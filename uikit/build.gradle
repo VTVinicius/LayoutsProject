@@ -1,0 +1,15 @@
+apply plugin:'com.android.library'
+apply plugin:'kotlin-android'
+
+apply from: "$rootProject.projectDir/android-common.gradle"
+
+android {
+    buildFeatures {
+        compose true
+    }
+}
+
+dependencies {
+    appDependencies.each { add(it.configuration, it.dependency, it.options) }
+    presentationDependencies.each { add(it.configuration, it.dependency, it.options) }
+}

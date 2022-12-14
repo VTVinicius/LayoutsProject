@@ -1,0 +1,63 @@
+ext {
+
+    //kotlin
+    kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+    coroutine = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
+
+    //androidx
+    appCompat = "androidx.appcompat:appcompat:$appCompatVersion"
+    androidKtxCore = "androidx.core:core-ktx:$androidKtxCoreVersion"
+
+    //androidx lifecycle
+    viewModelRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    lifecycleJava8 = "androidx.lifecycle:lifecycle-common-java8:$lifecycleExtVersion"
+    lifecycleXt = "androidx.lifecycle:lifecycle-extensions:$lifecycleExtVersion"
+
+    //Koin
+    koinCore = "io.insert-koin:koin-core:$koinVersion"
+    koinAndroid = "io.insert-koin:koin-android:$koinVersion"
+    koinComposeViewModel = "io.insert-koin:koin-androidx-compose:$koinVersion"
+
+    //retrofit
+    retrofit2 = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    retrofitCoroutine = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofitCoroutineVersion"
+    httpInterceptor = "com.squareup.okhttp3:logging-interceptor:$httpInterceptorVersion"
+    okhttp = "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    gsonConvertFacotory = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    //gson
+    gson = "com.google.code.gson:gson:$gsonVersion"
+
+    //room
+    room = "androidx.room:room-runtime:$roomVersion"
+    roomKtx = "androidx.room:room-ktx:$roomVersion"
+    roomCompiler = "androidx.room:room-compiler:$roomVersion"
+    roomRx = "androidx.room:room-rxjava2:$roomVersion"
+
+    //material
+    material = "com.google.android.material:material:$materialVersion"
+
+    //sqlite
+    sqlite = "androidx.sqlite:sqlite:$sqliteVersion"
+
+    //compose
+    composeActivity = "androidx.activity:activity-compose:$composeActivity"
+    composeMaterialDesign = "androidx.compose.material:material:$composeVersion"
+    composeAnimations = "androidx.compose.animation:animation:$composeVersion"
+    composePreview = "androidx.compose.ui:ui-tooling:$composeVersion"
+    composeViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:$composeViewModel"
+    composeUITests = "androidx.compose.ui:ui-test-junit4:$composeVersion"
+    composeUi = "androidx.compose.ui:ui:$composeVersion"
+    composeRuntime = "androidx.compose.runtime:runtime:$composeRuntimeVersion"
+    composeNavigation = "androidx.navigation:navigation-compose:$navComposeVersion"
+    composeCompiler = "androidx.compose.compiler:compiler:$compilerVersion"
+
+    //security
+    securityCrypto = "androidx.security:security-crypto:$securityCryptoVersion"
+
+}
+
+
+

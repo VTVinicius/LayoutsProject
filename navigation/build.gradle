@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+apply from: "$rootProject.projectDir/android-common.gradle"
+
+dependencies {
+
+    implementation project(':base_feature')
+    implementation project(':feature_example')
+
+    intentDependencies.each { add(it.configuration, it.dependency) }
+}
+

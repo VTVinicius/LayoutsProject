@@ -1,0 +1,25 @@
+ext {
+
+//androidTestImplementation libs
+    androidTestRules = "androidx.test:rules:$androidTestRulesVersion"
+    androidJunit = "androidx.test.ext:junit:$androidJunitVersion"
+    androidTestRunner = "androidx.test:runner:$androidTestVersion"
+    composeTest = "androidx.compose.ui:ui-test-junit4:$composeTestVersion"
+
+    androidMockk = "io.mockk:mockk-android:$mockkVersion"
+    androidCoreTest = "androidx.test:core:$androidCoreTestVersion"
+
+    linkedinMockito = "com.linkedin.dexmaker:dexmaker-mockito:$linkedinMockitoVersion"
+
+//testImplementation libs
+    junit = "junit:junit:$junitVersion"
+    kotlinTest = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    kotlinJunit = "org.jetbrains.kotlin:kotlin-test"
+    mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:$mockitoKotlinVersion"
+    koinTest = "io.insert-koin:koin-test-junit4:$koinVersion"
+    coreTesting = "androidx.arch.core:core-testing:$coreTestVersion"
+    robolectric = "org.robolectric:robolectric:$robolectricVersion"
+    mockk = "io.mockk:mockk:$mockkVersion"
+    arch = "androidx.arch.core:core-testing:$archVersion"
+    mockitoInline = "org.mockito:mockito-inline:$mockitoInlineVersion"
+}

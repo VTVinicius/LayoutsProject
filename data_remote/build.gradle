@@ -1,0 +1,12 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+apply from: "$rootProject.projectDir/android-common.gradle"
+
+dependencies {
+
+    implementation project(':data')
+
+    dataRemoteDependencies.each { add(it.configuration, it.dependency, it.options) }
+    androidTestCommonsDependencies.each { add(it.configuration, it.dependency, it.options) }
+}

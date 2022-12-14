@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Base Compose Template"
+include ':app'
+include ':base_feature'
+include ':data'
+include ':data_local'
+include ':data_remote'
+include ':di'
+include ':domain'
+include ':navigation'
+include ':uikit'
+include ':feature_example'
