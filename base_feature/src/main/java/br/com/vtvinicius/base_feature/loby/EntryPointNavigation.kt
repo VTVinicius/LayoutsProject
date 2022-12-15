@@ -5,5 +5,6 @@ import androidx.navigation.NavController
 interface EntryPointNavigation {
 
     fun goToFeatureExample(navController: NavController)
+    fun goToFeatureSocialMedia(navController: NavController)
 
 }

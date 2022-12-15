@@ -18,6 +18,7 @@ fun DisplayLargeText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.displayLarge.fontWeight,
     fontFamily: FontFamily? = typography.displayLarge.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -28,7 +29,8 @@ fun DisplayLargeText(
             color = colors
         ),
         fontSize = typography.displayLarge.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -41,6 +43,7 @@ fun DisplayMediumText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.displayMedium.fontWeight,
     fontFamily: FontFamily? = typography.displayMedium.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -51,7 +54,8 @@ fun DisplayMediumText(
             color = colors
         ),
         fontSize = typography.displayMedium.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -64,6 +68,7 @@ fun DisplaySmallText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.displaySmall.fontWeight,
     fontFamily: FontFamily? = typography.displaySmall.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -74,7 +79,8 @@ fun DisplaySmallText(
             color = colors
         ),
         fontSize = typography.displaySmall.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 

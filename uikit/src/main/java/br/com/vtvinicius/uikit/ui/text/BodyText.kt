@@ -18,6 +18,7 @@ fun BodyLargeText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.bodyLarge.fontWeight,
     fontFamily: FontFamily? = typography.bodyLarge.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -28,7 +29,8 @@ fun BodyLargeText(
             color = colors
         ),
         fontSize = typography.bodyLarge.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -41,6 +43,7 @@ fun BodyMediumText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.bodyMedium.fontWeight,
     fontFamily: FontFamily? = typography.bodyMedium.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -51,7 +54,8 @@ fun BodyMediumText(
             color = colors
         ),
         fontSize = typography.bodyMedium.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -63,6 +67,7 @@ fun BodySmallText(
     fontWeight: FontWeight? = typography.bodySmall.fontWeight,
     fontFamily: FontFamily? = typography.bodySmall.fontFamily,
     modifier: Modifier = Modifier,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -73,6 +78,7 @@ fun BodySmallText(
             color = colors
         ),
         fontSize = typography.bodySmall.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }

@@ -19,6 +19,7 @@ fun LabelLargeText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.labelLarge.fontWeight,
     fontFamily: FontFamily? = typography.labelLarge.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -29,7 +30,8 @@ fun LabelLargeText(
             color = colors
         ),
         fontSize = typography.labelLarge.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -41,6 +43,7 @@ fun LabelMediumText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.labelMedium.fontWeight,
     fontFamily: FontFamily? = typography.labelMedium.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -51,7 +54,8 @@ fun LabelMediumText(
             color = colors
         ),
         fontSize = typography.labelMedium.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -63,6 +67,7 @@ fun LabelSmallText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.labelSmall.fontWeight,
     fontFamily: FontFamily? = typography.labelSmall.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -73,6 +78,7 @@ fun LabelSmallText(
             color = colors
         ),
         fontSize = typography.labelSmall.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }

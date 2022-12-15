@@ -42,6 +42,11 @@ fun LobbyScreen(
                     onClick = { navigation.goToFeatureExample(navController) },
                     text = "Go to Feature Example"
                 )
+
+                AppButton(
+                    onClick = { navigation.goToFeatureSocialMedia(navController) },
+                    text = "Go to Social Medias"
+                )
             }
 
         }

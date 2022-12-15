@@ -19,6 +19,7 @@ fun TitleLargeText(
     fontWeight: FontWeight? = typography.titleLarge.fontWeight,
     fontFamily: FontFamily? = typography.titleLarge.fontFamily,
     modifier: Modifier = Modifier,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -29,7 +30,8 @@ fun TitleLargeText(
             color = colors
         ),
         fontSize = typography.titleLarge.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -41,6 +43,7 @@ fun TitleMediumText(
     fontWeight: FontWeight? = typography.titleMedium.fontWeight,
     fontFamily: FontFamily? = typography.titleMedium.fontFamily,
     modifier: Modifier = Modifier,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -51,7 +54,8 @@ fun TitleMediumText(
             color = colors
         ),
         fontSize = typography.titleMedium.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -63,6 +67,7 @@ fun TitleSmallText(
     fontWeight: FontWeight? = typography.titleSmall.fontWeight,
     fontFamily: FontFamily? = typography.titleSmall.fontFamily,
     modifier: Modifier = Modifier,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -73,7 +78,8 @@ fun TitleSmallText(
             color = colors
         ),
         fontSize = typography.titleSmall.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 

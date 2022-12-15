@@ -19,6 +19,7 @@ fun HeadlineLargeText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.headlineLarge.fontWeight,
     fontFamily: FontFamily? = typography.headlineLarge.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -29,7 +30,8 @@ fun HeadlineLargeText(
             color = colors
         ),
         fontSize = typography.headlineLarge.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -41,6 +43,7 @@ fun HeadlineMediumText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.headlineMedium.fontWeight,
     fontFamily: FontFamily? = typography.headlineMedium.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -51,7 +54,8 @@ fun HeadlineMediumText(
             color = colors
         ),
         fontSize = typography.headlineMedium.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }
 
@@ -63,6 +67,7 @@ fun HeadlineSmallText(
     modifier: Modifier = Modifier,
     fontWeight: FontWeight? = typography.headlineSmall.fontWeight,
     fontFamily: FontFamily? = typography.headlineSmall.fontFamily,
+    maxLines: Int = 10
 ) {
     Text(
         modifier = modifier,
@@ -73,6 +78,7 @@ fun HeadlineSmallText(
             color = colors
         ),
         fontSize = typography.headlineSmall.fontSize,
-        fontWeight = fontWeight
+        fontWeight = fontWeight,
+        maxLines = maxLines
     )
 }

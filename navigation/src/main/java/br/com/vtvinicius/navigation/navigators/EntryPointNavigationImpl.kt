@@ -8,4 +8,8 @@ class EntryPointNavigationImpl : EntryPointNavigation {
     override fun goToFeatureExample(navController: NavController) {
         navController.navigate("feature_example")
     }
+
+    override fun goToFeatureSocialMedia(navController: NavController) {
+        navController.navigate("feature_social_media")
+    }
 }

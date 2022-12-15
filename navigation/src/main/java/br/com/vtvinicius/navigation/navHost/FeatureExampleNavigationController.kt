@@ -47,6 +47,10 @@ fun FeatureExampleNavigationController() {
                 navController,
                 FeatureExampleNavigationImpl()
             )
+
+        }
+        composable("social_medias") {
+            FeatureSocialMediaNavigationController()
         }
     }
 }
