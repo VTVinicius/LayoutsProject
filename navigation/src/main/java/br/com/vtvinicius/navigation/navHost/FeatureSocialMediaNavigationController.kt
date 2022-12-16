@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.navigation.navigators.SocialMediaNavigationImpl
 import com.example.feature_social_media.LobbySocialMedias
 import com.example.feature_social_media.instagram.InstaProfileScreen
+import com.example.feature_social_media.linkedin.LinkedinProfileScreen
 
 
 @Composable
@@ -26,8 +27,10 @@ fun FeatureSocialMediaNavigationController() {
             )
         }
         composable("instagram") {
-            InstaProfileScreen(
-            )
+            InstaProfileScreen()
+        }
+        composable("linkedin") {
+            LinkedinProfileScreen()
         }
     }
 }

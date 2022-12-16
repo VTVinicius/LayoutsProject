@@ -15,6 +15,7 @@ MERGED from [io.insert-koin:koin-androidx-compose:3.2.0] C:\Users\Vinicius\.grad
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1] C:\Users\Vinicius\.gradle\caches\transforms-3\d9fa9f95222338066a0c7eff31ca03c1\transformed\lifecycle-viewmodel-compose-2.5.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.ui:ui-tooling:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\cbef9962473f5c3bc2cf09b108a43865\transformed\ui-tooling-1.2.1\AndroidManifest.xml:17:1-29:12
 MERGED from [androidx.activity:activity-compose:1.6.0] C:\Users\Vinicius\.gradle\caches\transforms-3\f730437fee17443417fbbd5de3dfc9ab\transformed\activity-compose-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout-compose:1.0.1] C:\Users\Vinicius\.gradle\caches\transforms-3\67c11f8e094f5c89dca352bbec3de0de\transformed\constraintlayout-compose-1.0.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.material:material:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\b5fc083954ff5792f004a821e76d39ec\transformed\material-1.2.1\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.compose.material:material-ripple:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\e9235beb19696c5a02ac45c8fc86044d\transformed\material-ripple-1.2.1\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.compose.foundation:foundation:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\7ec52e334a3af8b1737286b1e8ecb67b\transformed\foundation-1.2.1\AndroidManifest.xml:17:1-23:12
@@ -213,6 +214,8 @@ MERGED from [androidx.compose.ui:ui-tooling:1.2.1] C:\Users\Vinicius\.gradle\cac
 MERGED from [androidx.compose.ui:ui-tooling:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\cbef9962473f5c3bc2cf09b108a43865\transformed\ui-tooling-1.2.1\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.activity:activity-compose:1.6.0] C:\Users\Vinicius\.gradle\caches\transforms-3\f730437fee17443417fbbd5de3dfc9ab\transformed\activity-compose-1.6.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-compose:1.6.0] C:\Users\Vinicius\.gradle\caches\transforms-3\f730437fee17443417fbbd5de3dfc9ab\transformed\activity-compose-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout-compose:1.0.1] C:\Users\Vinicius\.gradle\caches\transforms-3\67c11f8e094f5c89dca352bbec3de0de\transformed\constraintlayout-compose-1.0.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout-compose:1.0.1] C:\Users\Vinicius\.gradle\caches\transforms-3\67c11f8e094f5c89dca352bbec3de0de\transformed\constraintlayout-compose-1.0.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.compose.material:material:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\b5fc083954ff5792f004a821e76d39ec\transformed\material-1.2.1\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.compose.material:material:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\b5fc083954ff5792f004a821e76d39ec\transformed\material-1.2.1\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.compose.material:material-ripple:1.2.1] C:\Users\Vinicius\.gradle\caches\transforms-3\e9235beb19696c5a02ac45c8fc86044d\transformed\material-ripple-1.2.1\AndroidManifest.xml:20:5-21:38

@@ -17,6 +17,7 @@ ext {
             [configuration: "implementation", dependency: "$koinComposeViewModel"],
             [configuration: "implementation", dependency: "$koinAndroid"],
             [configuration: "implementation", dependency: "$koinCore"],
+            [configuration: "implementation", dependency: "$composeConstraints"],
             [configuration: "implementation", dependency: "$material"],
             [configuration: "implementation", dependency: "$gson"],
             [configuration: "api", dependency: "$composeUi"],
@@ -60,6 +61,7 @@ ext {
             [configuration: "api", dependency: "$composePreview"],
             [configuration: "implementation", dependency: "$composeRuntime"],
             [configuration: "implementation", dependency: "$composeCompiler"],
+            [configuration: "implementation", dependency: "$composeConstraints"],
             [configuration: "api", dependency: "$composeNavigation"]
     ]
 

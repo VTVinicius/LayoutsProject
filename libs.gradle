@@ -53,6 +53,7 @@ ext {
     composeRuntime = "androidx.compose.runtime:runtime:$composeRuntimeVersion"
     composeNavigation = "androidx.navigation:navigation-compose:$navComposeVersion"
     composeCompiler = "androidx.compose.compiler:compiler:$compilerVersion"
+    composeConstraints = "androidx.constraintlayout:constraintlayout-compose:$composeConstaintsVersion"
 
     //security
     securityCrypto = "androidx.security:security-crypto:$securityCryptoVersion"

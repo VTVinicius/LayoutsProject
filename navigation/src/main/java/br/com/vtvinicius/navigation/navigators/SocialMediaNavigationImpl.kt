@@ -9,6 +9,10 @@ class SocialMediaNavigationImpl: SocialMediaNavigation
         navController.navigate("instagram")
     }
 
+    override fun goToLinkedin(navController: NavController) {
+   navController.navigate("linkedin")
+    }
+
     override fun goToLobby(navController: NavController) {
         navController.navigate(" lobby_social_medias")
     }
