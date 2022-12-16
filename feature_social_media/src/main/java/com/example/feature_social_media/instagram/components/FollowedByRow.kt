@@ -27,13 +27,13 @@ fun FallowedByRow() {
     ) {
 
         RoundImageSmall(
-            image = painterResource(id = R.drawable.profile_pic),
+            image = painterResource(id = R.drawable.img_vini_1),
             modifier = Modifier
                 .size(30.dp)
                 .offset(x = 30.dp)
         )
         RoundImageSmall(
-            image = painterResource(id = R.drawable.profile_pic),
+            image = painterResource(id = R.drawable.img_vini_4),
             modifier = Modifier
                 .size(30.dp)
                 .offset(x = (-15).dp)

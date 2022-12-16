@@ -22,7 +22,7 @@ import br.com.vtvinicius.uikit.ui.text.TitleSmallText
 @Composable
 fun ProfileStats(
     numberPub: String = "8",
-    numberFollows: String = "1000",
+    numberFollows: String = "2M",
     numberFollowing: String = "2000"
 ) {
 

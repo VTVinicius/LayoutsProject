@@ -1,9 +1,6 @@
 package com.example.feature_social_media.instagram
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
@@ -67,8 +64,13 @@ fun InstaProfileScreen() {
                             painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_3),
                             painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_4),
                             painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_5),
+                            painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_1),
+                            painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_2),
+                            painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_3),
+                            painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_4),
+                            painterResource(id = br.com.vtvinicius.uikit.R.drawable.img_vini_5),
                         ),
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier.height(600.dp)
                     )
                 }
             }
