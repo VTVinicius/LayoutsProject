@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.layoutId
@@ -24,6 +25,7 @@ fun CapeAndProfilePic() {
         val capePic = createRefFor("capePic")
         val editProfile = createRefFor("editProfile")
         val editCape = createRefFor("editCape")
+        val editPic = createRefFor("editPic")
 
 
         constrain(capePic) {
@@ -53,7 +55,14 @@ fun CapeAndProfilePic() {
 
         constrain(editCape) {
             top.linkTo(capePic.top)
-            end.linkTo(capePic.end )
+            end.linkTo(capePic.end)
+            width = Dimension.value(35.dp)
+            height = Dimension.value(35.dp)
+        }
+        constrain(editPic) {
+            top.linkTo(profilePic.top)
+            bottom.linkTo(profilePic.bottom)
+            end.linkTo(profilePic.end)
             width = Dimension.value(35.dp)
             height = Dimension.value(35.dp)
         }
@@ -71,12 +80,12 @@ fun CapeAndProfilePic() {
                 .aspectRatio(1f)
                 .layoutId("capePic")
 
-
         )
         Box(
             Modifier
                 .layoutId("editCape")
-                .offset(x = (-16).dp, y = 16.dp)){
+                .offset(x = (-16).dp, y = 16.dp)
+        ) {
             RoundedIcon(
                 icon = R.drawable.ic_pencil,
                 buttonColors = Color.White,
@@ -88,17 +97,34 @@ fun CapeAndProfilePic() {
             painterResource(id = R.drawable.img_vini_2),
             modifier = Modifier
                 .layoutId("profilePic")
-                .padding(start = 8.dp)
+                .padding(start = 16.dp)
         )
 
         Box(
             Modifier
                 .layoutId("editProfile")
-                .padding(end = 16.dp)) {
+                .padding(end = 16.dp)
+        ) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_pencil),
                 contentDescription = "Edit",
                 modifier = Modifier
+            )
+
+        }
+
+        Box(
+            Modifier
+                .layoutId("editPic")
+                .offset(x = (-5).dp, y = 32.dp)
+        ) {
+            RoundedIcon(
+                icon = R.drawable.ic_plus,
+                iconColor = Color.White,
+                buttonColors = Color.Blue,
+                strokeColor = Color.White,
+                borderStrokeWidth = 3.dp,
+                iconModifier = Modifier.align(Alignment.Center).fillMaxSize()
             )
 
         }

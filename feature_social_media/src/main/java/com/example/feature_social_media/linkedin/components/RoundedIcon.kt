@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Icon
-import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,7 +21,10 @@ fun RoundedIcon(
     icon: Int,
     boxSize: Dp = 35.dp,
     buttonColors: Color,
-    iconColor: Color = Color.Black
+    iconColor: Color = Color.Black,
+    borderStrokeWidth: Dp = 1.dp,
+    strokeColor: Color = Color.Gray,
+    iconModifier: Modifier = Modifier
 ) {
 
     Box(
@@ -30,8 +32,8 @@ fun RoundedIcon(
             .clip(CircleShape)
             .size(boxSize)
             .border(
-                width = 1.dp,
-                color = Color.Gray,
+                width = borderStrokeWidth,
+                color = strokeColor,
                 shape = CircleShape
             )
 
@@ -41,7 +43,7 @@ fun RoundedIcon(
         Icon(
             painter = painterResource(id = icon),
             contentDescription = "Icon",
-            modifier = Modifier
+            modifier = iconModifier
                 .padding(10.dp)
                 .background(Color.Transparent),
             tint = iconColor

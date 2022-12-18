@@ -3856,18 +3856,12 @@ androidx.compose.foundation.layout.BoxKt:
     public static final void Box(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment,boolean,kotlin.jvm.functions.Function3,androidx.compose.runtime.Composer,int,int)
     public static final androidx.compose.ui.layout.MeasurePolicy getDefaultBoxMeasurePolicy()
     public static final androidx.compose.ui.layout.MeasurePolicy getEmptyBoxMeasurePolicy()
-androidx.compose.foundation.layout.BoxScope:
-    public abstract androidx.compose.ui.Modifier align(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment)
-androidx.compose.foundation.layout.BoxScopeInstance$align$$inlined$debugInspectorInfo$1
-androidx.compose.foundation.layout.BoxScopeInstance:
-    public androidx.compose.ui.Modifier align(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment)
 androidx.compose.foundation.layout.BoxWithConstraintsScope:
     public abstract float getMaxHeight-D9Ej5fM()
     public abstract float getMaxWidth-D9Ej5fM()
     public abstract float getMinHeight-D9Ej5fM()
     public abstract float getMinWidth-D9Ej5fM()
 androidx.compose.foundation.layout.BoxWithConstraintsScopeImpl:
-    public androidx.compose.ui.Modifier align(androidx.compose.ui.Modifier,androidx.compose.ui.Alignment)
     private final androidx.compose.ui.unit.Density component1()
     public final long component2-msEJaDk()
     public final androidx.compose.foundation.layout.BoxWithConstraintsScopeImpl copy-0kLqBqw(androidx.compose.ui.unit.Density,long)
@@ -20798,7 +20792,6 @@ br.com.vtvinicius.uikit.base.AppTypography:
     public final androidx.compose.ui.text.TextStyle component9()
     public final br.com.vtvinicius.uikit.base.AppTypography copy(androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle)
     public static synthetic br.com.vtvinicius.uikit.base.AppTypography copy$default(br.com.vtvinicius.uikit.base.AppTypography,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,androidx.compose.ui.text.TextStyle,int,java.lang.Object)
-    public final androidx.compose.ui.text.TextStyle getBodyLarge()
     public final androidx.compose.ui.text.TextStyle getBodySmall()
     public final androidx.compose.ui.text.TextStyle getDisplayLarge()
     public final androidx.compose.ui.text.TextStyle getDisplayMedium()
@@ -20834,10 +20827,8 @@ br.com.vtvinicius.uikit.ui.inputtext.base.InputTextStyleType
 br.com.vtvinicius.uikit.ui.inputtext.base.LiveLiterals$BaseInputTextKt
 br.com.vtvinicius.uikit.ui.inputtext.base.LiveLiterals$InputTextStateKt
 br.com.vtvinicius.uikit.ui.inputtext.base.LiveLiterals$InputTextStyleTypeKt
-br.com.vtvinicius.uikit.ui.text.BodyTextKt$BodyLargeText$1
 br.com.vtvinicius.uikit.ui.text.BodyTextKt$BodySmallText$1
 br.com.vtvinicius.uikit.ui.text.BodyTextKt:
-    public static final void BodyLargeText-dT70oyg(java.lang.String,long,int,androidx.compose.ui.Modifier,androidx.compose.ui.text.font.FontWeight,androidx.compose.ui.text.font.FontFamily,int,androidx.compose.runtime.Composer,int,int)
     public static final void BodySmallText-dT70oyg(java.lang.String,long,int,androidx.compose.ui.text.font.FontWeight,androidx.compose.ui.text.font.FontFamily,androidx.compose.ui.Modifier,int,androidx.compose.runtime.Composer,int,int)
 br.com.vtvinicius.uikit.ui.text.DisplayTextKt$DisplayLargeText$1
 br.com.vtvinicius.uikit.ui.text.DisplayTextKt$DisplayMediumText$1
@@ -20853,9 +20844,7 @@ br.com.vtvinicius.uikit.ui.text.LabelTextKt:
     public static final void LabelLargeText-dT70oyg(java.lang.String,long,int,androidx.compose.ui.Modifier,androidx.compose.ui.text.font.FontWeight,androidx.compose.ui.text.font.FontFamily,int,androidx.compose.runtime.Composer,int,int)
     public static final void LabelMediumText-dT70oyg(java.lang.String,long,int,androidx.compose.ui.Modifier,androidx.compose.ui.text.font.FontWeight,androidx.compose.ui.text.font.FontFamily,int,androidx.compose.runtime.Composer,int,int)
 br.com.vtvinicius.uikit.ui.text.LiveLiterals$BodyTextKt:
-    private static androidx.compose.runtime.State State$Int$param-maxLines$fun-BodyLargeText
     private static androidx.compose.runtime.State State$Int$param-maxLines$fun-BodySmallText
-    public final int Int$param-maxLines$fun-BodyLargeText()
     public final int Int$param-maxLines$fun-BodySmallText()
 br.com.vtvinicius.uikit.ui.text.LiveLiterals$DisplayTextKt
 br.com.vtvinicius.uikit.ui.text.LiveLiterals$HeadlineTextKt

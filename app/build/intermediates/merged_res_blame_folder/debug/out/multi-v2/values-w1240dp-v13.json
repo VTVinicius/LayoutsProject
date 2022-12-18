@@ -4,7 +4,7 @@
             "outputFile": "br.com.vtvinicius.app-mergeDebugResources-64:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Vinicius\\Documents\\GitHub\\LayoutsProject\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "source": "C:\\Users\\almic\\Documents\\GitHub\\LayoutsProject\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

@@ -4,7 +4,7 @@
             "outputFile": "br.com.vtvinicius.app-mergeDebugResources-64:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Vinicius\\.gradle\\caches\\transforms-3\\e15912da3c3fc52ef7c9917ba869cbb0\\transformed\\material-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\almic\\.gradle\\caches\\transforms-3\\e15912da3c3fc52ef7c9917ba869cbb0\\transformed\\material-1.7.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Vinicius\\.gradle\\caches\\transforms-3\\0383d386353300687ecd4db200bd95be\\transformed\\appcompat-1.5.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\almic\\.gradle\\caches\\transforms-3\\0383d386353300687ecd4db200bd95be\\transformed\\appcompat-1.5.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
