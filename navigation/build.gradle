@@ -6,8 +6,8 @@ apply from: "$rootProject.projectDir/android-common.gradle"
 dependencies {
 
     implementation project(':base_feature')
-    implementation project(':feature_example')
-    implementation project(':feature_social_media')
+    implementation project(':features:feature_viacep')
+    implementation project(':features:feature_clones')
 
     intentDependencies.each { add(it.configuration, it.dependency) }
 }

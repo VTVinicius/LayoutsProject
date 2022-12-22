@@ -10,8 +10,8 @@ dependencies {
     implementation project(':data')
     implementation project(':data_remote')
     implementation project(':data_local')
-    implementation project(':feature_example')
-    implementation project(':feature_social_media')
+    implementation project(':features:feature_viacep')
+    implementation project(':features:feature_clones')
     implementation project(':uikit')
 
     diDependencies.each { add(it.configuration, it.dependency, it.options) }

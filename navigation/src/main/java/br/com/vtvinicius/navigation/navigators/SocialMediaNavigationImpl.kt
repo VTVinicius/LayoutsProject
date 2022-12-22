@@ -1,9 +1,9 @@
 package br.com.vtvinicius.navigation.navigators
 
 import androidx.navigation.NavController
-import com.example.feature_social_media.SocialMediaNavigation
+import br.com.vtvinicius.feature_clones.SocialMediaNavigation
 
-class SocialMediaNavigationImpl: SocialMediaNavigation
+class SocialMediaNavigationImpl: br.com.vtvinicius.feature_clones.SocialMediaNavigation
 {
     override fun goToInstagram(navController: NavController) {
         navController.navigate("instagram")
