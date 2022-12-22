@@ -12,7 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Layouts Project"
+rootProject.name = "Portfolio Project"
 include ':app'
 include ':base_feature'
 include ':data'

@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import com.example.feature_social_media.linkedin.components.CapeAndProfilePic
 import com.example.feature_social_media.linkedin.components.CompanyAndLocation
 import com.example.feature_social_media.linkedin.components.NameAndDescription
-import com.example.feature_social_media.linkedin.components.ToButtonsRow
+import com.example.feature_social_media.linkedin.components.TopButtonsRow
 
 
 @Composable
@@ -29,7 +29,7 @@ fun LinkedinProfileScreen() {
 
             NameAndDescription()
             CompanyAndLocation()
-            ToButtonsRow()
+            TopButtonsRow()
 
         }
     })
