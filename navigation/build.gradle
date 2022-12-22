@@ -8,6 +8,7 @@ dependencies {
     implementation project(':base_feature')
     implementation project(':features:feature_viacep')
     implementation project(':features:feature_clones')
+    implementation project(':features:feature_canvas')
 
     intentDependencies.each { add(it.configuration, it.dependency) }
 }
