@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.cepScreen
+package br.com.vtvinicius.viacep.cepScreen
 
 sealed class EnderecoInteraction {
     data class SearchEndereco(val cep: String) : EnderecoInteraction()

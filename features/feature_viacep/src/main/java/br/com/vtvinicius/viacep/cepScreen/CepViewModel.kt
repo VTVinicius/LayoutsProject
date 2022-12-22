@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.cepScreen
+package br.com.vtvinicius.viacep.cepScreen
 
 import androidx.lifecycle.ViewModel
 import br.com.vtvinicius.base_feature.core.Async

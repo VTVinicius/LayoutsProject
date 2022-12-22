@@ -4,11 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import br.com.vtvinicius.feature_example.cepScreen.CepScreen
-import br.com.vtvinicius.feature_example.history.HistoryScreen
-import br.com.vtvinicius.feature_example.homeScreen.HomeScreen
-import br.com.vtvinicius.feature_example.secondScreen.SecondScreen
 import br.com.vtvinicius.navigation.navigators.FeatureExampleNavigationImpl
+import br.com.vtvinicius.viacep.cepScreen.CepScreen
+import br.com.vtvinicius.viacep.history.HistoryScreen
+import br.com.vtvinicius.viacep.homeScreen.HomeScreen
+import br.com.vtvinicius.viacep.secondScreen.SecondScreen
 
 @Composable
 fun FeatureExampleNavigationController() {
@@ -49,7 +49,7 @@ fun FeatureExampleNavigationController() {
             )
 
         }
-        composable("social_medias") {
+        composable("lobby_social_medias") {
             FeatureSocialMediaNavigationController()
         }
     }

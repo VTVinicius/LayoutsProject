@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.history
+package br.com.vtvinicius.viacep.history
 
 import androidx.lifecycle.ViewModel
 import br.com.vtvinicius.base_feature.core.Async

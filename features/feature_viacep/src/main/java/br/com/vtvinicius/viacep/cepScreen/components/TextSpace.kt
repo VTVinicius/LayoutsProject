@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.cepScreen.components
+package br.com.vtvinicius.viacep.cepScreen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

@@ -39,7 +39,7 @@ fun BallClickerGameScreen() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "br.com.vtvinicius.feature_canvas.graphs.line_graph.Points: $points",
+                text = "Points:: $points",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )

@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.homeScreen
+package br.com.vtvinicius.viacep.homeScreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -8,11 +8,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
-import br.com.vtvinicius.feature_example.navigation.FeatureExampleNavigation
 import br.com.vtvinicius.uikit.ui.button.AppButton
 import br.com.vtvinicius.uikit.ui.text.TitleMediumText
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
+import br.com.vtvinicius.viacep.navigation.FeatureExampleNavigation
 
 @Composable
 fun HomeScreen(

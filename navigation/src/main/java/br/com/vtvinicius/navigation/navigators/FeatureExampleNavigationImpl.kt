@@ -1,7 +1,8 @@
 package br.com.vtvinicius.navigation.navigators
 
 import androidx.navigation.NavController
-import br.com.vtvinicius.feature_example.navigation.FeatureExampleNavigation
+import br.com.vtvinicius.viacep.navigation.FeatureExampleNavigation
+
 
 class FeatureExampleNavigationImpl : FeatureExampleNavigation {
 

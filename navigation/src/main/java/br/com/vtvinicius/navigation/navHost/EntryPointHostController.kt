@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import br.com.vtvinicius.base_feature.loby.LobbyScreen
+import br.com.vtvinicius.base_feature.lobby.LobbyScreen
 import br.com.vtvinicius.navigation.navigators.EntryPointNavigationImpl
 
 @Composable
@@ -20,8 +20,15 @@ fun EntryPointHostController() {
             LobbyScreen(navController = navController, EntryPointNavigationImpl())
         }
 
-        composable("feature_example") {
+        composable("feature_viacep") {
             FeatureExampleNavigationController()
+        }
+
+        composable("feature_canvas") {
+            FeatureCanvasNavigationController()
+        }
+        composable("feature_clones") {
+            FeatureSocialMediaNavigationController()
         }
     }
 }

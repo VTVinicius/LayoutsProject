@@ -1,4 +1,4 @@
-package br.com.vtvinicius.base_feature.loby
+package br.com.vtvinicius.base_feature.lobby
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
@@ -39,13 +39,17 @@ fun LobbyScreen(
                 VerticalSpacer(56)
 
                 AppButton(
-                    onClick = { navigation.goToFeatureExample(navController) },
+                    onClick = { navigation.goToFeatureViaCep(navController) },
                     text = "Go to Feature Example"
                 )
 
                 AppButton(
-                    onClick = { navigation.goToFeatureSocialMedia(navController) },
-                    text = "Go to Social Medias"
+                    onClick = { navigation.goToFeatureClones(navController) },
+                    text = "Go to Feature Clones"
+                )
+                AppButton(
+                    onClick = { navigation.goToFeatureCanvas(navController) },
+                    text = "Go to Feature of Canvas"
                 )
             }
 

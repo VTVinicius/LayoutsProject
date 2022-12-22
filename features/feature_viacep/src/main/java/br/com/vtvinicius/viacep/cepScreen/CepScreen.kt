@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.cepScreen
+package br.com.vtvinicius.viacep.cepScreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,13 +15,13 @@ import br.com.vtvinicius.base_feature.core.asSuccessOrNull
 import br.com.vtvinicius.base_feature.dialogs.CustomError
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.base_feature.extensions.validateStateError
-import br.com.vtvinicius.feature_example.cepScreen.components.TextSpace
-import br.com.vtvinicius.feature_example.navigation.FeatureExampleNavigation
 import br.com.vtvinicius.uikit.ui.button.AppButton
 import br.com.vtvinicius.uikit.ui.inputtext.BasicInputText
 import br.com.vtvinicius.uikit.ui.inputtext.base.InputTextState
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
+import br.com.vtvinicius.viacep.cepScreen.components.TextSpace
+import br.com.vtvinicius.viacep.navigation.FeatureExampleNavigation
 import org.koin.androidx.compose.getViewModel
 
 

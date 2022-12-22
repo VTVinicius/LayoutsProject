@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.cepScreen
+package br.com.vtvinicius.viacep.cepScreen
 
 import br.com.vtvinicius.base_feature.core.Async
 import br.com.vtvinicius.domain.model.example.EnderecoEntity

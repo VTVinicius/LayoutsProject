@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.history
+package br.com.vtvinicius.viacep.history
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,10 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.core.Scene
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
-import br.com.vtvinicius.feature_example.history.components.AddressCard
-import br.com.vtvinicius.feature_example.navigation.FeatureExampleNavigation
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
+import br.com.vtvinicius.viacep.history.components.AddressCard
+import br.com.vtvinicius.viacep.navigation.FeatureExampleNavigation
 import org.koin.androidx.compose.getViewModel
 
 @Composable

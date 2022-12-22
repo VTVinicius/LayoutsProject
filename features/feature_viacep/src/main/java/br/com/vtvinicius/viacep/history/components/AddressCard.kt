@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.history.components
+package br.com.vtvinicius.viacep.history.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

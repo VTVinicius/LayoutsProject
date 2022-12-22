@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.history
+package br.com.vtvinicius.viacep.history
 
 sealed class HistoryInteraction {
     object LoadAddress : HistoryInteraction()

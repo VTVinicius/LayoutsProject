@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.navigation
+package br.com.vtvinicius.viacep.navigation
 
 import androidx.navigation.NavController
 

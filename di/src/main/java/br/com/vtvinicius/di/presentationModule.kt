@@ -1,7 +1,7 @@
 package br.com.vtvinicius.di
 
-import br.com.vtvinicius.feature_example.cepScreen.CepViewModel
-import br.com.vtvinicius.feature_example.history.HistoryViewModel
+import br.com.vtvinicius.viacep.cepScreen.CepViewModel
+import br.com.vtvinicius.viacep.history.HistoryViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

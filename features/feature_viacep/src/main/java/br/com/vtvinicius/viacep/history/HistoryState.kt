@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_example.history
+package br.com.vtvinicius.viacep.history
 
 import br.com.vtvinicius.base_feature.core.Async
 import br.com.vtvinicius.domain.model.example.AddressLocalEntity
