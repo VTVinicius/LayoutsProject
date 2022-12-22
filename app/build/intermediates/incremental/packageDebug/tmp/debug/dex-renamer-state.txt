@@ -1,4 +1,0 @@
-#Tue Dec 20 10:31:19 BRT 2022
-base.0=C\:\\Users\\Vinicius\\Documents\\GitHub\\LayoutsProject\\app\\build\\intermediates\\dex\\debug\\minifyDebugWithR8\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
