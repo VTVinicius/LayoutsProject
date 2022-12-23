@@ -32,7 +32,7 @@ fun TicTacToeScreen() {
 
         winningPlayer?.let {
             Text(
-                text = "br.com.vtvinicius.feature_canvas.games.tic_tac_toe.Player ${it.symbol} has won!",
+                text = "Player ${it.symbol} has won!",
                 fontSize = 25.sp,
                 fontWeight = FontWeight.Bold
             )

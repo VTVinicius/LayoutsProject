@@ -7,6 +7,8 @@ import br.com.vtvinicius.domain.model.example.AddressLocalEntity
 import br.com.vtvinicius.domain.model.example.EnderecoEntity
 import br.com.vtvinicius.domain.usecase.example.SaveAddressUseCase
 import br.com.vtvinicius.domain.usecase.example.SearchCepUseCase
+import br.com.vtvinicius.domain.usecase.shaerdPreferences.GetExampleUseCase
+import br.com.vtvinicius.domain.usecase.shaerdPreferences.SaveExampleUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -14,17 +16,25 @@ import org.koin.core.component.KoinComponent
 
 class CepViewModel : ViewModel(), KoinComponent {
 
-    private val _state = MutableStateFlow(CepState(Async.Waiting, null, null))
+    private val _state = MutableStateFlow(CepState(Async.Waiting, null, null, Async.Waiting))
     val state: StateFlow<CepState> = _state
 
     private val searchCepUseCase: SearchCepUseCase by useCase()
     private val saveAddressUseCase: SaveAddressUseCase by useCase()
+    private val saveExampleUseCase: SaveExampleUseCase by useCase()
+    private val getExampleUseCase: GetExampleUseCase by useCase()
 
     fun interact(interaction: EnderecoInteraction) {
         when (interaction) {
             is EnderecoInteraction.SearchEndereco -> searchCep(interaction.cep)
             is EnderecoInteraction.CloseDialog -> closeDialog()
+            is EnderecoInteraction.ShowLastCep -> showLastCep()
         }
+    }
+
+
+    init {
+        interact(EnderecoInteraction.ShowLastCep)
     }
 
     private fun searchCep(cep: String) {
@@ -37,6 +47,7 @@ class CepViewModel : ViewModel(), KoinComponent {
                     cepState.copy(endereco = Async.Success(it))
                 }
                 saveAddress(it)
+                saveLastCep(cep)
             },
             onError = {
                 _state.update { cepState ->
@@ -91,5 +102,27 @@ class CepViewModel : ViewModel(), KoinComponent {
         if (validateAddress(address)) {
             saveAddressLocal(modelConverter(address = address))
         }
+    }
+
+    private fun saveLastCep(cep: String) {
+        saveExampleUseCase(
+            params = SaveExampleUseCase.Params(cep),
+            onSuccess = {
+                interact(EnderecoInteraction.ShowLastCep)
+            },
+            onError ={
+                interact(EnderecoInteraction.ShowLastCep)
+            }
+        )
+    }
+
+    private fun showLastCep() {
+        getExampleUseCase(
+            onSuccess = {
+                _state.update { cepState ->
+                    cepState.copy(lastCep = Async.Success(it))
+                }
+            }
+        )
     }
 }

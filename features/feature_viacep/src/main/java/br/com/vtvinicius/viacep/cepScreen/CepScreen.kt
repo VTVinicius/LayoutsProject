@@ -18,6 +18,7 @@ import br.com.vtvinicius.base_feature.extensions.validateStateError
 import br.com.vtvinicius.uikit.ui.button.AppButton
 import br.com.vtvinicius.uikit.ui.inputtext.BasicInputText
 import br.com.vtvinicius.uikit.ui.inputtext.base.InputTextState
+import br.com.vtvinicius.uikit.ui.text.TitleMediumText
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 import br.com.vtvinicius.viacep.cepScreen.components.TextSpace
@@ -92,7 +93,9 @@ fun CepScreen(
                     title = "Logradouro"
                 )
 
-                VerticalSpacer(height = 50)
+                VerticalSpacer(height = 32)
+
+                TitleMediumText(text = "Ultimo CEP pesquisado: ${state.lastCep.asSuccessOrNull()}", modifier = Modifier.padding(horizontal = 16.dp))
 
                 Column(
                     Modifier.fillMaxHeight(),

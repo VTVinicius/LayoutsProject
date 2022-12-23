@@ -7,4 +7,5 @@ data class CepState(
     val endereco: Async<EnderecoEntity>,
     val saveAddress: Boolean?,
     var error: Throwable?,
+    var lastCep: Async<String?>,
 )
