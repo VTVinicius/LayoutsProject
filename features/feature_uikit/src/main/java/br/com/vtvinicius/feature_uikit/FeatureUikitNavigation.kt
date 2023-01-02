@@ -4,6 +4,6 @@ import androidx.navigation.NavController
 
 interface FeatureUikitNavigation {
 
-    fun goToLobby(navController: NavController)
+    fun goToLobbyUikit(navController: NavController)
 
 }

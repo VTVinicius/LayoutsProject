@@ -14,10 +14,10 @@ fun FeatureUikitNavigationController() {
 
     NavHost(
         navController = navController,
-        startDestination = "uikit_home"
+        startDestination = "lobby_uikit"
     )
     {
-        composable("uikit_home") {
+        composable("lobby_uikit") {
             LobbyUikit(
                 navController,
                 FeatureUikitNavigationImpl()

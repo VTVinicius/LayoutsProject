@@ -6,8 +6,6 @@ interface FeatureCanvasNavigation {
 
     fun goToLobbyCanvas(navController: NavController)
 
-    fun goToBallClickerGame(navController: NavController)
-
     fun goToWeightPicker(navController: NavController)
 
     fun goToClock(navController: NavController)
@@ -18,10 +16,7 @@ interface FeatureCanvasNavigation {
 
     fun goToGenderPicker(navController: NavController)
 
-    fun goToTicTacToe(navController: NavController)
-
     fun goToLineGraph(navController: NavController)
 
-    fun goToSnake(navController: NavController)
 
 }

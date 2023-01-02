@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_canvas.games.tic_tac_toe
+package br.com.vtvinicius.feature_games.games.tic_tac_toe
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D

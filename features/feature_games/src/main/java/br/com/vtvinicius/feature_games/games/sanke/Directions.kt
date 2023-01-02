@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_canvas.games.sanke
+package br.com.vtvinicius.feature_games.games.sanke
 
 data class Directions(
     var isGoingUp: Boolean = false,

@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_canvas.games.tic_tac_toe
+package br.com.vtvinicius.feature_games.games.tic_tac_toe
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text

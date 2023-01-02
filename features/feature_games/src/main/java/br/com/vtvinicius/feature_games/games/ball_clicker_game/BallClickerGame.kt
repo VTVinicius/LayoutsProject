@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_canvas.games.ball_clicker_game
+package br.com.vtvinicius.feature_games.games.ball_clicker_game
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.border

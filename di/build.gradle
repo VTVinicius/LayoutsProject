@@ -15,6 +15,7 @@ dependencies {
     implementation project(':features:feature_canvas')
     implementation project(':features:feature_home')
     implementation project(':features:feature_uikit')
+    implementation project(':features:feature_games')
     implementation project(':uikit')
 
     diDependencies.each { add(it.configuration, it.dependency, it.options) }

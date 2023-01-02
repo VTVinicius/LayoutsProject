@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_canvas.games.sanke
+package br.com.vtvinicius.feature_games.games.sanke
 
 import androidx.compose.animation.core.animateOffsetAsState
 import androidx.compose.animation.core.tween

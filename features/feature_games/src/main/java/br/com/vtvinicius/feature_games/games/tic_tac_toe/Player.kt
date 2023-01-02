@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_canvas.games.tic_tac_toe
+package br.com.vtvinicius.feature_games.games.tic_tac_toe
 
 sealed class Player(val symbol: Char) {
     object X : Player('X')

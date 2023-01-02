@@ -49,13 +49,6 @@ fun LobbyCanvas(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 AppButton(
-                    onClick = { navigation.goToBallClickerGame(navController) },
-                    text = "ball_clicker_game"
-                )
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                AppButton(
                     onClick = { navigation.goToWeightPicker(navController) },
                     text = "weight_picker"
                 )
@@ -91,20 +84,9 @@ fun LobbyCanvas(
                 Spacer(modifier = Modifier.height(24.dp))
 
                 AppButton(
-                    onClick = { navigation.goToTicTacToe(navController) },
-                    text = "tic_tac_toe"
-                )
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                AppButton(
                     onClick = { navigation.goToLineGraph(navController) },
                     text = "line_graph"
                 )
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                AppButton(onClick = { navigation.goToSnake(navController) }, text = "snake")
 
                 Spacer(modifier = Modifier.height(24.dp))
 

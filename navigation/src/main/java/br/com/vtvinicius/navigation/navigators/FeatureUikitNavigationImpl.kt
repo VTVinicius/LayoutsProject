@@ -5,7 +5,7 @@ import br.com.vtvinicius.feature_uikit.FeatureUikitNavigation
 
 class FeatureUikitNavigationImpl: FeatureUikitNavigation
 {
-    override fun goToLobby(navController: NavController) {
+    override fun goToLobbyUikit(navController: NavController) {
         navController.navigate("lobby_uikit")
     }
 }

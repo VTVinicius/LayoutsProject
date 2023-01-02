@@ -9,10 +9,6 @@ class FeatureCanvasNavigationImpl : FeatureCanvasNavigation {
         navController.navigate("lobby_canvas")
     }
 
-    override fun goToBallClickerGame(navController: NavController) {
-        navController.navigate("ball_clicker_game")
-    }
-
     override fun goToWeightPicker(navController: NavController) {
         navController.navigate("weight_picker")
     }
@@ -33,15 +29,9 @@ class FeatureCanvasNavigationImpl : FeatureCanvasNavigation {
         navController.navigate("gender_picker_screen")
     }
 
-    override fun goToTicTacToe(navController: NavController) {
-        navController.navigate("tic_tac_toe")
-    }
-
     override fun goToLineGraph(navController: NavController) {
         navController.navigate("line_graph")
     }
 
-    override fun goToSnake(navController: NavController) {
-        navController.navigate("snake")
-    }
+
 }
