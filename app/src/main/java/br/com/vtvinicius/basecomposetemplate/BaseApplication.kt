@@ -18,15 +18,13 @@ class BaseApplication : Application() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         startKoin {
             modules(
-                navigationModule +
-                        listOf(
-                            presentationModule,
-                            domainModule,
-                            dataModule,
-                            dataRemoteModule,
-                            dataLocalModule,
-                            databaseModule
-                        )
+                navigationModule,
+                presentationModule,
+                domainModule,
+                dataModule,
+                dataRemoteModule,
+                dataLocalModule,
+                databaseModule
             ).androidContext(applicationContext)
         }
     }

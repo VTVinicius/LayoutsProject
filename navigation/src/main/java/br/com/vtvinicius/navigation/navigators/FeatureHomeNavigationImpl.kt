@@ -1,9 +1,9 @@
 package br.com.vtvinicius.navigation.navigators
 
 import androidx.navigation.NavController
-import br.com.vtvinicius.base_feature.lobby.EntryPointNavigation
+import br.com.vtvinicius.feature_home.lobby.FeatureHomeNavigation
 
-class EntryPointNavigationImpl : EntryPointNavigation {
+class FeatureHomeNavigationImpl : FeatureHomeNavigation {
 
     override fun goToFeatureViaCep(navController: NavController) {
         navController.navigate("feature_viacep")

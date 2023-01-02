@@ -11,7 +11,7 @@ import br.com.vtvinicius.viacep.homeScreen.HomeScreen
 import br.com.vtvinicius.viacep.secondScreen.SecondScreen
 
 @Composable
-fun FeatureExampleNavigationController() {
+fun FeatureViaCepNavigationController() {
 
     val navController = rememberNavController()
 
@@ -33,7 +33,7 @@ fun FeatureExampleNavigationController() {
             )
         }
         composable("lobby_screen") {
-            EntryPointHostController()
+            FeatureHomeNavigationController()
         }
 
         composable("cep_screen") {
@@ -49,8 +49,8 @@ fun FeatureExampleNavigationController() {
             )
 
         }
-        composable("lobby_social_medias") {
-            FeatureSocialMediaNavigationController()
+        composable("lobby_clones") {
+            FeatureClonesNavigationController()
         }
     }
 }

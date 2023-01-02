@@ -7,23 +7,23 @@ import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_clones.LobbySocialMedias
 import br.com.vtvinicius.feature_clones.instagram.InstaProfileScreen
 import br.com.vtvinicius.feature_clones.linkedin.LinkedinProfileScreen
-import br.com.vtvinicius.navigation.navigators.SocialMediaNavigationImpl
+import br.com.vtvinicius.navigation.navigators.FeatureClonesNavigationImpl
 
 
 @Composable
-fun FeatureSocialMediaNavigationController() {
+fun FeatureClonesNavigationController() {
 
     val navController = rememberNavController()
 
     NavHost(
         navController = navController,
-        startDestination = "lobby_social_medias"
+        startDestination = "lobby_clones"
     )
     {
-        composable("lobby_social_medias") {
+        composable("lobby_clones") {
             LobbySocialMedias(
                 navController,
-                SocialMediaNavigationImpl()
+                FeatureClonesNavigationImpl()
             )
         }
         composable("instagram") {

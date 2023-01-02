@@ -9,7 +9,7 @@ import br.com.vtvinicius.uikit.ui.button.AppButton
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
 @Composable
-fun LobbySocialMedias(navController: NavController, navigation: SocialMediaNavigation) {
+fun LobbySocialMedias(navController: NavController, navigation: FeatureClonesNavigation) {
 
 
 

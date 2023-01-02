@@ -1,4 +1,4 @@
-package br.com.vtvinicius.base_feature.lobby
+package br.com.vtvinicius.feature_home.lobby
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
@@ -18,7 +18,7 @@ import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 @Composable
 fun LobbyScreen(
     navController: NavController,
-    navigation: EntryPointNavigation,
+    navigation: FeatureHomeNavigation,
 ) {
 
     AppScaffold(
