@@ -1,12 +1,12 @@
 package br.com.vtvinicius.navigation.navigators
 
 import androidx.navigation.NavController
-import br.com.vtvinicius.feature_home.lobby.FeatureHomeNavigation
+import br.com.vtvinicius.feature_home.navigation.FeatureHomeNavigation
 
 class FeatureHomeNavigationImpl : FeatureHomeNavigation {
 
-    override fun goToFeatureViaCep(navController: NavController) {
-        navController.navigate("feature_viacep")
+    override fun goToFeatures(navController: NavController) {
+        navController.navigate("feature_features")
     }
 
     override fun goToFeatureClones(navController: NavController) {
@@ -15,5 +15,13 @@ class FeatureHomeNavigationImpl : FeatureHomeNavigation {
 
     override fun goToFeatureCanvas(navController: NavController) {
         navController.navigate("feature_canvas")
+    }
+
+    override fun goToFeatureGames(navController: NavController) {
+        navController.navigate("feature_games")
+    }
+
+    override fun goToFeatureUikit(navController: NavController) {
+        navController.navigate("feature_uikit")
     }
 }
