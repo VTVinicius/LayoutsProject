@@ -5,30 +5,37 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.vtvinicius.feature_canvas.animated_path.LobbyBackground
-import br.com.vtvinicius.uikit.ui.button.AppButton
+import br.com.vtvinicius.uikit.base.blueCanvasDark
+import br.com.vtvinicius.uikit.base.blueCanvasLight
+import br.com.vtvinicius.uikit.ui.button.FeaturesButton
+import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun LobbyCanvas(
     navController: NavController,
-    navigation: FeatureCanvasNavigation
+    navigation: FeatureCanvasNavigation,
 ) {
-
 
     val scrollState = rememberScrollState()
     Scaffold(
+        topBar = {
+            AppTopBar(
+                title = "Canvas",
+                onBackPressed = { navigation.goBackToHome(navController = navController) },
+                textColor = blueCanvasDark,
+                backgroundColor = blueCanvasLight
+            )
+        },
         content = {
             Column(
-
                 Modifier
                     .fillMaxSize()
                     .verticalScroll(
@@ -38,54 +45,58 @@ fun LobbyCanvas(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
 
-                LobbyBackground()
-
                 Spacer(modifier = Modifier.height(24.dp))
 
-                Text(text = "Exemplos de Layouts com Canvas!", fontSize = 24.sp)
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                AppButton(
+                FeaturesButton(
                     onClick = { navigation.goToWeightPicker(navController) },
-                    text = "weight_picker"
+                    text = "weight_picker",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                AppButton(
+                FeaturesButton(
                     onClick = { navigation.goToClock(navController) },
                     text = "clock_screen",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                AppButton(
+                FeaturesButton(
                     onClick = { navigation.goToExamplePath(navController) },
-                    text = "example_path"
+                    text = "example_path",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                AppButton(
+                FeaturesButton(
                     onClick = { navigation.goToEffectPath(navController) },
                     text = "effect_path",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                AppButton(
+                FeaturesButton(
                     onClick = { navigation.goToGenderPicker(navController) },
-                    text = "gender_picker_screen"
+                    text = "gender_picker_screen",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                AppButton(
+                FeaturesButton(
                     onClick = { navigation.goToLineGraph(navController) },
-                    text = "line_graph"
+                    text = "line_graph",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
                 )
 
                 Spacer(modifier = Modifier.height(24.dp))

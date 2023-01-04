@@ -18,5 +18,6 @@ interface FeatureCanvasNavigation {
 
     fun goToLineGraph(navController: NavController)
 
+    fun goBackToHome(navController: NavController)
 
 }

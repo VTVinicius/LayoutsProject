@@ -33,5 +33,9 @@ class FeatureCanvasNavigationImpl : FeatureCanvasNavigation {
         navController.navigate("line_graph")
     }
 
+    override fun goBackToHome(navController: NavController) {
+        navController.navigate("lobby_screen")
+    }
+
 
 }

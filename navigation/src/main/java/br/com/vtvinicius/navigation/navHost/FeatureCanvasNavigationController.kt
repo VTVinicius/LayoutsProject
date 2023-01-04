@@ -8,12 +8,10 @@ import br.com.vtvinicius.feature_canvas.LobbyCanvas
 import br.com.vtvinicius.feature_canvas.animated_path.EffectPath
 import br.com.vtvinicius.feature_canvas.clock.ClockScreen
 import br.com.vtvinicius.feature_canvas.curve_lines.ExamplePath
-import br.com.vtvinicius.feature_games.games.ball_clicker_game.BallClickerGameScreen
-import br.com.vtvinicius.feature_games.games.sanke.SnakeGameScreen
-import br.com.vtvinicius.feature_games.games.tic_tac_toe.TicTacToeScreen
 import br.com.vtvinicius.feature_canvas.gender_picker.GenderScreen
 import br.com.vtvinicius.feature_canvas.graphs.line_graph.LineGraphScreen
 import br.com.vtvinicius.feature_canvas.weight_picker.WeightPickerScreen
+import br.com.vtvinicius.feature_games.games.sanke.SnakeGameScreen
 import br.com.vtvinicius.navigation.navigators.FeatureCanvasNavigationImpl
 
 
@@ -55,6 +53,9 @@ fun FeatureCanvasNavigationController() {
 
         composable("games") {
             SnakeGameScreen()
+        }
+        composable("lobby_screen") {
+            FeatureHomeNavigationController()
         }
     }
 }
