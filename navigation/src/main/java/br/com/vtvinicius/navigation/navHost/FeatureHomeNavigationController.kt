@@ -37,5 +37,9 @@ fun FeatureHomeNavigationController() {
         composable("feature_uikit") {
             FeatureUikitNavigationController()
         }
+        composable("feature_viacep") {
+            FeatureViaCepNavigationController()
+        }
+
     }
 }

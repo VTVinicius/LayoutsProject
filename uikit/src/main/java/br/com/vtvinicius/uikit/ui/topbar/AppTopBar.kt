@@ -1,27 +1,24 @@
 package br.com.vtvinicius.uikit.ui.topbar
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.vtvinicius.uikit.R
-import br.com.vtvinicius.uikit.base.green
-import br.com.vtvinicius.uikit.base.white
+import br.com.vtvinicius.uikit.base.greenApp
 import br.com.vtvinicius.uikit.ui.text.HeadlineSmallText
 
 
@@ -39,44 +36,61 @@ fun AppTopBar(
     onBackPressed: () -> Unit = {},
     title: String,
     hasBackButton: Boolean = true,
+    textColor: Color = Color.White,
+    backgroundColor: Color = greenApp,
 ) {
 
     MaterialTheme {
 
-        Box(
-            Modifier
+        Card(
+            backgroundColor = backgroundColor,
+            elevation = 8.dp,
+            modifier = Modifier
                 .fillMaxWidth()
-                .background(green)
-                .shadow(1.dp)
+                .padding(bottom = 2.dp)
+                .offset(y = (-5).dp),
+            shape = RoundedCornerShape(12.dp)
         ) {
 
             if (hasBackButton) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_back_arrow),
-                    contentDescription = "Back",
-                    Modifier
-                        .padding(start = 24.dp, top = 24.dp, bottom = 24.dp)
-                        .size(35.dp)
-                        .align(Alignment.CenterStart)
-                        .padding(7.dp)
-                        .clickable(
-                            interactionSource = remember { MutableInteractionSource() },
-                            indication = rememberRipple(bounded = false),
-                        ) {
-                            onBackPressed.invoke()
-                        }
+
+                Row(
+                    horizontalArrangement = Arrangement.Start,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_back_arrow),
+                        contentDescription = "Back",
+                        Modifier
+                            .padding(start = 24.dp, top = 24.dp, bottom = 24.dp)
+                            .size(35.dp)
+                            .padding(7.dp)
+                            .offset(y = 5.dp)
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = rememberRipple(bounded = false),
+                            ) {
+                                onBackPressed.invoke()
+                            },
+                        tint = textColor
+                    )
+                }
+            }
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+
+                HeadlineSmallText(
+                    text = title,
+                    modifier = Modifier
+                        .padding(top = 24.dp, bottom = 24.dp)
+                        .offset(y = 5.dp),
+                    colors = textColor,
+                    fontWeight = FontWeight.Bold
                 )
             }
-
-            HeadlineSmallText(
-                text = title,
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .padding(top = 24.dp, bottom = 24.dp),
-                colors = white,
-                fontWeight = FontWeight.Bold
-            )
-
         }
 
     }
