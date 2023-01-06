@@ -13,4 +13,6 @@ interface FeatureGamesNavigation {
     fun goToSnake(navController: NavController)
 
     fun goToBallClickerGame(navController: NavController)
+
+    fun goBackToHome(navController: NavController)
 }

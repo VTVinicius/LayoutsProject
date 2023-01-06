@@ -16,4 +16,8 @@ class FeatureClonesNavigationImpl: FeatureClonesNavigation
     override fun goToLobby(navController: NavController) {
         navController.navigate(" lobby_clones")
     }
+
+    override fun goBackToHome(navController: NavController) {
+        navController.navigate("lobby_screen")
+    }
 }

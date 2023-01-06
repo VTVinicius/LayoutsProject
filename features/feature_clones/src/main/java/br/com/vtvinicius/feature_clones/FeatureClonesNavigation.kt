@@ -8,4 +8,6 @@ interface FeatureClonesNavigation {
     fun goToLinkedin(navController: NavController)
     fun goToLobby(navController: NavController)
 
+    fun goBackToHome(navController: NavController)
+
 }

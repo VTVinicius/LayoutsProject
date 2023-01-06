@@ -14,14 +14,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import br.com.vtvinicius.uikit.R
 import br.com.vtvinicius.uikit.base.ApplicationTheme
-import br.com.vtvinicius.uikit.ui.text.BodySmallText
+import br.com.vtvinicius.uikit.base.gray
+import br.com.vtvinicius.uikit.base.red
+import br.com.vtvinicius.uikit.ui.inputtext.utils.RegexEnum
+import br.com.vtvinicius.uikit.ui.inputtext.utils.unmask
+import br.com.vtvinicius.uikit.ui.text.BodyMediumText
+import br.com.vtvinicius.uikit.ui.text.LabelSmallText
+import br.com.vtvinicius.uikit.utils.extensions.HorizontalSpacer
+import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
+import java.text.NumberFormat
+import java.util.*
 
 
 @Composable
@@ -33,17 +44,38 @@ fun BaseInputText(
     state: InputTextState = InputTextState.NORMAL,
     onSearch: (String) -> Unit = {},
     onIconClick: () -> Unit = {},
+    isMoney: Boolean = false,
+    inputType: RegexEnum? = null,
+    styleType: InputTextStyleType = InputTextStyleType.NOTHING,
     keyboardOptions: KeyboardOptions = KeyboardOptions(),
 ) {
+
+    val LOCALE_PT_BR = Locale("pt", "BR")
+
+    val mFormatter: NumberFormat = NumberFormat.getCurrencyInstance(LOCALE_PT_BR)
+
+    var mIsUpdating: Boolean = false
 
     var text by remember {
         mutableStateOf("")
     }
+
     var isHintDisplayed by remember {
         mutableStateOf(hint != "")
     }
+
     var isFieldEmpty by remember {
         mutableStateOf(true)
+    }
+
+    val textFieldValue = remember {
+        mutableStateOf(
+            TextFieldValue(
+                text = text,
+                selection = TextRange(0)
+            )
+        )
+
     }
 
     Column {
@@ -51,18 +83,38 @@ fun BaseInputText(
             modifier = modifier
         ) {
             TextField(
-                value = text,
+                value = textFieldValue.value,
                 onValueChange = {
-                    if (it.length > (maxLength ?: 0)) {
-                        return@TextField
-                    } else if (it.length < text.length) {
-                        text = it
-                        isFieldEmpty = it == ""
+                    if (isMoney) {
+                        if (!mIsUpdating && it.text.unmask()
+                                .matches(inputType?.value ?: RegexEnum.ALL.value)
+                        ) {
+                            mIsUpdating = true
+                            val cleanString = it.text.unmask()
+                            val parsed = cleanString.toDouble()
+                            val formatted = mFormatter.format(parsed / 100)
+                            text = formatted
+                            mIsUpdating = false
+
+                            textFieldValue.value = TextFieldValue(
+                                text = text,
+                                selection = TextRange(text.length)
+                            )
+                            isFieldEmpty = it.text == ""
+                        }
                     } else {
-                        text = it
-                        onSearch(it)
-                        isFieldEmpty = it == ""
+                        if (it.text.length > (maxLength ?: 0)) {
+                            return@TextField
+                        } else if (it.text.matches(inputType?.value ?: RegexEnum.ALL.value)) {
+                            textFieldValue.value = it
+                            onSearch(it.text)
+                            isFieldEmpty = it.text == ""
+                        } else if (it.text.length < textFieldValue.value.text.length) {
+                            textFieldValue.value = it
+                            isFieldEmpty = it.text == ""
+                        }
                     }
+
                 },
                 visualTransformation =
                 if (mask != null && mask is PasswordVisualTransformation) {
@@ -79,7 +131,9 @@ fun BaseInputText(
 
                             Icon(
                                 painter = painterResource(id = state.rightIcon!!),
-                                contentDescription = "visibility Icon"
+                                contentDescription = "visibility Icon",
+                                modifier = Modifier
+                                    .size(15.dp)
                             )
                         }
                     } else {
@@ -89,7 +143,7 @@ fun BaseInputText(
                 maxLines = 1,
                 singleLine = true,
                 keyboardOptions = keyboardOptions,
-                textStyle = TextStyle(color = Color.Black, fontSize = 12.sp),
+                textStyle = TextStyle(color = Color.Black),
                 colors = TextFieldDefaults.textFieldColors(
                     backgroundColor = state.getBackgroundColor(),
                     cursorColor = Color.Black,
@@ -98,9 +152,9 @@ fun BaseInputText(
                     unfocusedIndicatorColor = Color.Transparent
                 ),
                 shape = ApplicationTheme.dimensions.defaultSize,
-                modifier = Modifier
+                modifier = modifier
+                    .height(52.dp)
                     .fillMaxWidth()
-                    .height(50.dp)
                     .border(
                         width = state.getBorderSize(),
                         color = state.getBorderColor(),
@@ -126,11 +180,42 @@ fun BaseInputText(
                         .align(Alignment.CenterStart)
                         .padding(start = 16.dp)
                 ) {
-                    BodySmallText(text = hint, Color.Gray, fontWeight = FontWeight.Bold)
+                    BodyMediumText(
+                        modifier = modifier,
+                        align = TextAlign.Center,
+                        text = hint,
+                        colors = gray
+                    )
                 }
             }
         }
-    }
-}
 
+        VerticalSpacer(height = 2)
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            if (styleType.errorMessage != "") {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_error_alert),
+                    tint = red,
+                    modifier = Modifier.size(16.dp),
+                    contentDescription = "Error Icon"
+                )
+
+                HorizontalSpacer(width = 4)
+
+                LabelSmallText(
+                    text = styleType.errorMessage,
+                    colors = red,
+                    align = TextAlign.Start
+
+                )
+            }
+        }
+    }
+
+}
 

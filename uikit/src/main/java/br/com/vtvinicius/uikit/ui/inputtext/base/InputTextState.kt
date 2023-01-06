@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import br.com.vtvinicius.uikit.base.inputTextGrey
+import br.com.vtvinicius.uikit.base.lightGray
 
 
 enum class InputTextState(val value: Int) {
@@ -21,7 +23,7 @@ enum class InputTextState(val value: Int) {
     fun getBorderColor(): Color = when (value) {
         OUTLINE.value -> Color.Black
         ERROR.value -> Color.Red
-        PASSWORD.value -> Color.Gray
+        PASSWORD.value -> Color.Black
         PASSWORD_ERROR.value -> Color.Red
         else -> Color.Transparent
     }
@@ -37,7 +39,7 @@ enum class InputTextState(val value: Int) {
 
     @Composable
     fun getBackgroundColor(): Color = when (value) {
-        GRAY.value -> Color.Gray
+        GRAY.value -> inputTextGrey
         else -> Color.White
     }
 

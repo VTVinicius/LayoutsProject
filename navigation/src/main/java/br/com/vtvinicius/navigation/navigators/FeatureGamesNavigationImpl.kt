@@ -17,6 +17,10 @@ class FeatureGamesNavigationImpl : FeatureGamesNavigation {
         navController.navigate("ball_clicker_game")
     }
 
+    override fun goBackToHome(navController: NavController) {
+       navController.navigate("lobby_screen")
+    }
+
     override fun goToTicTacToe(navController: NavController) {
         navController.navigate("tic_tac_toe")
     }

@@ -113,4 +113,8 @@ var purpleUikitLight = Color(0xFFECC5FF)
 var purpleUikitDark = Color(0xFF6C1E92)
 var yellowRiHappy = Color(0xFFFDC305)
 var orangeLeve= Color(0xFFFF4D00)
+val gray = Color(0xFF515151)
+var red = Color(0xFFFF0000)
+val inputTextGrey = Color(0XFFEBEBEB)
+val background = Color(0XFFF6F6F6)
 

@@ -32,5 +32,8 @@ fun FeatureClonesNavigationController() {
         composable("linkedin") {
             LinkedinProfileScreen()
         }
+        composable("lobby_screen") {
+            FeatureHomeNavigationController()
+        }
     }
 }
