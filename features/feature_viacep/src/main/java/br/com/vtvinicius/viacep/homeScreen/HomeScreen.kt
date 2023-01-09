@@ -44,7 +44,7 @@ fun HomeScreen(
                     onClick = { navigation.goToSecondScreen(navController = navController) },
                     text = "Go to Second Screen",
                     backgroundColor = greenApp,
-                    textColor = greenAppDark
+                    textColor = Color.White
                 )
             }
         }
