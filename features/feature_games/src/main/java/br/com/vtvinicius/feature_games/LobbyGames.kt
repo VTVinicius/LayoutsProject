@@ -1,5 +1,6 @@
 package br.com.vtvinicius.feature_games
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import br.com.vtvinicius.feature_games.navigation.FeatureGamesNavigation
+import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.yellowGamesDark
 import br.com.vtvinicius.uikit.base.yellowGamesLight
 import br.com.vtvinicius.uikit.ui.button.FeaturesButton
@@ -31,7 +33,9 @@ fun LobbyGames(
         content = {
 
             Column(
-                Modifier.fillMaxSize(),
+                Modifier
+                    .fillMaxSize()
+                    .background(background),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {

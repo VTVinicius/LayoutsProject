@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import br.com.vtvinicius.feature_uikit.InputTextScreen
 import br.com.vtvinicius.feature_uikit.LobbyUikit
+import br.com.vtvinicius.feature_uikit.inputText.InputTextScreen
 import br.com.vtvinicius.navigation.navigators.FeatureUikitNavigationImpl
 
 @Composable
@@ -28,7 +28,10 @@ fun FeatureUikitNavigationController() {
             FeatureHomeNavigationController()
         }
         composable("input_text") {
-            InputTextScreen()
+            InputTextScreen(
+                navController,
+                FeatureUikitNavigationImpl()
+            )
         }
     }
 }

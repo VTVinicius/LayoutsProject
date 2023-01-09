@@ -1,13 +1,17 @@
 package br.com.vtvinicius.viacep.secondScreen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
+import br.com.vtvinicius.uikit.base.background
+import br.com.vtvinicius.uikit.base.greenApp
 import br.com.vtvinicius.uikit.ui.button.AppButton
 import br.com.vtvinicius.uikit.ui.text.TitleMediumText
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
@@ -28,7 +32,9 @@ fun SecondScreen(
         },
         content = {
             Column(
-                Modifier.fillMaxSize(),
+                Modifier
+                    .fillMaxSize()
+                    .background(background),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
@@ -38,21 +44,27 @@ fun SecondScreen(
 
                 AppButton(
                     onClick = { navigation.goBackToEntryPoint(navController = navController) },
-                    text = "Go back to Lobby"
+                    text = "Go back to Lobby",
+                    backgroundColor = greenApp,
+                    textColor = Color.White
                 )
 
                 VerticalSpacer(height = 32)
 
                 AppButton(
                     onClick = { navigation.goToHomeScreen(navController = navController) },
-                    text = "Go back to Home"
+                    text = "Go back to Home",
+                    backgroundColor = greenApp,
+                    textColor = Color.White
                 )
 
                 VerticalSpacer(height = 32)
 
                 AppButton(
                     onClick = { navigation.goToCepScreen(navController = navController) },
-                    text = "Go To Cep Screen"
+                    text = "Go To Cep Screen",
+                    backgroundColor = greenApp,
+                    textColor = Color.White
                 )
             }
         }

@@ -1,13 +1,13 @@
 package br.com.vtvinicius.viacep.cepScreen
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.padding
+import CepInputText
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.core.Scene
@@ -15,8 +15,9 @@ import br.com.vtvinicius.base_feature.core.asSuccessOrNull
 import br.com.vtvinicius.base_feature.dialogs.CustomError
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.base_feature.extensions.validateStateError
+import br.com.vtvinicius.uikit.base.background
+import br.com.vtvinicius.uikit.base.greenApp
 import br.com.vtvinicius.uikit.ui.button.AppButton
-import br.com.vtvinicius.uikit.ui.inputtext.BasicInputText
 import br.com.vtvinicius.uikit.ui.inputtext.base.InputTextState
 import br.com.vtvinicius.uikit.ui.text.TitleMediumText
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
@@ -43,69 +44,77 @@ fun CepScreen(
         },
         error = state.error?.validateStateError(),
         content = {
-            Column {
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .background(background)) {
 
-                Scene(
-                    async = state.endereco,
-                ) {
+                Column(Modifier.padding(horizontal = 16.dp)) {
 
-                }
+                    Scene(
+                        async = state.endereco,
+                    ) {
 
-                CustomError(state.error, text = "Mensagem De Erro Pernsonalizada")
+                    }
 
-                VerticalSpacer(height = 32)
+                    CustomError(state.error, text = "Mensagem De Erro Pernsonalizada")
 
-                BasicInputText(
-                    hint = "Digite o CEP",
-                    maxLength = 8,
-                    onSearch = {
-                        when (it.length) {
-                            8 -> viewModel.interact(EnderecoInteraction.SearchEndereco(it))
-                        }
-                    },
-                    state = InputTextState.OUTLINE,
-                    modifier = Modifier.padding(horizontal = 16.dp)
-                )
+                    VerticalSpacer(height = 32)
 
-                VerticalSpacer(height = 50)
-
-                TextSpace(text = state.endereco.asSuccessOrNull()?.cep ?: "", title = "CEP")
-
-                VerticalSpacer(height = 16)
-
-                TextSpace(text = state.endereco.asSuccessOrNull()?.uf ?: "", title = "UF")
-
-                VerticalSpacer(height = 16)
-
-                TextSpace(
-                    text = state.endereco.asSuccessOrNull()?.localidade ?: "",
-                    title = "Cidade"
-                )
-
-                VerticalSpacer(height = 16)
-
-                TextSpace(text = state.endereco.asSuccessOrNull()?.bairro ?: "", title = "Bairro")
-
-                VerticalSpacer(height = 16)
-
-                TextSpace(
-                    text = state.endereco.asSuccessOrNull()?.logradouro ?: "",
-                    title = "Logradouro"
-                )
-
-                VerticalSpacer(height = 32)
-
-                TitleMediumText(text = "Ultimo CEP pesquisado: ${state.lastCep.asSuccessOrNull()}", modifier = Modifier.padding(horizontal = 16.dp))
-
-                Column(
-                    Modifier.fillMaxHeight(),
-                    verticalArrangement = Arrangement.Bottom,
-                ) {
-
-                    AppButton(
-                        onClick = { navigation.goToHistoryScreen(navController = navController) },
-                        text = " Histórico"
+                    CepInputText(
+                        onSearch = {
+                            when (it.length) {
+                                8 -> viewModel.interact(EnderecoInteraction.SearchEndereco(it))
+                            }
+                        },
+                        state = InputTextState.OUTLINE,
                     )
+
+                    VerticalSpacer(height = 50)
+
+                    TextSpace(text = state.endereco.asSuccessOrNull()?.cep ?: "", title = "CEP")
+
+                    VerticalSpacer(height = 16)
+
+                    TextSpace(text = state.endereco.asSuccessOrNull()?.uf ?: "", title = "UF")
+
+                    VerticalSpacer(height = 16)
+
+                    TextSpace(
+                        text = state.endereco.asSuccessOrNull()?.localidade ?: "",
+                        title = "Cidade"
+                    )
+
+                    VerticalSpacer(height = 16)
+
+                    TextSpace(
+                        text = state.endereco.asSuccessOrNull()?.bairro ?: "",
+                        title = "Bairro"
+                    )
+
+                    VerticalSpacer(height = 16)
+
+                    TextSpace(
+                        text = state.endereco.asSuccessOrNull()?.logradouro ?: "",
+                        title = "Logradouro"
+                    )
+
+                    VerticalSpacer(height = 32)
+
+                    TitleMediumText(text = "Ultimo CEP pesquisado: ${state.lastCep.asSuccessOrNull()}")
+
+                    Column(
+                        Modifier.fillMaxHeight(),
+                        verticalArrangement = Arrangement.Bottom,
+                    ) {
+
+                        AppButton(
+                            onClick = { navigation.goToHistoryScreen(navController = navController) },
+                            text = " Histórico",
+                            backgroundColor = greenApp,
+                            textColor = Color.White
+                        )
+                    }
                 }
             }
         }

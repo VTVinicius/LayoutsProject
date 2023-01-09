@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_uikit
+package br.com.vtvinicius.feature_uikit.inputText
 
 import CPFInputText
 import CepInputText
@@ -10,34 +10,46 @@ import OnlyNumbersInputText
 import PasswordInputText
 import PhoneInputText
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import br.com.vtvinicius.feature_uikit.FeatureUikitNavigation
 import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.purpleUikitDark
 import br.com.vtvinicius.uikit.base.purpleUikitLight
-import br.com.vtvinicius.uikit.ui.button.FeaturesButton
+import br.com.vtvinicius.uikit.ui.button.SmallButton
 import br.com.vtvinicius.uikit.ui.inputtext.BasicInputText
 import br.com.vtvinicius.uikit.ui.inputtext.base.InputTextState
 import br.com.vtvinicius.uikit.ui.text.LabelLargeText
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
+import br.com.vtvinicius.uikit.utils.extensions.HorizontalSpacer
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
 @Composable
-fun InputTextScreen() {
+fun InputTextScreen(
+    navController: NavController,
+    navigation: FeatureUikitNavigation
+) {
 
+    val rowState = rememberLazyListState()
 
     Scaffold(
         topBar = {
             AppTopBar(
                 title = "Campos de Texto",
                 textColor = purpleUikitDark,
-                backgroundColor = purpleUikitLight
+                backgroundColor = purpleUikitLight,
+                onBackPressed = { navigation.popBackStack(navController) }
             )
         },
         content = {
@@ -77,43 +89,50 @@ fun InputTextScreen() {
 
                 VerticalSpacer(height = 24)
 
-                Column(
-                    Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.SpaceBetween
-                ) {
-                    FeaturesButton(
-                        backgroundColor = purpleUikitLight,
-                        textColor = purpleUikitDark,
-                        onClick = { styleOption = 0 },
-                        text = "Outline"
-                    )
-                    VerticalSpacer(height = 8)
-                    FeaturesButton(
-                        backgroundColor = purpleUikitLight,
-                        textColor = purpleUikitDark,
-                        onClick = { styleOption = 1 },
-                        text = "Normal"
-                    )
-                    VerticalSpacer(height = 8)
-                    FeaturesButton(
-                        backgroundColor = purpleUikitLight,
-                        textColor = purpleUikitDark,
-                        onClick = { styleOption = 2 },
-                        text = "Gray"
-                    )
-                    VerticalSpacer(height = 8)
-                    FeaturesButton(
-                        backgroundColor = purpleUikitLight,
-                        textColor = purpleUikitDark,
-                        onClick = { styleOption = 3 },
-                        text = "Error"
-                    )
-                }
+                LazyRow(state = rowState,
+                    content = {
+                        item {
+                            HorizontalSpacer(width = 8)
+                            SmallButton(
+                                backgroundColor = purpleUikitLight,
+                                textColor = purpleUikitDark,
+                                onClick = { styleOption = 0 },
+                                text = "Outline",
+                                modifier = Modifier.size(width = 100.dp, height = 42.dp)
+                            )
+                            HorizontalSpacer(width = 8)
+                            SmallButton(
+                                backgroundColor = purpleUikitLight,
+                                textColor = purpleUikitDark,
+                                onClick = { styleOption = 1 },
+                                text = "Normal",
+                                modifier = Modifier.size(width = 100.dp, height = 42.dp)
+                            )
+                            HorizontalSpacer(width = 8)
+                            SmallButton(
+                                backgroundColor = purpleUikitLight,
+                                textColor = purpleUikitDark,
+                                onClick = { styleOption = 2 },
+                                text = "Gray",
+                                modifier = Modifier.size(width = 100.dp, height = 42.dp)
+                            )
+                            HorizontalSpacer(width = 8)
+                            SmallButton(
+                                backgroundColor = purpleUikitLight,
+                                textColor = purpleUikitDark,
+                                onClick = { styleOption = 3 },
+                                text = "Error",
+                                modifier = Modifier.size(width = 100.dp, height = 42.dp)
+                            )
+                            HorizontalSpacer(width = 8)
+                        }
+                    }
+                )
                 Column(
                     Modifier
                         .fillMaxSize()
-                        .padding(horizontal = 16.dp)) {
+                        .padding(horizontal = 16.dp)
+                ) {
 
 
                     VerticalSpacer(height = 24)

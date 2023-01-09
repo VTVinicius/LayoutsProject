@@ -23,7 +23,6 @@ fun TextSpace(
     Column(
         Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp)
     ) {
         LabelLargeText(text = title)
         Column(

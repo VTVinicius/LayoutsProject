@@ -1,5 +1,6 @@
 package br.com.vtvinicius.feature_home.features
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import br.com.vtvinicius.feature_home.navigation.FeatureHomeNavigation
+import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.greenFeatures
 import br.com.vtvinicius.uikit.base.greenFeaturesDark
 import br.com.vtvinicius.uikit.ui.button.FeaturesButton
@@ -33,7 +35,9 @@ fun FeaturesLobby(
     ) {
 
         Column(
-            Modifier.fillMaxSize(),
+            Modifier
+                .fillMaxSize()
+                .background(background),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {

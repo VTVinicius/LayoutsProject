@@ -3,8 +3,7 @@ package br.com.vtvinicius.navigation.navigators
 import androidx.navigation.NavController
 import br.com.vtvinicius.feature_uikit.FeatureUikitNavigation
 
-class FeatureUikitNavigationImpl: FeatureUikitNavigation
-{
+class FeatureUikitNavigationImpl : FeatureUikitNavigation {
     override fun goToLobbyUikit(navController: NavController) {
         navController.navigate("lobby_uikit")
     }
@@ -15,5 +14,9 @@ class FeatureUikitNavigationImpl: FeatureUikitNavigation
 
     override fun goBackToHome(navController: NavController) {
         navController.navigate("lobby_screen")
+    }
+
+    override fun popBackStack(navController: NavController) {
+        navController.popBackStack()
     }
 }

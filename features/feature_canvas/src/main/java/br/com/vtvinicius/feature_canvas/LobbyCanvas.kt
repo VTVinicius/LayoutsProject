@@ -1,6 +1,7 @@
 package br.com.vtvinicius.feature_canvas
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -10,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import br.com.vtvinicius.feature_canvas.animated_path.LobbyBackground
+import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.blueCanvasDark
 import br.com.vtvinicius.uikit.base.blueCanvasLight
 import br.com.vtvinicius.uikit.ui.button.FeaturesButton
@@ -40,7 +41,8 @@ fun LobbyCanvas(
                     .fillMaxSize()
                     .verticalScroll(
                         scrollState
-                    ),
+                    )
+                    .background(background),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {

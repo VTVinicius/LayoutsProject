@@ -1,5 +1,6 @@
 package br.com.vtvinicius.viacep.history
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.core.Scene
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
+import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 import br.com.vtvinicius.viacep.history.components.AddressCard
@@ -34,7 +36,10 @@ fun HistoryScreen(
                 onBackPressed = { navigation.goToCepScreen(navController = navController) })
         },
         content = {
-            Column(Modifier.fillMaxSize()) {
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .background(background)) {
 
                 Scene(async = state.address) { addressList ->
 

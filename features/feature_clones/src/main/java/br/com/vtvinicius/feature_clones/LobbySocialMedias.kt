@@ -1,5 +1,6 @@
 package br.com.vtvinicius.feature_clones
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.redClonesDark
 import br.com.vtvinicius.uikit.base.redClonesLight
 import br.com.vtvinicius.uikit.ui.button.FeaturesButton
@@ -31,7 +33,9 @@ fun LobbySocialMedias(navController: NavController, navigation: FeatureClonesNav
 
 
             Column(
-                Modifier.fillMaxSize(),
+                Modifier
+                    .fillMaxSize()
+                    .background(background),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {

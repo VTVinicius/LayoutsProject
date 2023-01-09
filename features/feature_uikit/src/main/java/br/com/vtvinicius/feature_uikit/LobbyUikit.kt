@@ -1,5 +1,6 @@
 package br.com.vtvinicius.feature_uikit
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.purpleUikitDark
 import br.com.vtvinicius.uikit.base.purpleUikitLight
 import br.com.vtvinicius.uikit.ui.button.FeaturesButton
@@ -30,7 +32,9 @@ fun LobbyUikit(
         content = {
 
             Column(
-                Modifier.fillMaxSize(),
+                Modifier
+                    .fillMaxSize()
+                    .background(background),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
