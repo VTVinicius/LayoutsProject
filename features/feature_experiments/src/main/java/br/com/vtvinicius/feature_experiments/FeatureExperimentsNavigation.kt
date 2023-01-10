@@ -9,4 +9,6 @@ interface FeatureExperimentsNavigation {
     fun goToHomeFeature(navController: NavController)
 
     fun goToMotionTopBar(navController: NavController)
+
+    fun goToMotionButtons(navController: NavController)
 }

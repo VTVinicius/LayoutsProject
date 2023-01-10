@@ -13,7 +13,10 @@
       username: {
         top: ['profile_pic', 'top'],
         bottom: ['profile_pic', 'bottom'],
-        start: ['profile_pic', 'end', 16]
+        start: ['profile_pic', 'end', 16],
+        custom: {
+          background: '#08ff04'
+        }
       },
       box: {
         width: 'spread',
@@ -38,7 +41,10 @@
       username: {
         top: ['profile_pic', 'bottom', 16],
         end: ['parent', 'end'],
-        start: ['parent', 'start']
+        start: ['parent', 'start'],
+        custom: {
+          background: '#FFFFFF'
+        }
       },
       box: {
         width: 'spread',

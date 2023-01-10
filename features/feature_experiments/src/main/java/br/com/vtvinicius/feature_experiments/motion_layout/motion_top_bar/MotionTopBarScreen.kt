@@ -6,7 +6,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Slider
-import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -15,11 +14,9 @@ import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
-import br.com.vtvinicius.uikit.R
 import br.com.vtvinicius.uikit.ui.text.HeadlineSmallText
 
 
@@ -58,29 +55,35 @@ fun MotionTopBar(progress: Float) {
         progress = progress,
         modifier = Modifier.fillMaxWidth()
     ) {
+
         val properties = motionProperties(id = "profile_pic")
+        val color = properties.value.color(name = "background")
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .background(Color.DarkGray)
                 .layoutId("box")
         )
+
         Image(
-            painter = painterResource(id = R.drawable.profile_pic),
+            painter = painterResource(id = br.com.vtvinicius.uikit.R.drawable.profile_pic),
             contentDescription = null,
             modifier = Modifier
                 .clip(CircleShape)
                 .border(
                     width = 2.dp,
-                    color = properties.value.color(name = "background"),
+                    color = color,
                     shape = CircleShape
                 )
                 .layoutId("profile_pic")
         )
+
+
         HeadlineSmallText(
             text = "Vinicius Teixeira",
             modifier = Modifier.layoutId("username"),
-            colors = properties.value.color(name = "background"),
+            colors = color,
         )
 
     }

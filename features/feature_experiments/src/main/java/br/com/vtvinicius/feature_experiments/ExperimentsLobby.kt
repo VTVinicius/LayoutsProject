@@ -14,6 +14,7 @@ import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
 import br.com.vtvinicius.uikit.ui.button.FeaturesButton
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
+import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
 
 @Composable
@@ -47,6 +48,13 @@ fun ExperimentsLobby(
                     textColor = greenExperimentsDark,
                     onClick = { navigation.goToMotionTopBar(navController = navController) },
                     text = "Motion Top Bar"
+                )
+                VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToMotionButtons(navController = navController) },
+                    text = "Motion Buttons"
                 )
 
             }

@@ -5,7 +5,7 @@ import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 
 class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToLobby(navController: NavController) {
-     navController.navigate("lobby_experiments")
+        navController.navigate("lobby_experiments")
     }
 
     override fun goToHomeFeature(navController: NavController) {
@@ -14,5 +14,9 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
 
     override fun goToMotionTopBar(navController: NavController) {
         navController.navigate("motion_top_bar")
+    }
+
+    override fun goToMotionButtons(navController: NavController) {
+        navController.navigate("motion_button")
     }
 }

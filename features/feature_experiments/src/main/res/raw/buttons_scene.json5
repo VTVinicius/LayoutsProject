@@ -1,0 +1,35 @@
+{
+  ConstraintSets: {
+    start: {
+      buttons: {
+        width: 40,
+        height: 52,
+        start: ['parent', 'start', 32],
+        end: ['parent', 'end', 32],
+      },
+    },
+    end: {
+      buttons: {
+        width: 'spread',
+        height: 52,
+        start: ['parent', 'start', 32],
+        end: ['parent', 'end', 32],
+      },
+    }
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      pathMotionArc: 'startHorizontal',
+      KeyFrames: {
+        KeyAttributes: [
+          {
+            target: ['buttons'],
+            frames: [0, 100]
+          },
+        ]
+      }
+    }
+  }
+}

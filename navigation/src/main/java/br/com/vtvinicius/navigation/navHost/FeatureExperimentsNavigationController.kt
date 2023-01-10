@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_experiments.ExperimentsLobby
+import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
 import br.com.vtvinicius.navigation.navigators.FeatureExperimentsNavigationImpl
 
@@ -25,6 +26,9 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("motion_top_bar") {
             MotionTopBarScreen()
+        }
+        composable("motion_button") {
+            MotionButtonsScreen()
         }
     }
 }
