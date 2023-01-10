@@ -149,6 +149,18 @@ fun ButtonsColumn(navController: NavController, navigation: FeatureHomeNavigatio
         image = br.com.vtvinicius.uikit.R.drawable.img_uikit
     )
 
+    VerticalSpacer(height = 20)
+
+    ButtonApplications(
+        textColor = greenExperimentsDark,
+        backgroundColor = greenExperimentsLight,
+        text = "Experimentos",
+        onClick = {
+            navigation.goToFeatureExperiments(navController)
+        },
+        image = br.com.vtvinicius.uikit.R.drawable.img_experimentos
+    )
+
 }
 
 @Composable

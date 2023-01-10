@@ -10,5 +10,6 @@ interface FeatureHomeNavigation {
     fun goToFeatureCanvas(navController: NavController)
     fun goToFeatureGames(navController: NavController)
     fun goToFeatureUikit(navController: NavController)
+    fun goToFeatureExperiments(navController: NavController)
 
 }

@@ -12,6 +12,7 @@ dependencies {
     implementation project(':features:feature_home')
     implementation project(':features:feature_uikit')
     implementation project(':features:feature_games')
+    implementation project(':features:feature_experiments')
 
     intentDependencies.each { add(it.configuration, it.dependency) }
 }

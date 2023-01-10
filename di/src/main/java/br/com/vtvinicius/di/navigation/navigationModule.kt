@@ -2,6 +2,7 @@ package br.com.vtvinicius.di.navigation
 
 import br.com.vtvinicius.feature_canvas.FeatureCanvasNavigation
 import br.com.vtvinicius.feature_clones.FeatureClonesNavigation
+import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.feature_home.navigation.FeatureHomeNavigation
 import br.com.vtvinicius.feature_uikit.FeatureUikitNavigation
 import br.com.vtvinicius.navigation.navigators.*
@@ -27,5 +28,8 @@ val navigationModule = module {
 
     factory<FeatureUikitNavigation> {
         FeatureUikitNavigationImpl()
+    }
+    factory<FeatureExperimentsNavigation> {
+        FeatureExperimentsNavigationImpl()
     }
 }

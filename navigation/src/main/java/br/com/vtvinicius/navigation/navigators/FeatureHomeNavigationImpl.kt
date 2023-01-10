@@ -25,6 +25,10 @@ class FeatureHomeNavigationImpl : FeatureHomeNavigation {
         navController.navigate("feature_uikit")
     }
 
+    override fun goToFeatureExperiments(navController: NavController) {
+        navController.navigate("feature_experiments")
+    }
+
     override fun goToFeatureViaCep(navController: NavController) {
         navController.navigate("feature_viacep")
     }
