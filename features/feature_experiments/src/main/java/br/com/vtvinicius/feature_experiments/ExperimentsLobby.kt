@@ -56,6 +56,13 @@ fun ExperimentsLobby(
                     onClick = { navigation.goToMotionButtons(navController = navController) },
                     text = "Motion Buttons"
                 )
+                VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToBottomSheet1(navController = navController) },
+                    text = "Bottom Sheet 1"
+                )
 
             }
 

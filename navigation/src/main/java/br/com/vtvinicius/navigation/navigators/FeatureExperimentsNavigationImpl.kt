@@ -19,4 +19,8 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToMotionButtons(navController: NavController) {
         navController.navigate("motion_button")
     }
+
+    override fun goToBottomSheet1(navController: NavController) {
+        navController.navigate("bottom_sheet_1")
+    }
 }

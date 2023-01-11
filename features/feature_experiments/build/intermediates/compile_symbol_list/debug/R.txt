@@ -1,1 +1,2 @@
+int raw buttons_scene 0x0
 int raw motion_scene 0x0
