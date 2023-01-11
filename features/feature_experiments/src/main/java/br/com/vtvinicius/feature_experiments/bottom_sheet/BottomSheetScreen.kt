@@ -1,6 +1,9 @@
 package br.com.vtvinicius.feature_experiments.bottom_sheet
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,6 +16,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
+import br.com.vtvinicius.uikit.base.greenExperimentsDark
+import br.com.vtvinicius.uikit.base.greenExperimentsLight
+import br.com.vtvinicius.uikit.ui.button.AppButton
+import br.com.vtvinicius.uikit.ui.text.BodyMediumText
 import br.com.vtvinicius.uikit.utils.extensions.HorizontalSpacer
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 import kotlinx.coroutines.launch
@@ -52,11 +59,14 @@ fun BottomSheetScreen() {
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("Rest of the UI")
-            Spacer(Modifier.height(20.dp))
-            Button(onClick = { scope.launch { state.show() } }) {
-                Text("Click to show sheet")
-            }
+            BodyMediumText("Rest of the UI")
+            VerticalSpacer(20)
+            AppButton(
+                onClick = { scope.launch { state.show() } },
+                text = "Click to show sheet",
+                backgroundColor = greenExperimentsLight,
+                textColor = greenExperimentsDark
+            )
             VerticalSpacer(height = 50)
             Row(
                 Modifier.toggleable(
@@ -67,12 +77,15 @@ fun BottomSheetScreen() {
             ) {
                 Checkbox(checked = skipHalfExpanded, onCheckedChange = null)
                 HorizontalSpacer(16)
-                Text("Skip Half Expanded State")
+                BodyMediumText("Skip Half Expanded State")
             }
             VerticalSpacer(20)
-            Button(onClick = { scope.launch { state2.show() } }) {
-                Text("Click to show sheet 2")
-            }
+            AppButton(
+                onClick = { scope.launch { state2.show() } },
+                text = "Click to show sheet 2",
+                backgroundColor = greenExperimentsLight,
+                textColor = greenExperimentsDark
+            )
         }
 
     }
@@ -83,7 +96,7 @@ fun BottomSheetScreen() {
             LazyColumn {
                 items(50) {
                     ListItem(
-                        text = { Text("Item $it") },
+                        text = { BodyMediumText("Item $it") },
                         icon = {
                             Icon(
                                 Icons.Default.Call,
