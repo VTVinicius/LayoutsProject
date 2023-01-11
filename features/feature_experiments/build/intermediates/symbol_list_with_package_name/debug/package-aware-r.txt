@@ -1,3 +1,0 @@
-br.com.vtvinicius.feature_experiments
-raw buttons_scene
-raw motion_scene

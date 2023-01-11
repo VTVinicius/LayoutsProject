@@ -1,4 +1,0 @@
-R_DEF: Internal format may change without notice
-local
-raw buttons_scene
-raw motion_scene
