@@ -6,8 +6,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_experiments.ExperimentsLobby
 import br.com.vtvinicius.feature_experiments.bottom_sheet.BottomSheetScreen
+import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
+import br.com.vtvinicius.feature_experiments.side_modal.SideModalScreen
 import br.com.vtvinicius.navigation.navigators.FeatureExperimentsNavigationImpl
 
 @Composable
@@ -33,6 +35,12 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("bottom_sheet_1") {
             BottomSheetScreen()
+        }
+        composable("side_modal_1") {
+            SideModalScreen()
+        }
+        composable("dialogs_1") {
+            MaterialDialogScreen()
         }
     }
 }

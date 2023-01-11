@@ -23,4 +23,12 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToBottomSheet1(navController: NavController) {
         navController.navigate("bottom_sheet_1")
     }
+
+    override fun goToSideModal1(navController: NavController) {
+        navController.navigate("side_modal_1")
+    }
+
+    override fun goToDialogs1(navController: NavController) {
+        navController.navigate("dialogs_1")
+    }
 }

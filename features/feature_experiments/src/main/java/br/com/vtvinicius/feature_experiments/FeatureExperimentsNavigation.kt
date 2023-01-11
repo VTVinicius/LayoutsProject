@@ -13,4 +13,8 @@ interface FeatureExperimentsNavigation {
     fun goToMotionButtons(navController: NavController)
 
     fun goToBottomSheet1(navController: NavController)
+
+    fun goToSideModal1(navController: NavController)
+
+    fun goToDialogs1(navController: NavController)
 }
