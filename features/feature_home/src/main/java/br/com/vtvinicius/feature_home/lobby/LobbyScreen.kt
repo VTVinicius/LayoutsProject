@@ -1,5 +1,7 @@
 package br.com.vtvinicius.feature_home.lobby
 
+import android.content.Intent
+import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,11 +16,16 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
+import br.com.vtvinicius.feature_home.intentHavan
+import br.com.vtvinicius.feature_home.intentLeve
+import br.com.vtvinicius.feature_home.intentRiHappy
 import br.com.vtvinicius.feature_home.lobby.components.ButtonApplications
 import br.com.vtvinicius.feature_home.lobby.components.LobbyHomeTopBar
 import br.com.vtvinicius.feature_home.navigation.FeatureHomeNavigation
@@ -33,6 +40,7 @@ fun LobbyScreen(
     navController: NavController,
     navigation: FeatureHomeNavigation,
 ) {
+
 
     AppScaffold(
         content = {
@@ -166,6 +174,10 @@ fun ButtonsColumn(navController: NavController, navigation: FeatureHomeNavigatio
 @Composable
 fun CarrouselApps() {
 
+
+
+    val context = LocalContext.current
+
     val lazySate = rememberLazyListState()
 
     LazyRow(content = {
@@ -175,25 +187,30 @@ fun CarrouselApps() {
 
             ItemsCarrousel(
                 backgroundColor = Color.Transparent,
-                image = br.com.vtvinicius.uikit.R.drawable.img_havan
-            ) {
-            }
+                image = br.com.vtvinicius.uikit.R.drawable.img_havan,
+                onClick = {
+                    startActivity(context, intentHavan, null)
+                }
+            )
 
             HorizontalSpacer(width = 16)
 
             ItemsCarrousel(
                 backgroundColor = yellowRiHappy,
-                image = br.com.vtvinicius.uikit.R.drawable.img_logo_rihappy
-            ) {
-            }
-
+                image = br.com.vtvinicius.uikit.R.drawable.img_logo_rihappy,
+                onClick = {
+                    startActivity(context, intentRiHappy, null)
+                }
+            )
             HorizontalSpacer(width = 16)
 
             ItemsCarrousel(
                 backgroundColor = orangeLeve,
-                image = br.com.vtvinicius.uikit.R.drawable.img_logo_leve
-            ) {
-            }
+                image = br.com.vtvinicius.uikit.R.drawable.img_logo_leve,
+                onClick = {
+                    startActivity(context, intentLeve, null)
+                }
+            )
 
             HorizontalSpacer(width = 24)
         }
