@@ -48,6 +48,15 @@ fun LobbyUikit(
                     text = "Input Text"
                 )
 
+                VerticalSpacer(height = 16)
+
+                FeaturesButton(
+                    backgroundColor = purpleUikitLight,
+                    textColor = purpleUikitDark,
+                    onClick = { navigation.goToButtons(navController) },
+                    text = "Buttons"
+                )
+
                 VerticalSpacer(height = 24)
 
             }

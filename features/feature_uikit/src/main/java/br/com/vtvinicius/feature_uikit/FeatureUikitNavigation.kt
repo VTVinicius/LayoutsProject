@@ -11,4 +11,6 @@ interface FeatureUikitNavigation {
     fun goBackToHome(navController: NavController)
 
     fun popBackStack(navController: NavController)
+
+    fun goToButtons(navController: NavController)
 }

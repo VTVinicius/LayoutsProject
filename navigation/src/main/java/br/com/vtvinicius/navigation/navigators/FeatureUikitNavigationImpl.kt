@@ -19,4 +19,8 @@ class FeatureUikitNavigationImpl : FeatureUikitNavigation {
     override fun popBackStack(navController: NavController) {
         navController.popBackStack()
     }
+
+    override fun goToButtons(navController: NavController) {
+        navController.navigate("buttons")
+    }
 }
