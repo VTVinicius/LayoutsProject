@@ -19,7 +19,6 @@ fun NameAndDescription(
     Column(
         Modifier
             .fillMaxSize()
-            .padding(12.dp)
     ) {
 
         Row(Modifier.fillMaxWidth()) {

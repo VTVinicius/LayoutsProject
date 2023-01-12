@@ -18,7 +18,7 @@ fun CompanyAndLocation(
     state: String = "Santa Catarina, ",
     country: String = "Brasil",
 ) {
-    Column(Modifier.padding(horizontal = 12.dp)) {
+    Column {
 
 
         Row(Modifier.fillMaxWidth()) {
