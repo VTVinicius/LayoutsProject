@@ -26,11 +26,9 @@ fun LinkedinProfileScreen() {
         ) {
 
             CapeAndProfilePic()
-
             NameAndDescription()
             CompanyAndLocation()
             TopButtonsRow()
-
         }
     })
 }

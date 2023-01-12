@@ -1,11 +1,11 @@
 package br.com.vtvinicius.feature_clones.linkedin.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -52,7 +52,11 @@ fun TopButtonsRow() {
 
         VerticalSpacer(height = 16)
 
-        Row(Modifier.fillMaxWidth()) {
+        Row(
+            Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
 
 
             HorizontalSpacer(width = 8)
@@ -66,25 +70,26 @@ fun TopButtonsRow() {
             RoundedButtons(
                 onClick = { /*TODO*/ },
                 buttonColor = Color.White,
+                textColor = Color.Gray,
                 modifier = Modifier.weight(5f),
                 text = "Adicionar \n seção"
             )
             HorizontalSpacer(width = 4)
-            RoundedButtons(
+            CircularButtons(
                 onClick = { /*TODO*/ },
                 buttonColor = Color.White,
                 modifier = Modifier.weight(1f),
-                icon = R.drawable.ic_plus
+                icon = R.drawable.ic_three_dots,
             )
             HorizontalSpacer(width = 8)
 
         }
     }
 
-
 }
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RoundedButtons(
     modifier: Modifier = Modifier,
@@ -92,37 +97,18 @@ fun RoundedButtons(
     text: String = "",
     textColor: Color = Color.Black,
     icon: Int = 0,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
 
-    Button(
+    Card(
         onClick = { onClick },
-        modifier = modifier
-            .background(shape = CircleShape, color = buttonColor)
-            .border(
-                width = 1.dp,
-                color = Color.Gray,
-                shape = CircleShape
-            ),
-        colors = ButtonDefaults.buttonColors(buttonColor),
-        shape = CircleShape,
+        backgroundColor = buttonColor,
+        content = {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+            ) {
 
-        )
-    {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxSize()
-        ) {
-
-            if (text.isBlank()) {
-                Icon(
-                    painter = painterResource(id = icon),
-                    contentDescription = "Plus",
-                    tint = Color.Blue,
-                    modifier = Modifier.size(10.dp)
-                )
-            } else {
                 BodyLargeText(
                     text = text,
                     maxLines = 2,
@@ -131,6 +117,43 @@ fun RoundedButtons(
                 )
 
             }
-        }
-    }
+        },
+        shape = RoundedCornerShape(90.dp),
+        border = BorderStroke(1.dp, Color.LightGray),
+        modifier = modifier
+    )
+}
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun CircularButtons(
+    modifier: Modifier = Modifier,
+    buttonColor: Color = Color.White,
+    text: String = "",
+    textColor: Color = Color.Black,
+    icon: Int = 0,
+    onClick: () -> Unit,
+) {
+
+    Card(
+        onClick = { onClick },
+        backgroundColor = buttonColor,
+        content = {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+            ) {
+
+                Icon(
+                    painter = painterResource(id = icon),
+                    contentDescription = null,
+                    modifier = Modifier.size(15.dp)
+                )
+
+            }
+        },
+        shape = CircleShape,
+        border = BorderStroke(1.dp, Color.LightGray),
+        modifier = modifier.size(35.dp)
+    )
 }
