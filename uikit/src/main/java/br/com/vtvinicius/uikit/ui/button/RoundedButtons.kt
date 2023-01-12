@@ -20,7 +20,10 @@ fun RoundedButtons(
     modifier: Modifier = Modifier,
     buttonColor: Color = Color.White,
     text: String = "",
+    fontWeight: FontWeight = FontWeight.Bold,
     textColor: Color = Color.Black,
+    strokeColor: Color = Color.LightGray,
+    textModifier: Modifier = Modifier,
     onClick: () -> Unit,
 ) {
 
@@ -36,14 +39,15 @@ fun RoundedButtons(
                 BodyLargeText(
                     text = text,
                     maxLines = 2,
-                    fontWeight = FontWeight.Bold,
-                    colors = textColor
+                    fontWeight = fontWeight,
+                    colors = textColor,
+                    modifier = textModifier
                 )
 
             }
         },
         shape = RoundedCornerShape(90.dp),
-        border = BorderStroke(1.dp, Color.LightGray),
+        border = BorderStroke(1.dp, strokeColor),
         modifier = modifier
     )
 }

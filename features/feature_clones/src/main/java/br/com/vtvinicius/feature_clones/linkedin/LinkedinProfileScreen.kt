@@ -40,6 +40,12 @@ fun LinkedinProfileScreen() {
             }
             VerticalSpacer(height = 8)
             DividerLinkedin()
+            Column(modifier = Modifier.padding(horizontal = 12.dp)) {
+                VerticalSpacer(height = 8)
+                ActivitiesSection()
+            }
+            CardShowActivities()
+            DividerLinkedin()
         }
     })
 }
