@@ -48,7 +48,7 @@ fun LobbyUikit(
                     text = "Input Text"
                 )
 
-                VerticalSpacer(height = 16)
+                VerticalSpacer(height = 20)
 
                 FeaturesButton(
                     backgroundColor = purpleUikitLight,

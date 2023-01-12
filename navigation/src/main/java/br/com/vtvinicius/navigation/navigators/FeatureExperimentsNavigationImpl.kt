@@ -31,4 +31,12 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToDialogs1(navController: NavController) {
         navController.navigate("dialogs_1")
     }
+
+    override fun goToRadioButtonsScreen(navController: NavController) {
+        navController.navigate("radio_buttons")
+    }
+
+    override fun goToCheckBoxesScreen(navController: NavController) {
+        navController.navigate("check_boxes")
+    }
 }

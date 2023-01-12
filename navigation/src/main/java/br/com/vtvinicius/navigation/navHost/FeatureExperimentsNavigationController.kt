@@ -6,6 +6,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_experiments.ExperimentsLobby
 import br.com.vtvinicius.feature_experiments.bottom_sheet.BottomSheetScreen
+import br.com.vtvinicius.feature_experiments.buttons.CheckBoxes
+import br.com.vtvinicius.feature_experiments.buttons.RadioButtonsTest
 import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
@@ -41,6 +43,12 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("dialogs_1") {
             MaterialDialogScreen()
+        }
+        composable("radio_buttons") {
+            RadioButtonsTest()
+        }
+        composable("check_boxes") {
+            CheckBoxes()
         }
     }
 }

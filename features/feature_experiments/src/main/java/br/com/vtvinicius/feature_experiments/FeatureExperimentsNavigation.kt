@@ -17,4 +17,8 @@ interface FeatureExperimentsNavigation {
     fun goToSideModal1(navController: NavController)
 
     fun goToDialogs1(navController: NavController)
+
+    fun goToRadioButtonsScreen(navController: NavController)
+
+    fun goToCheckBoxesScreen(navController: NavController)
 }

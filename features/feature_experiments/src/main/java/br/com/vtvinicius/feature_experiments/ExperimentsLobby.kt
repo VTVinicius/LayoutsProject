@@ -78,6 +78,21 @@ fun ExperimentsLobby(
                     text = "Dialog 1"
                 )
 
+                VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToRadioButtonsScreen(navController = navController) },
+                    text = "Radio Buttons"
+                )
+                VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToCheckBoxesScreen(navController = navController) },
+                    text = "Check Boxes"
+                )
+
             }
 
 
