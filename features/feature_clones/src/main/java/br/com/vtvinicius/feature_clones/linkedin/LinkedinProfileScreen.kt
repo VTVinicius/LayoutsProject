@@ -34,6 +34,12 @@ fun LinkedinProfileScreen() {
                 TopButtonsRow()
             }
             DividerLinkedin()
+            Column(modifier = Modifier.padding(horizontal = 12.dp)) {
+                AboutSection()
+
+            }
+            VerticalSpacer(height = 8)
+            DividerLinkedin()
         }
     })
 }
