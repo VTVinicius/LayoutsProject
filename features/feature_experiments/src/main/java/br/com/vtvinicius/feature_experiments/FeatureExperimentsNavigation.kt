@@ -21,4 +21,8 @@ interface FeatureExperimentsNavigation {
     fun goToRadioButtonsScreen(navController: NavController)
 
     fun goToCheckBoxesScreen(navController: NavController)
+
+    fun goToProductsPagerScreen(navController: NavController)
+
+    fun goToCarouselScreen(navController: NavController)
 }

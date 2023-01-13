@@ -4,6 +4,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -34,15 +36,17 @@ fun ExperimentsLobby(
         },
         content = {
 
+            val scrollState = rememberScrollState()
 
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(background),
+                    .background(background)
+                    .verticalScroll(scrollState),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-
+                VerticalSpacer(height = 20)
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
@@ -92,7 +96,22 @@ fun ExperimentsLobby(
                     onClick = { navigation.goToCheckBoxesScreen(navController = navController) },
                     text = "Check Boxes"
                 )
+                VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToProductsPagerScreen(navController = navController) },
+                    text = "Products Pager"
+                )
+                VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToCarouselScreen(navController = navController) },
+                    text = "Carousel Pager"
+                )
 
+                VerticalSpacer(height = 20)
             }
 
 

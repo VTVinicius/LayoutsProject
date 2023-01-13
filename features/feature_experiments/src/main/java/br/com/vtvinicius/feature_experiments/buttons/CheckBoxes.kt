@@ -14,14 +14,20 @@ import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
 @Composable
 fun CheckBoxes() {
+
+    val checkedState1 = remember { mutableStateOf(true) }
+    val checkedState2 = remember { mutableStateOf(true) }
+    val checkedState3 = remember { mutableStateOf(true) }
+
+    // define dependent checkboxes states
+    val (state, onStateChange) = remember { mutableStateOf(true) }
+    val (state2, onStateChange2) = remember { mutableStateOf(true) }
+    val (state3, onStateChange3) = remember { mutableStateOf(true) }
+    val (state4, onStateChange4) = remember { mutableStateOf(true) }
+
     Column() {
 
         Column {
-            // define dependent checkboxes states
-            val (state, onStateChange) = remember { mutableStateOf(true) }
-            val (state2, onStateChange2) = remember { mutableStateOf(true) }
-            val (state3, onStateChange3) = remember { mutableStateOf(true) }
-            val (state4, onStateChange4) = remember { mutableStateOf(true) }
 
             // TriStateCheckbox state reflects state of dependent checkboxes
             val parentState = remember(state, state2, state3, state4) {
@@ -55,17 +61,23 @@ fun CheckBoxes() {
                     Checkbox(state, onStateChange)
                     Text(text = "Queijo")
                 }
+
                 Spacer(Modifier.size(8.dp))
+
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Checkbox(state2, onStateChange2)
                     Text(text = "Presunto")
                 }
+
                 Spacer(Modifier.size(8.dp))
+
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Checkbox(state3, onStateChange3)
                     Text(text = "Maionese")
                 }
+
                 Spacer(Modifier.size(8.dp))
+
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Checkbox(state4, onStateChange4)
                     Text(text = "Bacon")
@@ -74,10 +86,8 @@ fun CheckBoxes() {
         }
         VerticalSpacer(height = 100)
 
-        Column() {
+        Column {
 
-
-            val checkedState1 = remember { mutableStateOf(true) }
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Checkbox(
                     checked = checkedState1.value,
@@ -89,7 +99,9 @@ fun CheckBoxes() {
                 )
                 Text(text = "Option 1")
             }
-            val checkedState2 = remember { mutableStateOf(true) }
+
+
+
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Checkbox(
                     checked = checkedState2.value,
@@ -101,7 +113,7 @@ fun CheckBoxes() {
                 )
                 Text(text = "Option 2")
             }
-            val checkedState3 = remember { mutableStateOf(true) }
+
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Checkbox(
                     checked = checkedState3.value,

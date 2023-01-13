@@ -58,6 +58,9 @@ ext {
     //security
     securityCrypto = "androidx.security:security-crypto:$securityCryptoVersion"
 
+    viewPager = "com.google.accompanist:accompanist-pager:$viewPagerVersion"
+    viewPagerIndicator = "com.google.accompanist:accompanist-pager-indicators:$viewPagerVersion"
+
 }
 
 

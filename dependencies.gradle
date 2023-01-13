@@ -23,6 +23,8 @@ ext {
             [configuration: "api", dependency: "$composeUi"],
             [configuration: "implementation", dependency: "$composeRuntime"],
             [configuration: "implementation", dependency: "$composeCompiler"],
+            [configuration: "implementation", dependency: "$viewPager"],
+            [configuration: "implementation", dependency: "$viewPagerIndicator"],
 
 
     ]

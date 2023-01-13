@@ -39,4 +39,12 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToCheckBoxesScreen(navController: NavController) {
         navController.navigate("check_boxes")
     }
+
+    override fun goToProductsPagerScreen(navController: NavController) {
+        navController.navigate("products_pager")
+    }
+
+    override fun goToCarouselScreen(navController: NavController) {
+        navController.navigate("carousel_pager")
+    }
 }

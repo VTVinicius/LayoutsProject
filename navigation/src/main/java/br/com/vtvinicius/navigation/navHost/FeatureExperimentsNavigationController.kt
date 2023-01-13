@@ -8,6 +8,8 @@ import br.com.vtvinicius.feature_experiments.ExperimentsLobby
 import br.com.vtvinicius.feature_experiments.bottom_sheet.BottomSheetScreen
 import br.com.vtvinicius.feature_experiments.buttons.CheckBoxes
 import br.com.vtvinicius.feature_experiments.buttons.RadioButtonsTest
+import br.com.vtvinicius.feature_experiments.carousel.CarouselScreen
+import br.com.vtvinicius.feature_experiments.carousel.ProductsPagerScreen
 import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
@@ -49,6 +51,12 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("check_boxes") {
             CheckBoxes()
+        }
+        composable("products_pager") {
+            ProductsPagerScreen()
+        }
+        composable("carousel_pager") {
+            CarouselScreen()
         }
     }
 }
