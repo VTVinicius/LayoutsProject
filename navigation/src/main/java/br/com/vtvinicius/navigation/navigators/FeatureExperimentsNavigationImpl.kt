@@ -47,4 +47,8 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToCarouselScreen(navController: NavController) {
         navController.navigate("carousel_pager")
     }
+
+    override fun goToRangeSliderScreen(navController: NavController) {
+        navController.navigate("range_slider")
+    }
 }

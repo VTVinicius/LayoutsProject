@@ -14,6 +14,7 @@ import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
 import br.com.vtvinicius.feature_experiments.side_modal.SideModalScreen
+import br.com.vtvinicius.feature_experiments.slider.RangeSliderScreen
 import br.com.vtvinicius.navigation.navigators.FeatureExperimentsNavigationImpl
 
 @Composable
@@ -57,6 +58,9 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("carousel_pager") {
             CarouselScreen()
+        }
+        composable("range_slider") {
+            RangeSliderScreen()
         }
     }
 }

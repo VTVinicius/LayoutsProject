@@ -25,4 +25,6 @@ interface FeatureExperimentsNavigation {
     fun goToProductsPagerScreen(navController: NavController)
 
     fun goToCarouselScreen(navController: NavController)
+
+    fun goToRangeSliderScreen(navController: NavController)
 }

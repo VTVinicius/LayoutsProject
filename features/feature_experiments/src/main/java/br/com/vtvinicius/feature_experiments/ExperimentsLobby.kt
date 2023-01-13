@@ -112,6 +112,14 @@ fun ExperimentsLobby(
                 )
 
                 VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToRangeSliderScreen(navController = navController) },
+                    text = "Range Slider"
+                )
+
+                VerticalSpacer(height = 20)
             }
 
 
