@@ -13,6 +13,7 @@ import br.com.vtvinicius.feature_experiments.carousel.ProductsPagerScreen
 import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
+import br.com.vtvinicius.feature_experiments.shimmer.ShimmerScreen
 import br.com.vtvinicius.feature_experiments.side_modal.SideModalScreen
 import br.com.vtvinicius.feature_experiments.slider.RangeSliderScreen
 import br.com.vtvinicius.navigation.navigators.FeatureExperimentsNavigationImpl
@@ -61,6 +62,9 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("range_slider") {
             RangeSliderScreen()
+        }
+        composable("shimmer_screen") {
+            ShimmerScreen(navController = navController, navigation = FeatureExperimentsNavigationImpl())
         }
     }
 }

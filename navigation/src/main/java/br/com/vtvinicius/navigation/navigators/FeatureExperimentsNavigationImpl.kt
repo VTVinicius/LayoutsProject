@@ -51,4 +51,8 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToRangeSliderScreen(navController: NavController) {
         navController.navigate("range_slider")
     }
+
+    override fun goToShimmerScreen(navController: NavController) {
+        navController.navigate("shimmer_screen")
+    }
 }

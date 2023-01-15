@@ -120,6 +120,14 @@ fun ExperimentsLobby(
                 )
 
                 VerticalSpacer(height = 20)
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToShimmerScreen(navController = navController) },
+                    text = "Shimmer Effect"
+                )
+
+                VerticalSpacer(height = 20)
             }
 
 
