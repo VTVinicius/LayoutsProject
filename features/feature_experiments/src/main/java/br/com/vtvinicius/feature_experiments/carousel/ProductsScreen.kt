@@ -3,6 +3,7 @@ package br.com.vtvinicius.feature_experiments.carousel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -10,7 +11,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.R
+import br.com.vtvinicius.uikit.base.greenExperimentsDark
+import br.com.vtvinicius.uikit.base.greenExperimentsLight
+import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
@@ -18,15 +24,26 @@ import com.google.accompanist.pager.rememberPagerState
 
 
 @Composable
-fun ProductsPagerScreen() {
+fun ProductsPagerScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
+    Scaffold(
+        topBar = {
+            AppTopBar(
+                title = "Products Pager",
+                onBackPressed = { navigation.goToLobby(navController) },
+                backgroundColor = greenExperimentsLight,
+                textColor = greenExperimentsDark
+            )
+        },
+        content = {
 
-    Column(
-        Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        ProductsPager()
-    }
+            Column(
+                Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                ProductsPager()
+            }
+        })
 
 }
 

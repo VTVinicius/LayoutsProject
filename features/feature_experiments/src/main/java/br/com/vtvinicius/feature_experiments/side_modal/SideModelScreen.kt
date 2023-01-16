@@ -10,18 +10,35 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
+import br.com.vtvinicius.uikit.base.greenExperimentsDark
+import br.com.vtvinicius.uikit.base.greenExperimentsLight
 import br.com.vtvinicius.uikit.ui.text.BodyMediumText
+import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.HorizontalSpacer
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 import kotlinx.coroutines.launch
 
 @Composable
-fun SideModalScreen() {
+fun SideModalScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
 
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
-    ModalDrawer(
+    Scaffold(
+        topBar = {
+            AppTopBar(
+                title = "Side Modal",
+                onBackPressed = { navigation.goToLobby(navController) },
+                backgroundColor = greenExperimentsLight,
+                textColor = greenExperimentsDark
+            )
+        },
+        content = {
+
+
+        ModalDrawer(
         drawerState = drawerState,
         drawerContent = {
 
@@ -78,5 +95,5 @@ fun SideModalScreen() {
                 VerticalSpacer(height = 32)
             }
         }
-    )
+        )})
 }

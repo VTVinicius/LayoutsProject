@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Slider
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -17,31 +18,50 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
+import androidx.navigation.NavController
+import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
+import br.com.vtvinicius.feature_experiments.R
+import br.com.vtvinicius.uikit.base.greenExperimentsDark
+import br.com.vtvinicius.uikit.base.greenExperimentsLight
 import br.com.vtvinicius.uikit.ui.text.HeadlineSmallText
+import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 
 
 @Composable
-fun MotionTopBarScreen() {
+fun MotionTopBarScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
 
     var progress by remember {
         mutableStateOf(0f)
     }
 
-    Column {
+    Scaffold(
+        topBar = {
+            AppTopBar(
+                title = "Motion Top Bar",
+                onBackPressed = { navigation.goToLobby(navController) },
+                backgroundColor = greenExperimentsLight,
+                textColor = greenExperimentsDark
+            )
+        },
+        content = {
 
-        MotionTopBar(progress = progress)
 
-        Spacer(modifier = Modifier.height(32.dp))
+            Column {
 
-        Slider(
-            value = progress,
-            onValueChange = {
-                progress = it
-            },
-            modifier = Modifier.padding(horizontal = 32.dp)
-        )
+                MotionTopBar(progress = progress)
 
-    }
+                Spacer(modifier = Modifier.height(32.dp))
+
+                Slider(
+                    value = progress,
+                    onValueChange = {
+                        progress = it
+                    },
+                    modifier = Modifier.padding(horizontal = 32.dp)
+                )
+
+            }
+        })
 }
 
 
@@ -53,7 +73,7 @@ fun MotionTopBar(progress: Float) {
 
     val motionScene = remember {
         context.resources
-            .openRawResource(br.com.vtvinicius.feature_experiments.R.raw.motion_scene)
+            .openRawResource(R.raw.motion_scene)
             .readBytes()
             .decodeToString()
     }

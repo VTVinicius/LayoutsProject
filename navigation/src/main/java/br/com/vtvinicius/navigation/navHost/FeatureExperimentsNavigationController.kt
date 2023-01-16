@@ -35,34 +35,64 @@ fun FeatureExperimentsNavigationController() {
             FeatureHomeNavigationController()
         }
         composable("motion_top_bar") {
-            MotionTopBarScreen()
+            MotionTopBarScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("motion_button") {
-            MotionButtonsScreen()
+            MotionButtonsScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("bottom_sheet_1") {
-            BottomSheetScreen()
+            BottomSheetScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("side_modal_1") {
-            SideModalScreen()
+            SideModalScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("dialogs_1") {
-            MaterialDialogScreen()
+            MaterialDialogScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("radio_buttons") {
-            RadioButtonsTest()
+            RadioButtonsTest(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("check_boxes") {
-            CheckBoxes()
+            CheckBoxes(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("products_pager") {
-            ProductsPagerScreen()
+            ProductsPagerScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("carousel_pager") {
-            CarouselScreen()
+            CarouselScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("range_slider") {
-            RangeSliderScreen()
+            RangeSliderScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
         composable("shimmer_screen") {
             ShimmerScreen(
@@ -71,7 +101,10 @@ fun FeatureExperimentsNavigationController() {
             )
         }
         composable("switch_buttons") {
-            SwitchButtonsScreen()
+            SwitchButtonsScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
         }
     }
 }

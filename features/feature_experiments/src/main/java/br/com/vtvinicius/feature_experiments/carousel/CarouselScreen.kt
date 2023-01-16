@@ -3,6 +3,7 @@ package br.com.vtvinicius.feature_experiments.carousel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -11,8 +12,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.R
+import br.com.vtvinicius.uikit.base.greenExperimentsDark
+import br.com.vtvinicius.uikit.base.greenExperimentsLight
 import br.com.vtvinicius.uikit.ui.text.TitleLargeText
+import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -21,8 +27,20 @@ import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.delay
 
 @Composable
-fun CarouselScreen() {
-    Column(
+fun CarouselScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
+
+    Scaffold(
+        topBar = {
+            AppTopBar(
+                title = "Carousel",
+                onBackPressed = { navigation.goToLobby(navController) },
+                backgroundColor = greenExperimentsLight,
+                textColor = greenExperimentsDark
+            )
+        },
+        content = {
+
+        Column(
         Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -35,7 +53,7 @@ fun CarouselScreen() {
         TitleLargeText(text = "Carrossel sem animação funciona direito")
         VerticalSpacer(height = 16)
         Carousel(false)
-    }
+        }})
 }
 
 @OptIn(ExperimentalPagerApi::class)
