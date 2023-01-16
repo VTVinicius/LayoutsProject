@@ -165,6 +165,15 @@ fun ExperimentsLobby(
 
                 VerticalSpacer(height = 20)
 
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToProgressIndicator(navController = navController) },
+                    text = "Progress Indicator"
+                )
+
+                VerticalSpacer(height = 20)
+
             }
 
 

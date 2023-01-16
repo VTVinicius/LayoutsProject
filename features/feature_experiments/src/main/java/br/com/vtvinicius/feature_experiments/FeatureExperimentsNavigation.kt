@@ -33,4 +33,8 @@ interface FeatureExperimentsNavigation {
     fun goToSwitchButtons(navController: NavController)
 
     fun goToDropDownScreen(navController: NavController)
+
+    fun goToLoadings(navController: NavController)
+
+    fun goToProgressIndicator(navController: NavController)
 }

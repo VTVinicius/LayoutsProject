@@ -13,6 +13,7 @@ import br.com.vtvinicius.feature_experiments.carousel.CarouselScreen
 import br.com.vtvinicius.feature_experiments.carousel.ProductsPagerScreen
 import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
 import br.com.vtvinicius.feature_experiments.dropdown.DropDownScreen
+import br.com.vtvinicius.feature_experiments.loadings.ProgressIndicatorScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
 import br.com.vtvinicius.feature_experiments.shimmer.ShimmerScreen
@@ -109,6 +110,12 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("dropdown_screen") {
             DropDownScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
+        }
+        composable("progress_indicator") {
+            ProgressIndicatorScreen(
                 navController = navController,
                 navigation = FeatureExperimentsNavigationImpl()
             )

@@ -63,4 +63,12 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToDropDownScreen(navController: NavController) {
         navController.navigate("dropdown_screen")
     }
+
+    override fun goToLoadings(navController: NavController) {
+        navController.navigate("loadings_screen")
+    }
+
+    override fun goToProgressIndicator(navController: NavController) {
+        navController.navigate("progress_indicator")
+    }
 }
