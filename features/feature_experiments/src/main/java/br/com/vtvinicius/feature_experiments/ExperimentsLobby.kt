@@ -46,35 +46,45 @@ fun ExperimentsLobby(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
+
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
                     onClick = { navigation.goToMotionTopBar(navController = navController) },
                     text = "Motion Top Bar"
                 )
+
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
                     onClick = { navigation.goToMotionButtons(navController = navController) },
                     text = "Motion Buttons"
                 )
+
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
                     onClick = { navigation.goToBottomSheet1(navController = navController) },
                     text = "Bottom Sheet 1"
                 )
+
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
                     onClick = { navigation.goToSideModal1(navController = navController) },
                     text = "Side Modal 1"
                 )
+
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
@@ -83,13 +93,16 @@ fun ExperimentsLobby(
                 )
 
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
                     onClick = { navigation.goToRadioButtonsScreen(navController = navController) },
                     text = "Radio Buttons"
                 )
+
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
@@ -97,13 +110,16 @@ fun ExperimentsLobby(
                     text = "Check Boxes"
                 )
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
                     onClick = { navigation.goToProductsPagerScreen(navController = navController) },
                     text = "Products Pager"
                 )
+
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
@@ -112,6 +128,7 @@ fun ExperimentsLobby(
                 )
 
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
@@ -120,6 +137,7 @@ fun ExperimentsLobby(
                 )
 
                 VerticalSpacer(height = 20)
+
                 FeaturesButton(
                     backgroundColor = greenExperimentsLight,
                     textColor = greenExperimentsDark,
@@ -128,6 +146,7 @@ fun ExperimentsLobby(
                 )
 
                 VerticalSpacer(height = 20)
+                
             }
 
 

@@ -1,13 +1,6 @@
 package br.com.vtvinicius.feature_experiments.shimmer
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -23,14 +16,18 @@ fun ShimmerListItem(
     contentAfterLoading: @Composable () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+
     if (isLoading) {
+
         Row(modifier = modifier) {
             Box(
                 modifier = Modifier
                     .size(100.dp)
                     .shimmerEffect()
             )
+
             HorizontalSpacer(width = 16)
+
             Column(
                 modifier = Modifier.weight(1f)
             ) {
@@ -40,7 +37,9 @@ fun ShimmerListItem(
                         .height(20.dp)
                         .shimmerEffect()
                 )
+
                 Spacer(modifier = Modifier.height(16.dp))
+
                 Box(
                     modifier = Modifier
                         .fillMaxWidth(0.7f)
@@ -60,7 +59,9 @@ fun ShimmerButtonItem(
     contentAfterLoading: @Composable () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+
     if (isLoading) {
+
         Column(
             modifier = modifier
                 .fillMaxWidth()

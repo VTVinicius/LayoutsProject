@@ -27,7 +27,6 @@ fun RangeSliderScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-
         RangeSlider()
 
         VerticalSpacer(height = 20)
@@ -35,15 +34,16 @@ fun RangeSliderScreen() {
         RangeSliderStep()
 
     }
-
-
 }
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RangeSlider() {
+
     var sliderPosition by remember { mutableStateOf(0f..100f) }
+
     Text(text = sliderPosition.toString())
+
     RangeSlider(
         value = sliderPosition,
         onValueChange = { sliderPosition = it },
@@ -60,7 +60,9 @@ fun RangeSlider() {
 @Composable
 fun RangeSliderStep() {
     var sliderPosition2 by remember { mutableStateOf(0f..100f) }
+
     Text(text = sliderPosition2.toString())
+
     RangeSlider(
         steps = 5,
         value = sliderPosition2,

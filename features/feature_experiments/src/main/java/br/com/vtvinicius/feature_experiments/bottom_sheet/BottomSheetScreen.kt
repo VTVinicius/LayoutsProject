@@ -35,6 +35,7 @@ fun BottomSheetScreen() {
         initialValue = ModalBottomSheetValue.Hidden,
         skipHalfExpanded = skipHalfExpanded
     )
+
     ModalBottomSheetLayout(
         sheetState = state,
         sheetContent = {
@@ -87,8 +88,8 @@ fun BottomSheetScreen() {
                 textColor = greenExperimentsDark
             )
         }
-
     }
+
     ModalBottomSheetLayout(
         sheetState = state2,
         sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
@@ -107,8 +108,5 @@ fun BottomSheetScreen() {
                 }
             }
         },
-
-        ) {
-
-    }
+    ) {}
 }

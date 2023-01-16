@@ -52,7 +52,7 @@ fun Carousel(animated: Boolean = false) {
         R.drawable.img_vini_4,
     )
 
-    Column() {
+    Column {
         val pagerState = rememberPagerState()
 
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
@@ -82,7 +82,7 @@ fun Carousel(animated: Boolean = false) {
                     pagerState.animateScrollToPage(pagerState.currentPage - pagerState.currentPage)
                 }
             }
-        } else{
+        } else {
             LaunchedEffect(key1 = pagerState.currentPage) {
                 delay(3000)
                 if (pagerState.currentPage < pagerState.pageCount - 1) {
@@ -91,7 +91,6 @@ fun Carousel(animated: Boolean = false) {
                     pagerState.scrollToPage(pagerState.currentPage - pagerState.currentPage)
                 }
             }
-
         }
 
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
@@ -102,5 +101,4 @@ fun Carousel(animated: Boolean = false) {
             )
         }
     }
-
 }

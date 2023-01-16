@@ -28,7 +28,6 @@ fun ProductsPagerScreen() {
         ProductsPager()
     }
 
-
 }
 
 
@@ -43,7 +42,8 @@ fun ProductsPager() {
         R.drawable.img_vini_4,
     )
 
-    Column() {
+    Column {
+
         val pagerState = rememberPagerState()
 
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {

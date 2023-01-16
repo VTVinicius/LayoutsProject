@@ -23,12 +23,16 @@ import br.com.vtvinicius.uikit.ui.text.HeadlineSmallText
 @Composable
 fun MotionTopBarScreen() {
 
+    var progress by remember {
+        mutableStateOf(0f)
+    }
+
     Column {
-        var progress by remember {
-            mutableStateOf(0f)
-        }
+
         MotionTopBar(progress = progress)
+
         Spacer(modifier = Modifier.height(32.dp))
+
         Slider(
             value = progress,
             onValueChange = {
@@ -36,6 +40,7 @@ fun MotionTopBarScreen() {
             },
             modifier = Modifier.padding(horizontal = 32.dp)
         )
+
     }
 }
 
@@ -43,13 +48,16 @@ fun MotionTopBarScreen() {
 @OptIn(ExperimentalMotionApi::class)
 @Composable
 fun MotionTopBar(progress: Float) {
+
     val context = LocalContext.current
+
     val motionScene = remember {
         context.resources
             .openRawResource(br.com.vtvinicius.feature_experiments.R.raw.motion_scene)
             .readBytes()
             .decodeToString()
     }
+
     MotionLayout(
         motionScene = MotionScene(content = motionScene),
         progress = progress,
@@ -85,6 +93,5 @@ fun MotionTopBar(progress: Float) {
             modifier = Modifier.layoutId("username"),
             colors = color,
         )
-
     }
 }

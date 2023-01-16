@@ -18,12 +18,13 @@ import kotlinx.coroutines.launch
 @Composable
 fun SideModalScreen() {
 
-
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
+
     ModalDrawer(
         drawerState = drawerState,
         drawerContent = {
+
             Button(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
@@ -31,29 +32,36 @@ fun SideModalScreen() {
                 onClick = { scope.launch { drawerState.close() } },
                 content = { Text("Close Drawer") }
             )
+
             VerticalSpacer(height = 16)
 
             LazyColumn {
                 items(10) {
+
                     VerticalSpacer(height = 12)
+
                     Row(
                         Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.Start
                     ) {
+
                         HorizontalSpacer(width = 16)
+
                         Icon(
                             Icons.Default.Call,
                             contentDescription = "Localized description"
                         )
+
                         HorizontalSpacer(width = 24)
+
                         BodyMediumText("Item $it")
 
                     }
                 }
             }
-
         },
         content = {
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -61,12 +69,13 @@ fun SideModalScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(text = if (drawerState.isClosed) ">>> Swipe >>>" else "<<< Swipe <<<")
-                Spacer(Modifier.height(20.dp))
+
+                VerticalSpacer(20)
+
                 Button(onClick = { scope.launch { drawerState.open() } }) {
                     Text("Click to open")
                 }
                 VerticalSpacer(height = 32)
-
             }
         }
     )

@@ -27,7 +27,6 @@ fun MotionButtonsScreen() {
             mutableStateOf(0f)
         }
 
-
         //dalay to incress progress
         LaunchedEffect(key1 = progress) {
             delay(10)
@@ -35,7 +34,6 @@ fun MotionButtonsScreen() {
                 progress += 0.05f
             }
         }
-
 
         Slider(
             value = progress,
@@ -46,13 +44,21 @@ fun MotionButtonsScreen() {
         )
 
         MotionButton(progress = progress)
+
         VerticalSpacer(height = 32)
+
         MotionButton(progress = progress)
+
         VerticalSpacer(height = 32)
+
         MotionButton(progress = progress)
+
         VerticalSpacer(height = 32)
+
         MotionButton(progress = progress)
+
         VerticalSpacer(height = 32)
+
         MotionButton(progress = progress)
     }
 }
@@ -60,7 +66,9 @@ fun MotionButtonsScreen() {
 @OptIn(ExperimentalMotionApi::class)
 @Composable
 fun MotionButton(progress: Float) {
+
     val context = LocalContext.current
+
     val motionScene = remember {
         context.resources
             .openRawResource(R.raw.buttons_scene)
@@ -73,8 +81,6 @@ fun MotionButton(progress: Float) {
         progress = progress,
         modifier = Modifier.fillMaxWidth()
     ) {
-
-
         FeaturesButton(
             text = if (progress >= 0.6f) "Botão Completo" else "",
             modifier = Modifier
@@ -84,5 +90,4 @@ fun MotionButton(progress: Float) {
             onClick = {}
         )
     }
-
 }

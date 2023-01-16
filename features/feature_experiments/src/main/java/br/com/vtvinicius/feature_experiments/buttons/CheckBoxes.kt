@@ -45,7 +45,6 @@ fun CheckBoxes() {
             }
 
             Row(verticalAlignment = Alignment.CenterVertically) {
-
                 TriStateCheckbox(
                     state = parentState,
                     onClick = onParentClick,
@@ -84,6 +83,7 @@ fun CheckBoxes() {
                 }
             }
         }
+
         VerticalSpacer(height = 100)
 
         Column {
@@ -99,8 +99,6 @@ fun CheckBoxes() {
                 )
                 Text(text = "Option 1")
             }
-
-
 
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Checkbox(
