@@ -1,5 +1,7 @@
 package br.com.vtvinicius.feature_experiments.dropdown
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -7,8 +9,11 @@ import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
+import br.com.vtvinicius.uikit.base.ApplicationTheme
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
@@ -104,13 +109,27 @@ fun ExposedDropDown() {
             readOnly = true,
             value = selectedOptionText,
             onValueChange = { },
-            label = { Text("Label") },
             trailingIcon = {
                 ExposedDropdownMenuDefaults.TrailingIcon(
                     expanded = expanded
                 )
             },
-            colors = ExposedDropdownMenuDefaults.textFieldColors()
+            colors = TextFieldDefaults.textFieldColors(
+                backgroundColor = Color.White,
+                cursorColor = Color.Black,
+                disabledLabelColor = Color.Transparent,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
+            ),
+            shape = ApplicationTheme.dimensions.defaultSize,
+            modifier = Modifier
+                .height(52.dp)
+                .border(
+                    width = 1.dp,
+                    color = Color.Black,
+                    shape = ApplicationTheme.dimensions.defaultSize,
+                )
+
         )
         ExposedDropdownMenu(
             expanded = expanded,
