@@ -146,7 +146,16 @@ fun ExperimentsLobby(
                 )
 
                 VerticalSpacer(height = 20)
-                
+
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToSwitchButtons(navController = navController) },
+                    text = "Switch Buttons"
+                )
+
+                VerticalSpacer(height = 20)
+
             }
 
 

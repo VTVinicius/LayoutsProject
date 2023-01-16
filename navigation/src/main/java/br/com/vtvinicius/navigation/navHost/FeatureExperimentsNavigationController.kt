@@ -8,6 +8,7 @@ import br.com.vtvinicius.feature_experiments.ExperimentsLobby
 import br.com.vtvinicius.feature_experiments.bottom_sheet.BottomSheetScreen
 import br.com.vtvinicius.feature_experiments.buttons.CheckBoxes
 import br.com.vtvinicius.feature_experiments.buttons.RadioButtonsTest
+import br.com.vtvinicius.feature_experiments.buttons.SwitchButtonsScreen
 import br.com.vtvinicius.feature_experiments.carousel.CarouselScreen
 import br.com.vtvinicius.feature_experiments.carousel.ProductsPagerScreen
 import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
@@ -64,7 +65,13 @@ fun FeatureExperimentsNavigationController() {
             RangeSliderScreen()
         }
         composable("shimmer_screen") {
-            ShimmerScreen(navController = navController, navigation = FeatureExperimentsNavigationImpl())
+            ShimmerScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
+        }
+        composable("switch_buttons") {
+            SwitchButtonsScreen()
         }
     }
 }

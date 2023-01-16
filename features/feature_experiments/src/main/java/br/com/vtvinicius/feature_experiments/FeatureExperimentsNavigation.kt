@@ -29,4 +29,6 @@ interface FeatureExperimentsNavigation {
     fun goToRangeSliderScreen(navController: NavController)
 
     fun goToShimmerScreen(navController: NavController)
+
+    fun goToSwitchButtons(navController: NavController)
 }

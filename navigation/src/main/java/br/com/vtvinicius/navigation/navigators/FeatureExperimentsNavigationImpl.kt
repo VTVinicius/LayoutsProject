@@ -55,4 +55,8 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToShimmerScreen(navController: NavController) {
         navController.navigate("shimmer_screen")
     }
+
+    override fun goToSwitchButtons(navController: NavController) {
+        navController.navigate("switch_buttons")
+    }
 }
