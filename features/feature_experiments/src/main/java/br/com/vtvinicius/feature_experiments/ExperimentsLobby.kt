@@ -156,6 +156,15 @@ fun ExperimentsLobby(
 
                 VerticalSpacer(height = 20)
 
+                FeaturesButton(
+                    backgroundColor = greenExperimentsLight,
+                    textColor = greenExperimentsDark,
+                    onClick = { navigation.goToDropDownScreen(navController = navController) },
+                    text = "DropDown"
+                )
+
+                VerticalSpacer(height = 20)
+
             }
 
 

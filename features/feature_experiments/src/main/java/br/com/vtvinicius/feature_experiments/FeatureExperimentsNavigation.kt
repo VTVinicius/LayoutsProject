@@ -31,4 +31,6 @@ interface FeatureExperimentsNavigation {
     fun goToShimmerScreen(navController: NavController)
 
     fun goToSwitchButtons(navController: NavController)
+
+    fun goToDropDownScreen(navController: NavController)
 }

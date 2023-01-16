@@ -59,4 +59,8 @@ class FeatureExperimentsNavigationImpl : FeatureExperimentsNavigation {
     override fun goToSwitchButtons(navController: NavController) {
         navController.navigate("switch_buttons")
     }
+
+    override fun goToDropDownScreen(navController: NavController) {
+        navController.navigate("dropdown_screen")
+    }
 }

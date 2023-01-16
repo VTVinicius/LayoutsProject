@@ -12,6 +12,7 @@ import br.com.vtvinicius.feature_experiments.buttons.SwitchButtonsScreen
 import br.com.vtvinicius.feature_experiments.carousel.CarouselScreen
 import br.com.vtvinicius.feature_experiments.carousel.ProductsPagerScreen
 import br.com.vtvinicius.feature_experiments.dialogs.MaterialDialogScreen
+import br.com.vtvinicius.feature_experiments.dropdown.DropDownScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons.MotionButtonsScreen
 import br.com.vtvinicius.feature_experiments.motion_layout.motion_top_bar.MotionTopBarScreen
 import br.com.vtvinicius.feature_experiments.shimmer.ShimmerScreen
@@ -102,6 +103,12 @@ fun FeatureExperimentsNavigationController() {
         }
         composable("switch_buttons") {
             SwitchButtonsScreen(
+                navController = navController,
+                navigation = FeatureExperimentsNavigationImpl()
+            )
+        }
+        composable("dropdown_screen") {
+            DropDownScreen(
                 navController = navController,
                 navigation = FeatureExperimentsNavigationImpl()
             )
