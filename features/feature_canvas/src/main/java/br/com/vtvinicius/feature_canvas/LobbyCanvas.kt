@@ -100,6 +100,14 @@ fun LobbyCanvas(
                     backgroundColor = blueCanvasLight,
                     textColor = blueCanvasDark
                 )
+                Spacer(modifier = Modifier.height(24.dp))
+
+                FeaturesButton(
+                    onClick = { navigation.goToAnimatedArrows(navController) },
+                    text = "animated arrows",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
+                )
 
                 Spacer(modifier = Modifier.height(24.dp))
 

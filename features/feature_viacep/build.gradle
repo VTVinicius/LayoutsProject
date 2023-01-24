@@ -8,7 +8,9 @@ dependencies {
     implementation project(':base_feature')
     implementation project(':uikit')
     implementation project(':domain')
+    androidTestImplementation project(path: ':base_feature')
 
     appDependencies.each { add(it.configuration, it.dependency, it.options) }
     androidTestCommonsDependencies.forEach { add(it.configuration, it.dependency, it.option) }
+
 }

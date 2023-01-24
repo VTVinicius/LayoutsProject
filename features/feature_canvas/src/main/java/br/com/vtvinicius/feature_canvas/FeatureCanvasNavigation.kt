@@ -20,4 +20,6 @@ interface FeatureCanvasNavigation {
 
     fun goBackToHome(navController: NavController)
 
+    fun goToAnimatedArrows(navController: NavController)
+
 }

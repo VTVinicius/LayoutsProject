@@ -12,4 +12,5 @@ dependencies {
 
     appDependencies.each { add(it.configuration, it.dependency, it.options) }
     presentationDependencies.each { add(it.configuration, it.dependency, it.options) }
+    androidTestCommonsDependencies.forEach { add(it.configuration, it.dependency, it.option) }
 }

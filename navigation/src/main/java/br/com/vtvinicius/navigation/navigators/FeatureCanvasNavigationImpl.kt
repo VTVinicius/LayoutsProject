@@ -37,5 +37,9 @@ class FeatureCanvasNavigationImpl : FeatureCanvasNavigation {
         navController.navigate("lobby_screen")
     }
 
+    override fun goToAnimatedArrows(navController: NavController) {
+        navController.navigate("animated_arrows")
+    }
+
 
 }

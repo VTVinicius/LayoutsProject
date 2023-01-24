@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_canvas.LobbyCanvas
+import br.com.vtvinicius.feature_canvas.animated_arrows.AnimatedScreen
 import br.com.vtvinicius.feature_canvas.animated_path.EffectPath
 import br.com.vtvinicius.feature_canvas.clock.ClockScreen
 import br.com.vtvinicius.feature_canvas.curve_lines.ExamplePath
@@ -56,6 +57,9 @@ fun FeatureCanvasNavigationController() {
         }
         composable("lobby_screen") {
             FeatureHomeNavigationController()
+        }
+        composable("animated_arrows") {
+            AnimatedScreen()
         }
     }
 }

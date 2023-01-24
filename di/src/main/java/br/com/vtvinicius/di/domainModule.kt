@@ -6,6 +6,7 @@ import br.com.vtvinicius.domain.usecase.example.SaveAddressUseCase
 import br.com.vtvinicius.domain.usecase.example.SearchCepUseCase
 import br.com.vtvinicius.domain.usecase.shaerdPreferences.GetExampleUseCase
 import br.com.vtvinicius.domain.usecase.shaerdPreferences.SaveExampleUseCase
+import br.com.vtvinicius.domain.usecase.sort.BubbleSortUseCase
 import kotlinx.coroutines.CoroutineScope
 import org.koin.dsl.module
 
@@ -46,6 +47,12 @@ val domainModule = module {
         SaveAddressUseCase(
             scope = scope,
             repository = get()
+        )
+    }
+
+    factory { (scope: CoroutineScope) ->
+        BubbleSortUseCase(
+            scope = scope,
         )
     }
 
