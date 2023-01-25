@@ -53,19 +53,3 @@ fun PhoneInputText(
         }
     )
 }
-
-//@Preview
-//@Composable
-//fun PhoneInputTextPreview() {
-//    Box(
-//        Modifier
-//            .fillMaxSize()
-//            .background(Color.Red)
-//            .padding(16.dp)
-//    ) {
-//        PhoneInputText(
-//            state = InputTextState.NORMAL,
-//            onSearch = {}
-//        )
-//    }
-//}

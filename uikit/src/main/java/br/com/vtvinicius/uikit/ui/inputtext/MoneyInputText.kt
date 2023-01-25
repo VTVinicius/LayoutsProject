@@ -18,12 +18,7 @@ fun MoneyInputText(
     modifier: Modifier = Modifier,
     state: InputTextState = InputTextState.NORMAL,
     onSearch: (String) -> Unit,
-    editText: EditText? = null,
 ) {
-
-    val LOCALE_PT_BR = Locale("pt", "BR")
-    val mFormatter: NumberFormat = NumberFormat.getCurrencyInstance(LOCALE_PT_BR)
-    var mIsUpdating: Boolean = false
 
     val styleType: InputTextStyleType = InputTextStyleType.NOTHING
 
@@ -36,7 +31,7 @@ fun MoneyInputText(
     when (error.value) {
         true -> {
             currentState = InputTextState.ERROR
-            styleType.getErrorMessage("Nome incompleto")
+            styleType.getErrorMessage("")
         }
         else -> {
             currentState = state
