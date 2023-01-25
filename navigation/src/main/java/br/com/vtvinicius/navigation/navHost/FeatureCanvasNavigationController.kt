@@ -11,6 +11,7 @@ import br.com.vtvinicius.feature_canvas.clock.ClockScreen
 import br.com.vtvinicius.feature_canvas.curve_lines.ExamplePath
 import br.com.vtvinicius.feature_canvas.gender_picker.GenderScreen
 import br.com.vtvinicius.feature_canvas.graphs.line_graph.LineGraphScreen
+import br.com.vtvinicius.feature_canvas.graphs.pie.PieChartScreen
 import br.com.vtvinicius.feature_canvas.weight_picker.WeightPickerScreen
 import br.com.vtvinicius.feature_games.games.sanke.SnakeGameScreen
 import br.com.vtvinicius.navigation.navigators.FeatureCanvasNavigationImpl
@@ -60,6 +61,9 @@ fun FeatureCanvasNavigationController() {
         }
         composable("animated_arrows") {
             AnimatedScreen()
+        }
+        composable("pie_chart") {
+            PieChartScreen()
         }
     }
 }

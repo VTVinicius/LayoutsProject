@@ -108,6 +108,14 @@ fun LobbyCanvas(
                     backgroundColor = blueCanvasLight,
                     textColor = blueCanvasDark
                 )
+                Spacer(modifier = Modifier.height(24.dp))
+
+                FeaturesButton(
+                    onClick = { navigation.goToPieChart(navController) },
+                    text = "pie chart",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
+                )
 
                 Spacer(modifier = Modifier.height(24.dp))
 

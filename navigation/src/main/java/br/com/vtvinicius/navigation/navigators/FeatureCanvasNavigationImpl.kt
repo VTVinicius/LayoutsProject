@@ -41,5 +41,9 @@ class FeatureCanvasNavigationImpl : FeatureCanvasNavigation {
         navController.navigate("animated_arrows")
     }
 
+    override fun goToPieChart(navController: NavController) {
+        navController.navigate("pie_chart")
+    }
+
 
 }
