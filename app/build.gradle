@@ -3,6 +3,7 @@ buildscript {
         mavenCentral()
         google()
         maven { url "https://plugins.gradle.org/m2/" }
+        maven { url 'https://jitpack.io' }
         gradlePluginPortal()
     }
 
@@ -10,6 +11,8 @@ buildscript {
         classpath 'com.android.tools.build:gradle:7.3.1'
     }
 }
+
+
 
 apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'com.android.application'

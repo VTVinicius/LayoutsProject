@@ -9,6 +9,7 @@ import OnlyLettersInputText
 import OnlyNumbersInputText
 import PasswordInputText
 import PhoneInputText
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,6 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import br.com.vtvinicius.feature_uikit.FeatureUikitNavigation
+import br.com.vtvinicius.input_text.components.input_text.CNPJInputTextLib
+import br.com.vtvinicius.input_text.components.input_text.DateInputTextLib
 import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.purpleUikitDark
 import br.com.vtvinicius.uikit.base.purpleUikitLight
@@ -35,6 +38,7 @@ import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.HorizontalSpacer
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun InputTextScreen(
     navController: NavController,
@@ -211,9 +215,19 @@ fun InputTextScreen(
 
                     LabelLargeText(text = "Input de Texto basico, sem validações.")
 
-                    VerticalSpacer(height = 8)
+                    VerticalSpacer(height = 16)
 
                     BasicInputText(maxLength = 100, onSearch = {}, state = style)
+
+                    VerticalSpacer(height = 16)
+
+                    CNPJInputTextLib(onSearch = {})
+
+                    VerticalSpacer(height = 16)
+
+                    DateInputTextLib(onSearch = {})
+
+                    VerticalSpacer(height = 16)
 
                 }
             }

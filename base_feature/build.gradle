@@ -5,6 +5,8 @@ apply plugin: 'com.google.devtools.ksp'
 
 apply from: "$rootProject.projectDir/android-common.gradle"
 
+
+
 dependencies {
 
     implementation project(':uikit')

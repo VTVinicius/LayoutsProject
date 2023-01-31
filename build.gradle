@@ -1,6 +1,11 @@
 
 buildscript {
 
+        repositories {
+            maven { url 'https://jitpack.io' }
+    }
+
+
     ext.kotlinVersion = '1.6.0'
 
     repositories {

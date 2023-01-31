@@ -61,6 +61,8 @@ ext {
     viewPager = "com.google.accompanist:accompanist-pager:$viewPagerVersion"
     viewPagerIndicator = "com.google.accompanist:accompanist-pager-indicators:$viewPagerVersion"
 
+
+    inputTextsLib = "com.github.VTVinicius:ComponentsLib:$inputTextsLibVersion"
 }
 
 

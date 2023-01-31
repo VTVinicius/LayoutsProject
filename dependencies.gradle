@@ -25,6 +25,7 @@ ext {
             [configuration: "implementation", dependency: "$composeCompiler"],
             [configuration: "implementation", dependency: "$viewPager"],
             [configuration: "implementation", dependency: "$viewPagerIndicator"],
+            [configuration: "implementation", dependency: "$inputTextsLib"],
 
 
     ]
