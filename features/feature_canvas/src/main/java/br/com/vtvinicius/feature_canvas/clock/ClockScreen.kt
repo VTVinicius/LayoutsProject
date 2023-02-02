@@ -5,37 +5,19 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import kotlinx.coroutines.delay
-import java.util.*
+import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun ClockScreen() {
 
-    val calendar = Calendar.getInstance()
+    val viewModel = getViewModel<ClockViewModel>()
 
-    var seconds by remember {
-        mutableStateOf((calendar.get(Calendar.SECOND)).toFloat())
-    }
-    var minutes by remember {
-        mutableStateOf(calendar.get(Calendar.MINUTE ).toFloat())
-    }
-    var hours by remember {
-        mutableStateOf(calendar.get(Calendar.HOUR_OF_DAY).toFloat())
-    }
+    val state by viewModel.state.collectAsState()
 
-    LaunchedEffect(key1 = seconds) {
-        delay(1000)
-        minutes += 6f / 360f
-        hours += 6f / (360f * 12f)
-        seconds += 1f
-    }
     Column(
         Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -43,9 +25,9 @@ fun ClockScreen() {
     ) {
 
         ClockExercise(
-            seconds = seconds,
-            minutes = minutes,
-            hours = hours
+            seconds = state.seconds,
+            minutes = state.minutes,
+            hours = state.hours
         )
 
     }
