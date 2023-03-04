@@ -23,4 +23,6 @@ interface FeatureCanvasNavigation {
     fun goToAnimatedArrows(navController: NavController)
 
     fun goToPieChart(navController: NavController)
+
+    fun goToStar(navController: NavController)
 }

@@ -74,7 +74,7 @@ fun EffectPath() {
                 )
             )
         )
-        scale(scale = 0.2f) {
+        scale(scale = 0.1f) {
             drawPath(
                 path = path2,
                 color = Color.Red,
