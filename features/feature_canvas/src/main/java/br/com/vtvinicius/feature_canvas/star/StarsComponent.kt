@@ -16,8 +16,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.StrokeCap
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.drawscope.translate
@@ -44,10 +42,18 @@ fun Star5(
     val star4PathString = stringResource(id = R.string.star_small_path)
     val star5PathString = stringResource(id = R.string.star_small_path)
 
+    //Declara as Variaveis de Controle de Clicks
     var center by remember {
         mutableStateOf(Offset.Unspecified)
     }
+    var currentClickOffset by remember {
+        mutableStateOf(Offset.Zero)
+    }
+    var selectedStar by remember {
+        mutableStateOf<Stars>(Stars.Star0)
+    }
 
+    //Declara as Variaveis de Conversão de String para Path
     val star1Path = remember {
         PathParser().parsePathString(star1PathString).toPath()
     }
@@ -64,6 +70,7 @@ fun Star5(
         PathParser().parsePathString(star5PathString).toPath()
     }
 
+    //Declara as Variaveis controlam o tamanho da estrela
     val star1PathBounds = remember {
         star1Path.getBounds()
     }
@@ -80,14 +87,7 @@ fun Star5(
         star5Path.getBounds()
     }
 
-    var currentClickOffset by remember {
-        mutableStateOf(Offset.Zero)
-    }
-
-    var selectedStar by remember {
-        mutableStateOf<Stars>(Stars.Star0)
-    }
-
+    //Declara as variaveis de animação
     var star1TranslationOffset by remember {
         mutableStateOf(Offset.Zero)
     }
@@ -104,6 +104,7 @@ fun Star5(
         mutableStateOf(Offset.Zero)
     }
 
+    //Declara as variaveis que controlam qual estrela foi selecionada
     var targetValue1 by remember {
         mutableStateOf(0f)
     }
@@ -120,6 +121,7 @@ fun Star5(
         mutableStateOf(0f)
     }
 
+    //Faz a validação de quais estrela tem que preencher quando clicada. No caso se a Quarta estrela foi selecionada, preenche todas para tras.
     targetValue1 =
         if (selectedStar is Stars.Star1 || selectedStar is Stars.Star2 || selectedStar is Stars.Star3 || selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
     targetValue2 =
@@ -129,6 +131,9 @@ fun Star5(
     targetValue4 = if (selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
     targetValue5 = if (selectedStar is Stars.Star5) 80f else 0f
 
+
+    //Controla as Animações de preenchimento e despreenchimento das estrelas.
+    //A animação para preenchimento por algum motivo é mais rapida que a de despreenchimento, então foi necessário fazer uma correção para que as animações fiquem Parecidas.
     val star1SelectionRadius = animateFloatAsState(
         targetValue = targetValue1,
         animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 1) else tween(
@@ -165,6 +170,9 @@ fun Star5(
         Canvas(modifier = Modifier
             .fillMaxWidth()
             .pointerInput(true) {
+
+                // Controla o Click na tela
+
                 detectTapGestures {
                     val transformedStar1Rect = Rect(
                         offset = star1TranslationOffset,
@@ -187,6 +195,7 @@ fun Star5(
                         size = star5PathBounds.size * pathScaleFactor
                     )
 
+                    //Verifica se o click na tela foi feito dentro de alguma estrela.
 
                     if (transformedStar1Rect.contains(it)) {
                         selectedStar = Stars.Star1
@@ -209,6 +218,8 @@ fun Star5(
 
             center = this.center
 
+
+            //Controla a posição da tela onde a estrela vai ser desenhada. Tambem controla o Espaçamento entre elas.
 
             star1TranslationOffset = Offset(
                 x = star1PathBounds.width * pathScaleFactor / 2f,
@@ -234,6 +245,10 @@ fun Star5(
                 x = star4TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
                 y = center.y - star1PathBounds.height * pathScaleFactor / 2f
             )
+
+
+            //Faz o controle, para quando haver clique, ele inicia o preenchimento a partir do Centro,
+            // no despreenchimento ele vai até o Offset Zero, no caso fora da estrela
 
             val untransformedStar1ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star1PathBounds.center
@@ -265,6 +280,9 @@ fun Star5(
                 (currentClickOffset - star5TranslationOffset) / pathScaleFactor
             }
 
+
+            //Essa é a função que desenha de fato as estrelas e o preenchimento delas
+            //Inicio da estrela 1
             translate(
                 left = star1TranslationOffset.x,
                 top = star1TranslationOffset.y
@@ -295,7 +313,9 @@ fun Star5(
                     }
                 }
             }
+            //Fim da estrela 1
 
+            //Inicio da estrela 2
             translate(
                 left = star2TranslationOffset.x,
                 top = star2TranslationOffset.y
@@ -325,10 +345,10 @@ fun Star5(
                         )
                     }
                 }
-
-
             }
+            //Fim da estrela 2
 
+            //Inicio da estrela 3
             translate(
                 left = star3TranslationOffset.x,
                 top = star3TranslationOffset.y
@@ -358,10 +378,10 @@ fun Star5(
                         )
                     }
                 }
-
-
             }
+            //Fim da estrela 3
 
+            //Inicio da estrela 4
             translate(
                 left = star4TranslationOffset.x,
                 top = star4TranslationOffset.y
@@ -391,10 +411,10 @@ fun Star5(
                         )
                     }
                 }
-
-
             }
+            //Fim da estrela 4
 
+            //Inicio da estrela 5
             translate(
                 left = star5TranslationOffset.x,
                 top = star5TranslationOffset.y
@@ -425,6 +445,7 @@ fun Star5(
                     }
                 }
             }
+            //Fim da estrela 5
         }
     }
 }
