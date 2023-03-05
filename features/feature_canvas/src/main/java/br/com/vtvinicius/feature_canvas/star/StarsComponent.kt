@@ -128,40 +128,43 @@ fun Star5(
         if (selectedStar is Stars.Star2 || selectedStar is Stars.Star3 || selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
     targetValue3 =
         if (selectedStar is Stars.Star5 || selectedStar is Stars.Star4 || selectedStar is Stars.Star3) 80f else 0f
-    targetValue4 = if (selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
-    targetValue5 = if (selectedStar is Stars.Star5) 80f else 0f
+    targetValue4 =
+        if (selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
+    targetValue5 =
+        if (selectedStar is Stars.Star5) 80f else 0f
 
 
     //Controla as Animações de preenchimento e despreenchimento das estrelas.
     //A animação para preenchimento por algum motivo é mais rapida que a de despreenchimento, então foi necessário fazer uma correção para que as animações fiquem Parecidas.
     val star1SelectionRadius = animateFloatAsState(
         targetValue = targetValue1,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 1) else tween(
-            durationMillis = animStarTime / 2 * 5
+        animationSpec = if (targetValue1 == 80f) tween(durationMillis = animStarTime * 1) else tween(
+            durationMillis = (animStarTime / 2) * 5
         )
     )
     val star2SelectionRadius = animateFloatAsState(
         targetValue = targetValue2,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 2) else tween(
-            durationMillis = animStarTime / 2 * 4
+        animationSpec = if (targetValue2 == 80f)
+            tween(durationMillis = animStarTime * 2)
+        else tween(durationMillis = (animStarTime / 2) * 4
         )
     )
     val star3SelectionRadius = animateFloatAsState(
         targetValue = targetValue3,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 3) else tween(
-            durationMillis = animStarTime / 2 * 3
+        animationSpec = if (targetValue3 == 80f) tween(durationMillis = animStarTime * 3) else tween(
+            durationMillis = (animStarTime / 2) * 3
         )
     )
     val star4SelectionRadius = animateFloatAsState(
         targetValue = targetValue4,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 4) else tween(
-            durationMillis = animStarTime / 2 * 2
+        animationSpec = if (targetValue4 == 80f) tween(durationMillis = animStarTime * 4) else tween(
+            durationMillis = (animStarTime) / 2 * 2
         )
     )
     val star5SelectionRadius = animateFloatAsState(
         targetValue = targetValue5,
         animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 5) else tween(
-            durationMillis = animStarTime / 2 * 1
+            durationMillis = (animStarTime / 2) * 1
         )
     )
 
