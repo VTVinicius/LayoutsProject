@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import br.com.vtvinicius.uikit.base.blueCanvasDark
 import br.com.vtvinicius.uikit.base.blueCanvasLight
+import br.com.vtvinicius.uikit.base.gold
 import br.com.vtvinicius.uikit.base.greenApp
 import br.com.vtvinicius.uikit.base.greenAppDark
 import br.com.vtvinicius.uikit.ui.button.AppButton
@@ -125,7 +126,7 @@ fun DialogScore(onDismissRequest: () -> Unit) {
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Star5(onStarSelected = { star = it }, animStarTime = 1000)
+                    Star5(onStarSelected = { star = it }, animStarTime = 1000, colorStarSelected = gold)
                 }
 
                 VerticalSpacer(height = 30)

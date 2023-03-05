@@ -16,6 +16,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.graphics.drawscope.translate
@@ -32,6 +34,8 @@ fun Star5(
     pathScaleFactor: Float = 7f,
     distanceBetweenStars: Dp = 35.dp,
     animStarTime: Int = 300,
+    colorStarSelected: Color = Color(0XFFffd700),
+    colorStarUnselected: Color = Color.LightGray,
 ) {
 
     val star1PathString = stringResource(id = R.string.star_small_path)
@@ -116,31 +120,44 @@ fun Star5(
         mutableStateOf(0f)
     }
 
-    targetValue1 = if (selectedStar is Stars.Star1 || selectedStar is Stars.Star2 || selectedStar is Stars.Star3 || selectedStar is Stars.Star4 || selectedStar is Stars.Star5 ) 80f else 0f
-    targetValue2 = if (selectedStar is Stars.Star2 || selectedStar is Stars.Star3 || selectedStar is Stars.Star4|| selectedStar is Stars.Star5) 80f else 0f
-    targetValue3 = if (selectedStar is Stars.Star5 || selectedStar is Stars.Star4 || selectedStar is Stars.Star3) 80f else 0f
+    targetValue1 =
+        if (selectedStar is Stars.Star1 || selectedStar is Stars.Star2 || selectedStar is Stars.Star3 || selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
+    targetValue2 =
+        if (selectedStar is Stars.Star2 || selectedStar is Stars.Star3 || selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
+    targetValue3 =
+        if (selectedStar is Stars.Star5 || selectedStar is Stars.Star4 || selectedStar is Stars.Star3) 80f else 0f
     targetValue4 = if (selectedStar is Stars.Star4 || selectedStar is Stars.Star5) 80f else 0f
-    targetValue5 = if (selectedStar is Stars.Star5 ) 80f else 0f
+    targetValue5 = if (selectedStar is Stars.Star5) 80f else 0f
 
     val star1SelectionRadius = animateFloatAsState(
         targetValue = targetValue1,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 1) else tween(durationMillis = animStarTime / 2 * 5)
+        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 1) else tween(
+            durationMillis = animStarTime / 2 * 5
+        )
     )
     val star2SelectionRadius = animateFloatAsState(
         targetValue = targetValue2,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 2) else tween(durationMillis = animStarTime / 2* 4)
+        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 2) else tween(
+            durationMillis = animStarTime / 2 * 4
+        )
     )
     val star3SelectionRadius = animateFloatAsState(
         targetValue = targetValue3,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 3) else tween(durationMillis = animStarTime / 2 * 3 )
+        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 3) else tween(
+            durationMillis = animStarTime / 2 * 3
+        )
     )
     val star4SelectionRadius = animateFloatAsState(
-        targetValue = targetValue4 ,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 4) else tween(durationMillis = animStarTime / 2 * 2)
+        targetValue = targetValue4,
+        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 4) else tween(
+            durationMillis = animStarTime / 2 * 2
+        )
     )
     val star5SelectionRadius = animateFloatAsState(
         targetValue = targetValue5,
-        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 5) else tween(durationMillis = animStarTime / 2 * 1)
+        animationSpec = if (targetValue5 == 80f) tween(durationMillis = animStarTime * 5) else tween(
+            durationMillis = animStarTime / 2 * 1
+        )
     )
 
     BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
@@ -194,7 +211,7 @@ fun Star5(
 
 
             star1TranslationOffset = Offset(
-                x =  star1PathBounds.width * pathScaleFactor / 2f,
+                x = star1PathBounds.width * pathScaleFactor / 2f,
                 y = center.y - star1PathBounds.height * pathScaleFactor / 2f
             )
 
@@ -258,7 +275,7 @@ fun Star5(
                 ) {
                     drawPath(
                         path = star1Path,
-                        color = Color.LightGray
+                        color = colorStarUnselected,
                     )
                     clipPath(
                         path = star1Path
@@ -266,51 +283,51 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    Color.Yellow,
-                                    Color.Yellow
+                                    colorStarSelected,
+                                    colorStarSelected
                                 ),
                                 center = untransformedStar1ClickOffset,
-                                radius = star1SelectionRadius.value+ 0.1f
+                                radius = star1SelectionRadius.value + 0.1f
                             ),
-                            radius = star1SelectionRadius.value/ 4,
+                            radius = star1SelectionRadius.value / 4,
                             center = untransformedStar1ClickOffset
                         )
                     }
                 }
             }
 
-                translate(
-                    left = star2TranslationOffset.x,
-                    top = star2TranslationOffset.y
+            translate(
+                left = star2TranslationOffset.x,
+                top = star2TranslationOffset.y
+            ) {
+                scale(
+                    scale = pathScaleFactor,
+                    pivot = star2PathBounds.topLeft
                 ) {
-                    scale(
-                        scale = pathScaleFactor,
-                        pivot = star2PathBounds.topLeft
+                    drawPath(
+                        path = star2Path,
+                        color = colorStarUnselected,
+                    )
+                    clipPath(
+                        path = star2Path
                     ) {
-                        drawPath(
-                            path = star2Path,
-                            color = Color.LightGray
-                        )
-                        clipPath(
-                            path = star2Path
-                        ) {
-                            drawCircle(
-                                brush = Brush.radialGradient(
-                                    colors = listOf(
-                                        Color.Yellow,
-                                        Color.Yellow
-                                    ),
-                                    center = untransformedStar2ClickOffset,
-                                    radius = star2SelectionRadius.value+ 0.1f
+                        drawCircle(
+                            brush = Brush.radialGradient(
+                                colors = listOf(
+                                    colorStarSelected,
+                                    colorStarSelected
                                 ),
-                                radius = star2SelectionRadius.value,
-                                center = untransformedStar2ClickOffset
-                            )
-                        }
+                                center = untransformedStar2ClickOffset,
+                                radius = star2SelectionRadius.value + 0.1f
+                            ),
+                            radius = star2SelectionRadius.value,
+                            center = untransformedStar2ClickOffset
+                        )
                     }
-
-
                 }
+
+
+            }
 
             translate(
                 left = star3TranslationOffset.x,
@@ -322,7 +339,7 @@ fun Star5(
                 ) {
                     drawPath(
                         path = star3Path,
-                        color = Color.LightGray
+                        color = colorStarUnselected,
                     )
                     clipPath(
                         path = star3Path
@@ -330,11 +347,11 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    Color.Yellow,
-                                    Color.Yellow
+                                    colorStarSelected,
+                                    colorStarSelected
                                 ),
                                 center = untransformedStar3ClickOffset,
-                                radius = star3SelectionRadius.value+ 0.1f
+                                radius = star3SelectionRadius.value + 0.1f
                             ),
                             radius = star3SelectionRadius.value,
                             center = untransformedStar3ClickOffset
@@ -355,7 +372,7 @@ fun Star5(
                 ) {
                     drawPath(
                         path = star4Path,
-                        color = Color.LightGray
+                        color = colorStarUnselected
                     )
                     clipPath(
                         path = star4Path
@@ -363,11 +380,11 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    Color.Yellow,
-                                    Color.Yellow
+                                    colorStarSelected,
+                                    colorStarSelected
                                 ),
                                 center = untransformedStar4ClickOffset,
-                                radius = star4SelectionRadius.value+ 0.1f
+                                radius = star4SelectionRadius.value + 0.1f
                             ),
                             radius = star4SelectionRadius.value,
                             center = untransformedStar4ClickOffset
@@ -388,7 +405,7 @@ fun Star5(
                 ) {
                     drawPath(
                         path = star5Path,
-                        color = Color.LightGray
+                        color = colorStarUnselected
                     )
                     clipPath(
                         path = star5Path
@@ -396,8 +413,8 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    Color.Yellow,
-                                    Color.Yellow
+                                    colorStarSelected,
+                                    colorStarSelected
                                 ),
                                 center = untransformedStar5ClickOffset,
                                 radius = star5SelectionRadius.value + 0.1f

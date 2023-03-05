@@ -122,4 +122,5 @@ val inputTextGrey = Color(0XFFEBEBEB)
 val background = Color(0XFFF6F6F6)
 val blueLinkedin = Color(0XFF0A66C2)
 val dividerLinkedin = Color(0XFFE9E5DF)
+val gold = Color(0XFFffd700)
 
