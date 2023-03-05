@@ -126,7 +126,7 @@ fun DialogScore(onDismissRequest: () -> Unit) {
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Star5(onStarSelected = { star = it }, animStarTime = 1000, colorStarSelected = gold)
+                    Star5(onStarSelected = { star = it }, animStarTimeFill = 1000, animStarTimeEmpty = 700, colorStarSelected = gold)
                 }
 
                 VerticalSpacer(height = 30)
