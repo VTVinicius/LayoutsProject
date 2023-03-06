@@ -6,6 +6,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -25,23 +26,26 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import br.com.vtvinicius.uikit.R
-
 @Composable
-fun Star5(
+fun FiveStars(
     onStarSelected: (Stars) -> Unit,
-    pathScaleFactor: Float = 7f,
     distanceBetweenStars: Dp = 35.dp,
     animStarTimeFill: Int = 300,
     animStarTimeEmpty: Int = 200,
-    colorStarSelected: Color = Color(0XFFffd700),
     colorStarUnselected: Color = Color.LightGray,
+    icon1PathString: String = stringResource(id = R.string.star_path),
+    icon2PathString: String = stringResource(id = R.string.star_path),
+    icon3PathString: String = stringResource(id = R.string.star_path),
+    icon4PathString: String = stringResource(id = R.string.star_path),
+    icon5PathString: String = stringResource(id = R.string.star_path),
+    icon1Color: Color = Color(0XFFffd700),
+    icon2Color: Color = Color(0XFFffd700),
+    icon3Color: Color = Color(0XFFffd700),
+    icon4Color: Color = Color(0XFFffd700),
+    icon5Color: Color = Color(0XFFffd700),
+    sizeStars: Dp = 24.dp,
+    modifier: Modifier = Modifier
 ) {
-
-    val star1PathString = stringResource(id = R.string.star_small_path)
-    val star2PathString = stringResource(id = R.string.star_small_path)
-    val star3PathString = stringResource(id = R.string.star_small_path)
-    val star4PathString = stringResource(id = R.string.star_small_path)
-    val star5PathString = stringResource(id = R.string.star_small_path)
 
     //Declara as Variaveis de Controle de Clicks
     var center by remember {
@@ -56,19 +60,19 @@ fun Star5(
 
     //Declara as Variaveis de Conversão de String para Path
     val star1Path = remember {
-        PathParser().parsePathString(star1PathString).toPath()
+        PathParser().parsePathString(icon1PathString).toPath()
     }
     val star2Path = remember {
-        PathParser().parsePathString(star2PathString).toPath()
+        PathParser().parsePathString(icon2PathString).toPath()
     }
     val star3Path = remember {
-        PathParser().parsePathString(star3PathString).toPath()
+        PathParser().parsePathString(icon3PathString).toPath()
     }
     val star4Path = remember {
-        PathParser().parsePathString(star4PathString).toPath()
+        PathParser().parsePathString(icon4PathString).toPath()
     }
     val star5Path = remember {
-        PathParser().parsePathString(star5PathString).toPath()
+        PathParser().parsePathString(icon5PathString).toPath()
     }
 
     //Declara as Variaveis controlam o tamanho da estrela
@@ -169,10 +173,11 @@ fun Star5(
         )
     )
 
-    BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
+    BoxWithConstraints(modifier = modifier.fillMaxWidth().height(sizeStars)) {
 
-        Canvas(modifier = Modifier
+        Canvas(modifier = modifier
             .fillMaxWidth()
+            .height(sizeStars)
             .pointerInput(true) {
 
                 // Controla o Click na tela
@@ -180,23 +185,24 @@ fun Star5(
                 detectTapGestures {
                     val transformedStar1Rect = Rect(
                         offset = star1TranslationOffset,
-                        size = star1PathBounds.size * pathScaleFactor
+                        size = star1PathBounds.size * (size.height / star1PathBounds.height)
                     )
                     val transformedStar2Rect = Rect(
                         offset = star2TranslationOffset,
-                        size = star2PathBounds.size * pathScaleFactor
+                        size = star2PathBounds.size * (size.height / star2PathBounds.height)
                     )
                     val transformedStar3Rect = Rect(
                         offset = star3TranslationOffset,
-                        size = star3PathBounds.size * pathScaleFactor
+                        size = star3PathBounds.size *( size.height / star3PathBounds.height)
                     )
                     val transformedStar4Rect = Rect(
                         offset = star4TranslationOffset,
-                        size = star4PathBounds.size * pathScaleFactor
+                        size = star4PathBounds.size * (size.height / star4PathBounds.height)
+
                     )
                     val transformedStar5Rect = Rect(
                         offset = star5TranslationOffset,
-                        size = star5PathBounds.size * pathScaleFactor
+                        size = star5PathBounds.size * (size.height / star5PathBounds.height)
                     )
 
                     //Verifica se o click na tela foi feito dentro de alguma estrela.
@@ -226,28 +232,28 @@ fun Star5(
             //Controla a posição da tela onde a estrela vai ser desenhada. Tambem controla o Espaçamento entre elas.
 
             star1TranslationOffset = Offset(
-                x = star1PathBounds.width * pathScaleFactor / 2f,
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                x = star1PathBounds.width * (size.height / star1PathBounds.height) / 2f,
+                y = center.y - star1PathBounds.height * (size.height / star1PathBounds.height) / 2f
             )
 
             star2TranslationOffset = Offset(
                 x = star1TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * (size.height / star2PathBounds.height) / 2f
             )
 
             star3TranslationOffset = Offset(
                 x = star2TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * (size.height / star3PathBounds.height) / 2f
             )
 
             star4TranslationOffset = Offset(
                 x = star3TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * (size.height / star4PathBounds.height) / 2f
             )
 
             star5TranslationOffset = Offset(
                 x = star4TranslationOffset.x + star1PathBounds.width + distanceBetweenStars.toPx(),
-                y = center.y - star1PathBounds.height * pathScaleFactor / 2f
+                y = center.y - star1PathBounds.height * (size.height / star5PathBounds.height) / 2f
             )
 
 
@@ -257,31 +263,31 @@ fun Star5(
             val untransformedStar1ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star1PathBounds.center
             } else {
-                (currentClickOffset - star1TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star1TranslationOffset) / (size.height / star1PathBounds.height)
             }
 
             val untransformedStar2ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star2PathBounds.center
             } else {
-                (currentClickOffset - star2TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star2TranslationOffset) / (size.height / star2PathBounds.height)
             }
 
             val untransformedStar3ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star3PathBounds.center
             } else {
-                (currentClickOffset - star3TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star3TranslationOffset) / (size.height / star3PathBounds.height)
             }
 
             val untransformedStar4ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star4PathBounds.center
             } else {
-                (currentClickOffset - star4TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star4TranslationOffset) / (size.height / star4PathBounds.height)
             }
 
             val untransformedStar5ClickOffset = if (currentClickOffset == Offset.Zero) {
                 star5PathBounds.center
             } else {
-                (currentClickOffset - star5TranslationOffset) / pathScaleFactor
+                (currentClickOffset - star5TranslationOffset) / (size.height / star5PathBounds.height)
             }
 
 
@@ -292,7 +298,7 @@ fun Star5(
                 top = star1TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = size.height / star1PathBounds.height,
                     pivot = star1PathBounds.topLeft
                 ) {
                     drawPath(
@@ -305,8 +311,8 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    colorStarSelected,
-                                    colorStarSelected
+                                    icon1Color,
+                                    icon1Color
                                 ),
                                 center = untransformedStar1ClickOffset,
                                 radius = star1SelectionRadius.value + 0.1f
@@ -325,7 +331,7 @@ fun Star5(
                 top = star2TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = size.height / star2PathBounds.height,
                     pivot = star2PathBounds.topLeft
                 ) {
                     drawPath(
@@ -338,8 +344,8 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    colorStarSelected,
-                                    colorStarSelected
+                                    icon2Color,
+                                    icon2Color
                                 ),
                                 center = untransformedStar2ClickOffset,
                                 radius = star2SelectionRadius.value + 0.1f
@@ -358,7 +364,7 @@ fun Star5(
                 top = star3TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = size.height / star3PathBounds.height,
                     pivot = star3PathBounds.topLeft
                 ) {
                     drawPath(
@@ -371,8 +377,8 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    colorStarSelected,
-                                    colorStarSelected
+                                    icon3Color,
+                                    icon3Color
                                 ),
                                 center = untransformedStar3ClickOffset,
                                 radius = star3SelectionRadius.value + 0.1f
@@ -391,7 +397,7 @@ fun Star5(
                 top = star4TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = size.height / star4PathBounds.height,
                     pivot = star4PathBounds.topLeft
                 ) {
                     drawPath(
@@ -404,8 +410,8 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    colorStarSelected,
-                                    colorStarSelected
+                                    icon4Color,
+                                    icon4Color
                                 ),
                                 center = untransformedStar4ClickOffset,
                                 radius = star4SelectionRadius.value + 0.1f
@@ -424,7 +430,7 @@ fun Star5(
                 top = star5TranslationOffset.y
             ) {
                 scale(
-                    scale = pathScaleFactor,
+                    scale = size.height / star5PathBounds.height,
                     pivot = star5PathBounds.topLeft
                 ) {
                     drawPath(
@@ -437,8 +443,8 @@ fun Star5(
                         drawCircle(
                             brush = Brush.radialGradient(
                                 colors = listOf(
-                                    colorStarSelected,
-                                    colorStarSelected
+                                    icon5Color,
+                                    icon5Color
                                 ),
                                 center = untransformedStar5ClickOffset,
                                 radius = star5SelectionRadius.value + 0.1f

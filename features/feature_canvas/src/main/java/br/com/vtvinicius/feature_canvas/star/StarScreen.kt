@@ -1,30 +1,21 @@
 package br.com.vtvinicius.feature_canvas.star
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.Center
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import br.com.vtvinicius.uikit.base.blueCanvasDark
-import br.com.vtvinicius.uikit.base.blueCanvasLight
-import br.com.vtvinicius.uikit.base.gold
-import br.com.vtvinicius.uikit.base.greenApp
-import br.com.vtvinicius.uikit.base.greenAppDark
+import br.com.vtvinicius.uikit.base.*
 import br.com.vtvinicius.uikit.ui.button.AppButton
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
@@ -46,7 +37,26 @@ fun StarScreen() {
             backgroundColor = blueCanvasLight,
             textColor = blueCanvasDark
         )
+        VerticalSpacer(height = 50)
 
+        Row(Modifier.padding(24.dp).fillMaxWidth(), horizontalArrangement = Arrangement.Center){
+
+                FiveStars(
+                    onStarSelected = { }, animStarTimeFill = 1000, animStarTimeEmpty = 500,
+                    icon1Color = gold,
+                    icon2Color = purpleUikitDark,
+                    icon3Color = yellowGamesDark,
+                    icon4Color = blueCanvasDark,
+                    icon5Color = greenApp,
+                    icon2PathString = stringResource(id = br.com.vtvinicius.uikit.R.string.done),
+                    icon3PathString = stringResource(id = br.com.vtvinicius.uikit.R.string.cloud),
+                    icon4PathString = stringResource(id = br.com.vtvinicius.uikit.R.string.collections),
+                    icon5PathString = stringResource(id = br.com.vtvinicius.uikit.R.string.android),
+                    sizeStars = 35.dp,
+                    distanceBetweenStars = 60.dp
+                )
+
+        }
         if (show) {
             DialogScore(onDismissRequest = { show = false })
         }
@@ -122,11 +132,13 @@ fun DialogScore(onDismissRequest: () -> Unit) {
                 VerticalSpacer(height = 30)
 
                 Row(
-                    Modifier.fillMaxWidth().padding(16.dp),
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Star5(onStarSelected = { star = it }, animStarTimeFill = 1000, animStarTimeEmpty = 700, colorStarSelected = gold)
+                    FiveStars(onStarSelected = { star = it }, animStarTimeFill = 1000, animStarTimeEmpty = 500)
                 }
 
                 VerticalSpacer(height = 30)
