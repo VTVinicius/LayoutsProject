@@ -12,6 +12,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -23,7 +24,7 @@ fun ProgressIndicatorScreen(
     navController: NavController,
     navigation: FeatureExperimentsNavigation
 ) {
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Progress Indicators",

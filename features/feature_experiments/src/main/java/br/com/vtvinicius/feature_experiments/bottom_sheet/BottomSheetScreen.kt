@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -33,7 +34,7 @@ import kotlinx.coroutines.launch
 fun BottomSheetScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
 
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Bottom Sheets",

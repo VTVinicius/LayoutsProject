@@ -2,7 +2,6 @@ package br.com.vtvinicius.feature_experiments.buttons
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.toggleable
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -11,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -20,7 +20,7 @@ import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 @Composable
 fun SwitchButtonsScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Switch Buttons",

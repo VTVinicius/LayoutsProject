@@ -7,11 +7,8 @@ import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
@@ -26,8 +23,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import br.com.vtvinicius.uikit.R
+
 @Composable
 fun FiveStars(
+    modifier: Modifier = Modifier,
     onStarSelected: (Stars) -> Unit,
     distanceBetweenStars: Dp = 35.dp,
     animStarTimeFill: Int = 300,
@@ -44,7 +43,8 @@ fun FiveStars(
     icon4Color: Color = Color(0XFFffd700),
     icon5Color: Color = Color(0XFFffd700),
     sizeStars: Dp = 24.dp,
-    modifier: Modifier = Modifier
+    iconsAlignment: Alignment = Alignment.Center,
+
 ) {
 
     //Declara as Variaveis de Controle de Clicks
@@ -173,11 +173,12 @@ fun FiveStars(
         )
     )
 
-    BoxWithConstraints(modifier = modifier.fillMaxWidth().height(sizeStars)) {
+    BoxWithConstraints(modifier = modifier.fillMaxWidth().height(sizeStars), contentAlignment = iconsAlignment) {
 
         Canvas(modifier = modifier
             .fillMaxWidth()
             .height(sizeStars)
+            .align(iconsAlignment)
             .pointerInput(true) {
 
                 // Controla o Click na tela

@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -26,7 +27,7 @@ fun RadioButtonsTest(navigation: FeatureExperimentsNavigation, navController: Na
 
     // Note that Modifier.selectableGroup() is essential to ensure correct accessibility behavior
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Radio Buttons",

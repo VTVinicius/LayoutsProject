@@ -5,10 +5,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_clones.linkedin.components.*
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
@@ -17,7 +17,7 @@ import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 fun LinkedinProfileScreen() {
 
 
-    Scaffold(content = {
+    AppScaffold(content = {
 
         Column(
             Modifier
