@@ -51,7 +51,13 @@ fun StarScreen() {
 
         VerticalSpacer(height = 60)
 
-        StarsIcons()
+        FiveStarsIcons(
+            animStarTimeFill = 600,
+            animStarTimeEmpty = 500,
+            sizeIcons = 30.dp,
+            onStarSelected = {},
+            distanceBetweenStars = 20.dp
+        )
 
         if (show) {
             DialogScore(onDismissRequest = { show = false })
