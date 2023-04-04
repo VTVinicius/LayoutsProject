@@ -49,13 +49,17 @@ class CepViewModel : ViewModel(), KoinComponent {
                 saveAddress(it)
                 saveLastCep(cep)
             },
-            onError = {
+            onError = { error ->
                 _state.update { cepState ->
-                    cepState.copy(error = it)
+                    cepState.copy(error = error)
                 }
-                _state.update { it.copy(endereco = Async.Waiting) }
+                _state.update { it.copy(endereco = Async.Error(error)) }
             }
         )
+    }
+
+    fun resetState() {
+        _state.update { it.copy(endereco = Async.Waiting) }
     }
 
     private fun closeDialog() {
@@ -110,7 +114,7 @@ class CepViewModel : ViewModel(), KoinComponent {
             onSuccess = {
                 interact(EnderecoInteraction.ShowLastCep)
             },
-            onError ={
+            onError = {
                 interact(EnderecoInteraction.ShowLastCep)
             }
         )

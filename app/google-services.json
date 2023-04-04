@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "908150035362",
+    "project_id": "portifolio-project-d238f",
+    "storage_bucket": "portifolio-project-d238f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908150035362:android:3491850a46ba236d5758fb",
+        "android_client_info": {
+          "package_name": "br.com.vtvinicius.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908150035362-vf6d7it8qci2v3ai2ej7sdc681guf1db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHrxp-k3uAdkwQwmgvdwXqejhSbn22Tio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908150035362-vf6d7it8qci2v3ai2ej7sdc681guf1db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

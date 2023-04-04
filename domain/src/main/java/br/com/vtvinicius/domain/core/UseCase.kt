@@ -18,7 +18,7 @@ abstract class UseCase<T, in Params>(private val scope: CoroutineScope) : KoinCo
         params: Params? = null,
         onError: ((Throwable) -> Unit) = {},
         onSuccess: (T) -> Unit = {},
-        onFinally: (T) -> Unit = {},
+        onFinally: () -> Unit = {},
     ) {
         scope.launch(contextProvider.io) {
             try {
@@ -32,10 +32,8 @@ abstract class UseCase<T, in Params>(private val scope: CoroutineScope) : KoinCo
                     onError(e)
                 }
             } finally {
-                run(params).collect {
                     withContext(contextProvider.main) {
-                        onFinally(it)
-                    }
+                        onFinally()
                 }
             }
         }

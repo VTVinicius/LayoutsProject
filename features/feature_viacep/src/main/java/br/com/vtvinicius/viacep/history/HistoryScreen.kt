@@ -39,9 +39,10 @@ fun HistoryScreen(
             Column(
                 Modifier
                     .fillMaxSize()
-                    .background(background)) {
+                    .background(background)
+            ) {
 
-                Scene(async = state.address) { addressList ->
+                Scene(async = state.address, error = {}, content = { addressList ->
 
                     LazyColumn(state = lazyState) {
 
@@ -58,7 +59,7 @@ fun HistoryScreen(
                             )
                         }
                     }
-                }
+                })
             }
         })
 }

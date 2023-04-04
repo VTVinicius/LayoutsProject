@@ -16,19 +16,17 @@ fun ErrorDialog(
     onDismiss: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    if (showError) {
         AlertDialog(
-            onDismissRequest = { },
+            onDismissRequest = { onDismiss(false) },
             title = { Text("Erro!", style = MaterialTheme.typography.h6) },
             text = { Text(error) },
             confirmButton = {
-                Button(onClick = { onDismiss(false) }) {
+                Button(onClick = {onDismiss(false) }) {
                     Text(text = "OK", color = Color.White, style = MaterialTheme.typography.button)
                 }
             },
             modifier = modifier
         )
-    }
 }
 
 @Composable

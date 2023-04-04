@@ -17,6 +17,9 @@ buildscript {
 apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
 
 apply from: "$rootProject.projectDir/android-common.gradle"
 
@@ -29,4 +32,10 @@ dependencies {
 
     appDependencies.each { add(it.configuration, it.dependency, it.options) }
     presentationDependencies.each { add(it.configuration, it.dependency, it.options) }
+
+
+    implementation platform ("com.google.firebase:firebase-bom:$firebaseBomVersion")
+    implementation "com.google.firebase:firebase-analytics-ktx"
+    implementation  "com.google.firebase:firebase-crashlytics-ktx"
+
 }
