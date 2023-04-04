@@ -42,24 +42,27 @@ fun HistoryScreen(
                     .background(background)
             ) {
 
-                Scene(async = state.address, error = {}, content = { addressList ->
+                Scene(
+                    async = state.address,
+                    error = { viewModel.resetState() },
+                    content = { addressList ->
 
-                    LazyColumn(state = lazyState) {
+                        LazyColumn(state = lazyState) {
 
-                        items(addressList.size) {
+                            items(addressList.size) {
 
-                            VerticalSpacer(height = 24)
+                                VerticalSpacer(height = 24)
 
-                            AddressCard(
-                                zipCode = addressList[it].cep,
-                                uf = addressList[it].uf,
-                                city = addressList[it].localidade,
-                                neighborhood = addressList[it].bairro,
-                                address = addressList[it].logradouro,
-                            )
+                                AddressCard(
+                                    zipCode = addressList[it].cep,
+                                    uf = addressList[it].uf,
+                                    city = addressList[it].localidade,
+                                    neighborhood = addressList[it].bairro,
+                                    address = addressList[it].logradouro,
+                                )
+                            }
                         }
-                    }
-                })
+                    })
             }
         })
 }

@@ -40,7 +40,6 @@ fun CepScreen(
                 title = "Via CEP",
                 onBackPressed = { navigation.goToSecondScreen(navController = navController) })
         },
-//        error = state.error?.validateStateError(),
         content = {
             Column(
                 Modifier
@@ -53,9 +52,9 @@ fun CepScreen(
                     Scene(
                         async = state.endereco,
                         error = { viewModel.resetState() },
-                        content = {})
+                        content = {},
+                    )
 
-//                    CustomError(state.error, text = "Mensagem De Erro Pernsonalizada")
 
                     VerticalSpacer(height = 32)
 

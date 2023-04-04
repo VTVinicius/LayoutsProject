@@ -1,7 +1,7 @@
 package br.com.vtvinicius.base_feature.core
 
 import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import br.com.vtvinicius.base_feature.dialogs.ErrorDialog
 import br.com.vtvinicius.base_feature.dialogs.LoadingDialog
 import br.com.vtvinicius.domain.core.validateErrors
@@ -13,14 +13,17 @@ fun <T> Scene(
     waiting: Boolean? = true,
     loading: @Composable () -> Unit = { LoadingDialog() },
     content: @Composable (T) -> Unit,
-    error: () -> Unit
+    error: () -> Unit,
+    errorMessage: String? = null,
 ) {
 
     MaterialTheme {
         when (async) {
             is Async.Error -> {
-                ValidateErrors(async.message, onDismiss =
-                error)
+                ValidateErrors(
+                    async.message, onDismiss =
+                    error, errorMessage = errorMessage
+                )
             }
             is Async.Loading -> loading()
             is Async.Success -> content(async.value)
@@ -32,19 +35,12 @@ fun <T> Scene(
 }
 
 @Composable
-fun ValidateErrors(error: Throwable?, onDismiss: () -> Unit) {
-
-    var showError by remember {
-        mutableStateOf(true)
-    }
+fun ValidateErrors(error: Throwable?, onDismiss: () -> Unit, errorMessage: String?) {
 
     ErrorDialog(
-        showError = showError,
-        error = validateErrors(error),
+        error = errorMessage ?: validateErrors(error) ?: "Ocorreu um erro",
         onDismiss = {
-            showError = false
             onDismiss()
         }
     )
-
 }

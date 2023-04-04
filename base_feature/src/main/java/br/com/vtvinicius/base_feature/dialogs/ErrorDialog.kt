@@ -11,41 +11,40 @@ import br.com.vtvinicius.base_feature.extensions.isCommonError
 
 @Composable
 fun ErrorDialog(
-    showError: Boolean,
     error: String,
-    onDismiss: (Boolean) -> Unit,
+    onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-        AlertDialog(
-            onDismissRequest = { onDismiss(false) },
-            title = { Text("Erro!", style = MaterialTheme.typography.h6) },
-            text = { Text(error) },
-            confirmButton = {
-                Button(onClick = {onDismiss(false) }) {
-                    Text(text = "OK", color = Color.White, style = MaterialTheme.typography.button)
-                }
-            },
-            modifier = modifier
-        )
+    AlertDialog(
+        onDismissRequest = { onDismiss() },
+        title = { Text("Erro!", style = MaterialTheme.typography.h6) },
+        text = { Text(error) },
+        confirmButton = {
+            Button(onClick = { onDismiss() }) {
+                Text(text = "OK", color = Color.White, style = MaterialTheme.typography.button)
+            }
+        },
+        modifier = modifier
+    )
 }
 
-@Composable
-fun CustomError(
-    state: Throwable?,
-    text: String = "Ocorreu um Erro",
-) {
-    var showError by remember {
-        mutableStateOf(true)
-    }
-
-    if (state == null) {
-        showError = true
-    }
-
-    if (state?.isCommonError() == false) {
-        ErrorDialog(
-            showError = showError,
-            error = state.message ?: text,
-            onDismiss = { showError = false })
-    }
-}
+//@Composable
+//fun CustomError(
+//    state: Throwable?,
+//    text: String = "Ocorreu um Erro",
+//) {
+//    var showError by remember {
+//        mutableStateOf(true)
+//    }
+//
+//    if (state == null) {
+//        showError = true
+//    }
+//
+//    if (state?.isCommonError() == false) {
+//        ErrorDialog(
+//            showError = showError,
+//            error = state.message ?: text,
+//            onDismiss = { showError = false })
+//    }
+//}
