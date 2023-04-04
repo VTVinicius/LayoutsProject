@@ -53,6 +53,15 @@ fun FeaturesLobby(
 
                 VerticalSpacer(height = 24)
 
+                FeaturesButton(
+                    backgroundColor = greenFeatures,
+                    textColor = greenFeaturesDark,
+                    text = "Login Firebase",
+                    onClick = { navigation.goToFeatureFirebase(navController) }
+                )
+
+                VerticalSpacer(height = 24)
+
             }
         })
 }

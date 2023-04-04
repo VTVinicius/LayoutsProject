@@ -17,6 +17,7 @@ dependencies {
     implementation project(':features:feature_uikit')
     implementation project(':features:feature_games')
     implementation project(':features:feature_experiments')
+    implementation project(':features:feature_firebase')
     implementation project(':uikit')
 
     diDependencies.each { add(it.configuration, it.dependency, it.options) }

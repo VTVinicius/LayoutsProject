@@ -32,4 +32,7 @@ class FeatureHomeNavigationImpl : FeatureHomeNavigation {
     override fun goToFeatureViaCep(navController: NavController) {
         navController.navigate("feature_viacep")
     }
+    override fun goToFeatureFirebase(navController: NavController) {
+        navController.navigate("feature_firebase")
+    }
 }

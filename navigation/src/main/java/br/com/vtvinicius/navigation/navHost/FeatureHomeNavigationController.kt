@@ -43,6 +43,9 @@ fun FeatureHomeNavigationController() {
         composable("feature_experiments") {
             FeatureExperimentsNavigationController()
         }
+        composable("feature_firebase") {
+            FeatureFirebaseNavigationController()
+        }
 
     }
 }
