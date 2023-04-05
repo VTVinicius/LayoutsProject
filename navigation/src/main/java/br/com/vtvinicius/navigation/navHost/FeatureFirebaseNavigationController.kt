@@ -6,9 +6,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_firebase.logged.LoggedFirebaseScreen
 import br.com.vtvinicius.feature_firebase.login.LoginFirebaseScreen
+import br.com.vtvinicius.feature_firebase.pre_login.PreLoginScreen
 import br.com.vtvinicius.feature_firebase.register.RegisterFirebaseScreen
-import br.com.vtvinicius.navigation.navigators.FeatureExampleNavigationImpl
-import br.com.vtvinicius.viacep.homeScreen.HomeScreen
+import br.com.vtvinicius.navigation.navigators.FeatureFirebaseNavigationImpl
 
 @Composable
 fun FeatureFirebaseNavigationController() {
@@ -18,11 +18,13 @@ fun FeatureFirebaseNavigationController() {
 
     NavHost(
         navController = navController,
-        startDestination = "login_screen"
+        startDestination = "pre_login_screen"
     )
     {
         composable("login_screen") {
             LoginFirebaseScreen(
+                navController,
+                FeatureFirebaseNavigationImpl()
             )
         }
         composable("register_screen") {
@@ -32,6 +34,17 @@ fun FeatureFirebaseNavigationController() {
         }
         composable("logged_screen") {
             LoggedFirebaseScreen(
+                navController,
+                FeatureFirebaseNavigationImpl()
+            )
+        }
+        composable("home_screen") {
+            FeatureHomeNavigationController()
+        }
+        composable("pre_login_screen") {
+            PreLoginScreen(
+                navController,
+                FeatureFirebaseNavigationImpl()
             )
         }
     }

@@ -10,4 +10,8 @@ interface FeatureFirebaseNavigation {
 
     fun goToLoggedScreen(navController: NavController)
 
+    fun goBackToHome(navController: NavController)
+
+    fun goToPreLoginScreen(navController: NavController)
+
 }

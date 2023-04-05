@@ -2,6 +2,8 @@ package br.com.vtvinicius.di
 
 import br.com.vtvinicius.feature_canvas.clock.ClockViewModel
 import br.com.vtvinicius.feature_experiments.sortItems.SortViewModel
+import br.com.vtvinicius.feature_firebase.login.LoginViewModel
+import br.com.vtvinicius.feature_firebase.register.RegisterViewModel
 import br.com.vtvinicius.viacep.cepScreen.CepViewModel
 import br.com.vtvinicius.viacep.history.HistoryViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -13,5 +15,7 @@ val presentationModule = module {
     viewModel { HistoryViewModel() }
     viewModel { SortViewModel() }
     viewModel { ClockViewModel() }
+    viewModel { RegisterViewModel() }
+    viewModel { LoginViewModel() }
 
 }

@@ -3,7 +3,7 @@ package br.com.vtvinicius.navigation.navigators
 import androidx.navigation.NavController
 import br.com.vtvinicius.feature_firebase.navigation.FeatureFirebaseNavigation
 
-class FeatureFirebaseNavigationImpl: FeatureFirebaseNavigation {
+class FeatureFirebaseNavigationImpl : FeatureFirebaseNavigation {
     override fun goToLoginScreen(navController: NavController) {
         navController.navigate("login_screen")
     }
@@ -14,5 +14,13 @@ class FeatureFirebaseNavigationImpl: FeatureFirebaseNavigation {
 
     override fun goToLoggedScreen(navController: NavController) {
         navController.navigate("logged_screen")
+    }
+
+    override fun goBackToHome(navController: NavController) {
+        navController.navigate("home_screen")
+    }
+
+    override fun goToPreLoginScreen(navController: NavController) {
+        navController.navigate("pre_login_screen")
     }
 }
