@@ -12,9 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.core.Scene
 import br.com.vtvinicius.base_feature.core.asSuccessOrNull
-import br.com.vtvinicius.base_feature.dialogs.CustomError
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
-import br.com.vtvinicius.base_feature.extensions.validateStateError
 import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.greenApp
 import br.com.vtvinicius.uikit.ui.button.AppButton
@@ -42,22 +40,21 @@ fun CepScreen(
                 title = "Via CEP",
                 onBackPressed = { navigation.goToSecondScreen(navController = navController) })
         },
-        error = state.error?.validateStateError(),
         content = {
             Column(
                 Modifier
                     .fillMaxSize()
-                    .background(background)) {
+                    .background(background)
+            ) {
 
                 Column(Modifier.padding(horizontal = 16.dp)) {
 
                     Scene(
                         async = state.endereco,
-                    ) {
+                        error = { viewModel.resetState() },
+                        content = {},
+                    )
 
-                    }
-
-                    CustomError(state.error, text = "Mensagem De Erro Pernsonalizada")
 
                     VerticalSpacer(height = 32)
 

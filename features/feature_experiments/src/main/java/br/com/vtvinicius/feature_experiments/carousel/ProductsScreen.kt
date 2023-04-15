@@ -3,7 +3,6 @@ package br.com.vtvinicius.feature_experiments.carousel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -12,6 +11,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.R
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
@@ -25,7 +25,7 @@ import com.google.accompanist.pager.rememberPagerState
 
 @Composable
 fun ProductsPagerScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Products Pager",

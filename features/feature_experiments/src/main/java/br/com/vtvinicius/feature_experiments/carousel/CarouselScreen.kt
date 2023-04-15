@@ -3,7 +3,6 @@ package br.com.vtvinicius.feature_experiments.carousel
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -13,6 +12,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.R
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
@@ -29,7 +29,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun CarouselScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Carousel",

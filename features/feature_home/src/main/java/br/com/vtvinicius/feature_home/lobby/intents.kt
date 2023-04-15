@@ -1,4 +1,4 @@
-package br.com.vtvinicius.feature_home
+package br.com.vtvinicius.feature_home.lobby
 
 import android.content.Intent
 import android.net.Uri

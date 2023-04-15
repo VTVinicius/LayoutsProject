@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -21,7 +22,7 @@ import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
 @Composable
 fun RangeSliderScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Range Sliders",

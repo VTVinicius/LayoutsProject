@@ -5,7 +5,7 @@ ext {
             [configuration: "implementation", dependency: "$kotlinReflect"],
             [configuration: "implementation", dependency: "$androidKtxCore"],
             [configuration: "implementation", dependency: "$coroutine"],
-            [configuration: "implementation", dependency: "$koinCore"],
+            [configuration: "implementation", dependency: "$koinCore"]
 
     ]
 

@@ -1,6 +1,5 @@
 package br.com.vtvinicius.feature_experiments.dropdown
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -12,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.ApplicationTheme
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
@@ -22,7 +22,7 @@ import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 @Composable
 fun DropDownScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "DropDowns",

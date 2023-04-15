@@ -63,6 +63,12 @@ ext {
 
 
     inputTextsLib = "com.github.VTVinicius:ComponentsLib:$inputTextsLibVersion"
+
+
+
+    //Firebase
+
+
 }
 
 

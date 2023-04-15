@@ -2,7 +2,6 @@ package br.com.vtvinicius.feature_experiments.dialogs
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.AlertDialog
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -10,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -25,7 +25,7 @@ fun MaterialDialogScreen(navigation: FeatureExperimentsNavigation, navController
 
     val openDialog = remember { mutableStateOf(true) }
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Dialogs",

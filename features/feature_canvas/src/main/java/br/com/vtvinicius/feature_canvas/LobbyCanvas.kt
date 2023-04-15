@@ -5,12 +5,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.blueCanvasDark
 import br.com.vtvinicius.uikit.base.blueCanvasLight
@@ -26,7 +26,7 @@ fun LobbyCanvas(
 ) {
 
     val scrollState = rememberScrollState()
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Canvas",

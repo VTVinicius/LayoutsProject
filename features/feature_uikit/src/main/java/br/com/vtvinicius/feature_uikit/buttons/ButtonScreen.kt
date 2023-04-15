@@ -6,13 +6,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_uikit.FeatureUikitNavigation
+import br.com.vtvinicius.uikit.R
 import br.com.vtvinicius.uikit.base.*
 import br.com.vtvinicius.uikit.ui.button.*
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
@@ -34,7 +35,7 @@ fun ButtonScreen(navController: NavController, navigation: FeatureUikitNavigatio
     val rowState = rememberLazyListState()
 
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Botões",
@@ -42,7 +43,6 @@ fun ButtonScreen(navController: NavController, navigation: FeatureUikitNavigatio
                 backgroundColor = purpleUikitLight, textColor = purpleUikitDark
             )
         }, content = {
-
 
             Column(
                 Modifier.fillMaxSize(),
@@ -144,7 +144,7 @@ fun ButtonScreen(navController: NavController, navigation: FeatureUikitNavigatio
                 CircularIconButton(
                     onClick = { /*TODO*/ },
                     buttonColor = buttonColor,
-                    icon = br.com.vtvinicius.uikit.R.drawable.ic_plus,
+                    icon = R.drawable.ic_plus,
                 )
 
                 VerticalSpacer(height = 16)

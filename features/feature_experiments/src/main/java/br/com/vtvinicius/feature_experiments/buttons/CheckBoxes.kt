@@ -8,8 +8,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -31,7 +33,7 @@ fun CheckBoxes(navigation: FeatureExperimentsNavigation, navController: NavContr
     val (state3, onStateChange3) = remember { mutableStateOf(true) }
     val (state4, onStateChange4) = remember { mutableStateOf(true) }
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Check Boxes",
@@ -49,13 +51,13 @@ fun CheckBoxes(navigation: FeatureExperimentsNavigation, navController: NavContr
 
                     // TriStateCheckbox state reflects state of dependent checkboxes
                     val parentState = remember(state, state2, state3, state4) {
-                        if (state && state2 && state3 && state4) androidx.compose.ui.state.ToggleableState.On
-                        else if (!state && !state2 && !state3 && !state4) androidx.compose.ui.state.ToggleableState.Off
-                        else androidx.compose.ui.state.ToggleableState.Indeterminate
+                        if (state && state2 && state3 && state4) ToggleableState.On
+                        else if (!state && !state2 && !state3 && !state4) ToggleableState.Off
+                        else ToggleableState.Indeterminate
                     }
                     // click on TriStateCheckbox can set state for dependent checkboxes
                     val onParentClick = {
-                        val s = parentState != androidx.compose.ui.state.ToggleableState.On
+                        val s = parentState != ToggleableState.On
                         onStateChange(s)
                         onStateChange2(s)
                         onStateChange3(s)

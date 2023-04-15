@@ -3,7 +3,6 @@ package br.com.vtvinicius.feature_experiments.shimmer
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Icon
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -12,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
 import br.com.vtvinicius.uikit.base.greenExperimentsLight
@@ -35,7 +35,7 @@ fun ShimmerScreen(navigation: FeatureExperimentsNavigation, navController: NavCo
         isLoading = false
     }
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = if (isLoading) "Loading" else "ShimmerEffect",

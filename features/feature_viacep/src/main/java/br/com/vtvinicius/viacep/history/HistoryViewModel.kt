@@ -27,6 +27,11 @@ class HistoryViewModel : ViewModel(), KoinComponent {
         interact(HistoryInteraction.LoadAddress)
     }
 
+    fun resetState() {
+        _state.update { it.copy(address = Async.Waiting) }
+    }
+
+
     private fun loadAddress() {
         _state.update { it.copy(address = Async.Loading) }
         closeDialog()

@@ -18,6 +18,7 @@ abstract class UseCase<T, in Params>(private val scope: CoroutineScope) : KoinCo
         params: Params? = null,
         onError: ((Throwable) -> Unit) = {},
         onSuccess: (T) -> Unit = {},
+        onFinally: () -> Unit = {},
     ) {
         scope.launch(contextProvider.io) {
             try {
@@ -30,9 +31,12 @@ abstract class UseCase<T, in Params>(private val scope: CoroutineScope) : KoinCo
                 withContext(contextProvider.main) {
                     onError(e)
                 }
+            } finally {
+                    withContext(contextProvider.main) {
+                        onFinally()
+                }
             }
         }
-
     }
 
     fun cancel() = scope.coroutineContext.cancelChildren()

@@ -3,11 +3,11 @@ package br.com.vtvinicius.feature_clones.instagram
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_clones.instagram.components.*
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
@@ -18,7 +18,7 @@ fun InstaProfileScreen() {
         mutableStateOf(0)
     }
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             InstaTopBar(
                 Modifier

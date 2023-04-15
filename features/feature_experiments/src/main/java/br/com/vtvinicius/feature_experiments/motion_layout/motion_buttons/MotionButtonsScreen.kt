@@ -3,7 +3,6 @@ package br.com.vtvinicius.feature_experiments.motion_layout.motion_buttons
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Slider
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -14,6 +13,7 @@ import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.feature_experiments.R
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
@@ -26,7 +26,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun MotionButtonsScreen(navigation: FeatureExperimentsNavigation, navController: NavController) {
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Motion Buttons",

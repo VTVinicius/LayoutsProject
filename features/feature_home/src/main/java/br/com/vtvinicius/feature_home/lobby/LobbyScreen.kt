@@ -1,7 +1,5 @@
 package br.com.vtvinicius.feature_home.lobby
 
-import android.content.Intent
-import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,9 +21,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
-import br.com.vtvinicius.feature_home.intentHavan
-import br.com.vtvinicius.feature_home.intentLeve
-import br.com.vtvinicius.feature_home.intentRiHappy
 import br.com.vtvinicius.feature_home.lobby.components.ButtonApplications
 import br.com.vtvinicius.feature_home.lobby.components.LobbyHomeTopBar
 import br.com.vtvinicius.feature_home.navigation.FeatureHomeNavigation
@@ -174,8 +169,6 @@ fun ButtonsColumn(navController: NavController, navigation: FeatureHomeNavigatio
 @Composable
 fun CarrouselApps() {
 
-
-
     val context = LocalContext.current
 
     val lazySate = rememberLazyListState()
@@ -226,7 +219,6 @@ fun ItemsCarrousel(
     image: Int,
     onClick: () -> Unit,
 ) {
-
     Card(
         backgroundColor = backgroundColor,
         onClick = onClick,
@@ -235,9 +227,6 @@ fun ItemsCarrousel(
             .width(130.dp),
         shape = RoundedCornerShape(6.dp)
     ) {
-
         Image(painter = painterResource(id = image), contentDescription = "Image")
-
     }
-
 }

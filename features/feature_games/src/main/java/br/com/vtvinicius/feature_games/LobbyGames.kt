@@ -4,11 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_games.navigation.FeatureGamesNavigation
 import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.yellowGamesDark
@@ -23,7 +23,7 @@ fun LobbyGames(
     navigation: FeatureGamesNavigation,
 ) {
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Jogos", onBackPressed = { navigation.goBackToHome(navController) },

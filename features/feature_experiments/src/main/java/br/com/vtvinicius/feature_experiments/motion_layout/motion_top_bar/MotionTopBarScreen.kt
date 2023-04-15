@@ -5,7 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Slider
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -19,6 +18,7 @@ import androidx.constraintlayout.compose.ExperimentalMotionApi
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.constraintlayout.compose.MotionScene
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_experiments.FeatureExperimentsNavigation
 import br.com.vtvinicius.feature_experiments.R
 import br.com.vtvinicius.uikit.base.greenExperimentsDark
@@ -34,7 +34,7 @@ fun MotionTopBarScreen(navigation: FeatureExperimentsNavigation, navController: 
         mutableStateOf(0f)
     }
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Motion Top Bar",

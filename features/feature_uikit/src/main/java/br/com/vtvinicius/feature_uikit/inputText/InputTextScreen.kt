@@ -19,11 +19,11 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.feature_uikit.FeatureUikitNavigation
 import br.com.vtvinicius.input_text.components.input_text.CNPJInputTextLib
 import br.com.vtvinicius.input_text.components.input_text.DateInputTextLib
@@ -47,7 +47,7 @@ fun InputTextScreen(
 
     val rowState = rememberLazyListState()
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "Campos de Texto",
