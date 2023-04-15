@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_uikit.LobbyUikit
 import br.com.vtvinicius.feature_uikit.buttons.ButtonScreen
 import br.com.vtvinicius.feature_uikit.inputText.InputTextScreen
+import br.com.vtvinicius.feature_uikit.neumorphism.NeumorphismScreen
 import br.com.vtvinicius.navigation.navigators.FeatureUikitNavigationImpl
 
 @Composable
@@ -39,6 +40,9 @@ fun FeatureUikitNavigationController() {
                 navController,
                 FeatureUikitNavigationImpl()
             )
+        }
+        composable("neumorphism") {
+            NeumorphismScreen()
         }
     }
 }

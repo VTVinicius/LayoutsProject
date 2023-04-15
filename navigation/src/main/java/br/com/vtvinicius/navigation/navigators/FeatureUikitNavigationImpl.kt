@@ -23,4 +23,7 @@ class FeatureUikitNavigationImpl : FeatureUikitNavigation {
     override fun goToButtons(navController: NavController) {
         navController.navigate("buttons")
     }
+    override fun goToNeumorphism(navController: NavController) {
+        navController.navigate("neumorphism")
+    }
 }

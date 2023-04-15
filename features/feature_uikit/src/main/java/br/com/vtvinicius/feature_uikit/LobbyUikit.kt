@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.uikit.base.background
 import br.com.vtvinicius.uikit.base.purpleUikitDark
 import br.com.vtvinicius.uikit.base.purpleUikitLight
@@ -22,7 +23,7 @@ fun LobbyUikit(
     navigation: FeatureUikitNavigation,
 ) {
 
-    Scaffold(
+    AppScaffold(
         topBar = {
             AppTopBar(
                 title = "UiKit", onBackPressed = { navigation.goBackToHome(navController) },
@@ -55,6 +56,14 @@ fun LobbyUikit(
                     textColor = purpleUikitDark,
                     onClick = { navigation.goToButtons(navController) },
                     text = "Buttons"
+                )
+                VerticalSpacer(height = 20)
+
+                FeaturesButton(
+                    backgroundColor = purpleUikitLight,
+                    textColor = purpleUikitDark,
+                    onClick = { navigation.goToNeumorphism(navController) },
+                    text = "Neumorphism"
                 )
 
                 VerticalSpacer(height = 24)

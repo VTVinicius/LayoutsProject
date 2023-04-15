@@ -13,4 +13,5 @@ interface FeatureUikitNavigation {
     fun popBackStack(navController: NavController)
 
     fun goToButtons(navController: NavController)
+    fun goToNeumorphism(navController: NavController)
 }

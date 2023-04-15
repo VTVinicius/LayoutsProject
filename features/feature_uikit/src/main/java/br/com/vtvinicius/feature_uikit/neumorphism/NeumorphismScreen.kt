@@ -1,0 +1,40 @@
+package br.com.vtvinicius.feature_uikit.neumorphism
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import br.com.vtvinicius.base_feature.extensions.AppScaffold
+import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicButtonSample
+import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicButtonSample2
+import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
+import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
+
+@Composable
+fun NeumorphismScreen() {
+
+    AppScaffold(
+        backgroundColor = Color(0xFFE9E9E9),
+        topBar = { AppTopBar(title = "Neumorphism") },
+        content = {
+
+
+            Column(
+                Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+
+
+                NeumorphicButtonSample()
+                VerticalSpacer(height = 18)
+                NeumorphicButtonSample2()
+
+
+            }
+        }
+    )
+}
