@@ -65,6 +65,7 @@ ext {
             [configuration: "implementation", dependency: "$composeRuntime"],
             [configuration: "implementation", dependency: "$composeCompiler"],
             [configuration: "implementation", dependency: "$composeConstraints"],
+            [configuration: "implementation", dependency: "$neumorphism"],
             [configuration: "api", dependency: "$composeNavigation"]
     ]
 

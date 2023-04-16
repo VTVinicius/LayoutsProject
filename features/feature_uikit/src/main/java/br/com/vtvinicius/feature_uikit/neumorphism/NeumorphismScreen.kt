@@ -8,8 +8,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
+import br.com.vtvinicius.uikit.base.purpleUikitLight
 import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicButtonSample
 import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicButtonSample2
+import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicButtonSampleLib
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 
@@ -17,7 +19,7 @@ import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
 fun NeumorphismScreen() {
 
     AppScaffold(
-        backgroundColor = Color(0xFFE9E9E9),
+        backgroundColor = Color(0xFFF5F5F5),
         topBar = { AppTopBar(title = "Neumorphism") },
         content = {
 
@@ -32,6 +34,8 @@ fun NeumorphismScreen() {
                 NeumorphicButtonSample()
                 VerticalSpacer(height = 18)
                 NeumorphicButtonSample2()
+                VerticalSpacer(height = 18)
+                NeumorphicButtonSampleLib()
 
 
             }

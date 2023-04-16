@@ -61,4 +61,10 @@ ext {
     //Firebase
 
     firebaseBomVersion = "31.2.3"
+
+
+    //Neumorphism
+
+    neumorphismVersion = "0.0.6"
+
 }
