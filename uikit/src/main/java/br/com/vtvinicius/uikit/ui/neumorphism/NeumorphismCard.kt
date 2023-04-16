@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -24,21 +26,20 @@ import androidx.compose.ui.unit.dp
 import com.gandiva.neumorphic.LightSource
 import com.gandiva.neumorphic.neu
 import com.gandiva.neumorphic.shape.Flat
-import com.gandiva.neumorphic.shape.Pressed
 import com.gandiva.neumorphic.shape.RoundedCorner
 
 @Composable
 fun NeumorphicButton1(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    shape: Shape = RoundedCornerShape(12.dp),
+    shape: Shape = RoundedCornerShape(5.dp),
     backgroundColor: Color = Color.LightGray,
     contentPadding: PaddingValues = PaddingValues(16.dp),
     content: @Composable() () -> Unit,
 ) {
     val elevation = 4.dp
     val shadowColorLight = Color.White
-    val shadowColorDark = Color.Gray
+    val shadowColorDark = Color.LightGray
 
     val backgroundModifier = Modifier
         .shadow(elevation, shape, true, shadowColorLight)
@@ -63,16 +64,12 @@ fun NeumorphicButton1(
 
 @Composable
 fun NeumorphicButtonSample() {
-    androidx.compose.foundation.layout.Box(
-        contentAlignment = Alignment.Center
+    NeumorphicButton(
+        onClick = { /* Do something on click */ },
+        contentPadding = PaddingValues(16.dp),
+        backgroundColor = Color(0xFFF0F0F0)
     ) {
-        NeumorphicButton(
-            onClick = { /* Do something on click */ },
-            contentPadding = PaddingValues(16.dp),
-            backgroundColor = Color(0xFFF0F0F0)
-        ) {
-            Text("Neumorphic Button", textAlign = TextAlign.Center)
-        }
+        Text("Neumorphic Button", textAlign = TextAlign.Center)
     }
 }
 
@@ -87,29 +84,34 @@ fun NeumorphicButton2(
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(12.dp),
     backgroundColor: Color = Color.LightGray,
-    contentPadding: PaddingValues = PaddingValues(16.dp),
+    contentPadding: PaddingValues = PaddingValues(20.dp),
     content: @Composable() () -> Unit,
 ) {
     val elevation = 4.dp
     val shadowColorLight = Color.White
-    val shadowColorDark = Color.Gray
+    val shadowColorDark = Color.White
 
     val backgroundModifier = Modifier
-        .shadow(elevation, shape, true, shadowColorLight)
-        .shadow(-elevation, shape, false, shadowColorDark)
-        .background(backgroundColor, shape)
+        .shadow((-2).dp, shape, false, shadowColorLight, shadowColorLight)
+
+
 
     androidx.compose.material.Button(
         onClick = onClick,
         modifier = modifier.then(backgroundModifier),
         shape = shape,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color.Transparent,
-            contentColor = MaterialTheme.colors.onSurface
+            backgroundColor = Color.White,
+            contentColor = Color.Black
         ),
         contentPadding = contentPadding,
-        border = BorderStroke(0.dp, Color.Transparent),
-        elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp)
+        elevation = ButtonDefaults.elevation(
+            defaultElevation = 30.dp,
+            pressedElevation = 0.dp,
+            disabledElevation = 0.dp,
+            hoveredElevation = 30.dp,
+            focusedElevation = 1.dp,
+        )
     ) {
         content()
     }
@@ -137,15 +139,12 @@ fun NeumorphicButton(
                 RoundedCorner(8.dp),
             )
         ),
-        shape = shape,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = backgroundColor,
             contentColor = Color.Black
         ),
     ) {
         content()
-
-
     }
 }
 
@@ -197,7 +196,7 @@ fun NeumorphicButtonSample2() {
             contentPadding = PaddingValues(16.dp),
             backgroundColor = Color(0xFFF0F0F0)
         ) {
-            Text("Neumorphic Button", textAlign = TextAlign.Center)
+            Text("Neumorphic Button", textAlign = TextAlign.Center, modifier = Modifier.padding(1.dp))
         }
     }
 }
@@ -231,15 +230,15 @@ fun NeumorphicButtonLib(
     Button(
         onClick = onClick,
         modifier = modifier.neu(
-            lightShadowColor = Color.LightGray,
+            lightShadowColor = Color.White,
             darkShadowColor = Color.Gray,
-            shadowElevation = 4.dp,
+            shadowElevation = 1.dp,
             lightSource = LightSource.LEFT_TOP,
-            shape = Pressed(
-                RoundedCorner(5.dp),
+            shape = Flat(
+                RoundedCorner(8.dp)
+
             )
         ),
-        shape = shape,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = backgroundColor,
             contentColor = Color.Black
@@ -251,17 +250,15 @@ fun NeumorphicButtonLib(
 
 @Composable
 fun NeumorphicButtonSampleLib() {
-    androidx.compose.foundation.layout.Box(
-        contentAlignment = Alignment.Center
+
+    NeumorphicButtonLib(
+        onClick = { /* Do something on click */ },
+        contentPadding = PaddingValues(16.dp),
+        backgroundColor = Color(0xFFF0F0F0)
     ) {
-        NeumorphicButtonLib(
-            onClick = { /* Do something on click */ },
-            contentPadding = PaddingValues(16.dp),
-            backgroundColor = Color(0xFFF0F0F0)
-        ) {
-            Text("Neumorphic Button", textAlign = TextAlign.Center)
-        }
+        Text("Neumorphic Button", textAlign = TextAlign.Center)
     }
+
 }
 
 @Preview
@@ -272,7 +269,7 @@ fun NeumorphicButtonSamplePreviewLib() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        NeumorphicButtonSample()
+        NeumorphicButton2(onClick = {}, content = { Text(text = "Neomorfismo")} )
     }
 
 }
