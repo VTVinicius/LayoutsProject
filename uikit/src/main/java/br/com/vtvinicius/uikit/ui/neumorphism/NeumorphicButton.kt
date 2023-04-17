@@ -7,10 +7,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -25,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun NeumorphicCard1(
+fun NeumorphicButton1(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(12.dp),
@@ -40,8 +38,6 @@ fun NeumorphicCard1(
 
     val backgroundModifier = Modifier
         .shadow((-2).dp, shape, false, Color.White, Color.White)
-        .height(150.dp)
-        .width(300.dp)
 
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
@@ -56,34 +52,40 @@ fun NeumorphicCard1(
         borderColor.value = Color.White
     }
 
-    Card(
+    androidx.compose.material.Button(
         modifier = modifier.then(backgroundModifier),
+        onClick = onClick,
+
         shape = shape,
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = backgroundColor.value,
+            contentColor = Color.Black
+
+        ),
         border = BorderStroke(5.dp, color = borderColor.value),
-        elevation = 30.dp,
-        backgroundColor = Color.White,
-        content = {
-            content()
-        })
+        contentPadding = contentPadding,
+        elevation = ButtonDefaults.elevation(
+            defaultElevation = 20.dp,
+            pressedElevation = 0.dp,
+            disabledElevation = 0.dp,
+            hoveredElevation = 20.dp,
+            focusedElevation = 1.dp,
+        ),
+
+        ) {
+        content()
+    }
 }
 
 @Preview
 @Composable
-fun NeumorphicCardSamplePreview() {
+fun NeumorphicButtonSamplePreview() {
     Column(
         Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        NeumorphicCard1(onClick = {}, content = {
-            Column(
-                Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text (text = "Neomorfismo")
-            }
-        })
+        NeumorphicButton1(onClick = {}, content = { Text(text = "Neomorfismo") })
     }
 
 }
