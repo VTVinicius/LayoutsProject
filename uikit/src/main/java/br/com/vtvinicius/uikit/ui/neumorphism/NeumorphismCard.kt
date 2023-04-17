@@ -19,6 +19,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,8 +37,14 @@ fun NeumorphicCard1(
     content: @Composable() () -> Unit,
 ) {
 
+
+    val gradient = Brush.verticalGradient(
+        colors = listOf(Color.White, Color(0xFFEEEDED)),
+
+    )
+
+
     val backgroundColor = remember { mutableStateOf(Color.LightGray) }
-    val borderColor = remember { mutableStateOf(Color.Gray) }
 
     val backgroundModifier = Modifier
         .shadow((-2).dp, shape, false, Color.White, Color.White)
@@ -49,19 +57,19 @@ fun NeumorphicCard1(
     if (isPressed) {
         onPressed()
         backgroundColor.value = Color.White
-        borderColor.value = Color.LightGray
+
     } else {
         onReleased()
         backgroundColor.value = Color.White
-        borderColor.value = Color.White
+
     }
 
     Card(
         modifier = modifier.then(backgroundModifier),
         shape = shape,
-        border = BorderStroke(5.dp, color = borderColor.value),
-        elevation = 30.dp,
-        backgroundColor = Color.White,
+        border = BorderStroke(1.dp, brush = gradient),
+        elevation = 20.dp,
+        backgroundColor = Color(0xFFF8F8F8),
         content = {
             content()
         })
@@ -81,7 +89,7 @@ fun NeumorphicCardSamplePreview() {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Text (text = "Neomorfismo")
+                Text(text = "Neomorfismo")
             }
         })
     }
