@@ -3,16 +3,14 @@ package br.com.vtvinicius.feature_uikit.neumorphism
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.text.font.FontWeight
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
-import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicButton1
+import br.com.vtvinicius.uikit.ui.neumorphism.CustomNeumorphicButton
 import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicCard1
 import br.com.vtvinicius.uikit.ui.topbar.AppTopBar
 import br.com.vtvinicius.uikit.utils.extensions.VerticalSpacer
@@ -46,10 +44,15 @@ fun NeumorphismScreen() {
 
                 VerticalSpacer(height = 64)
 
-                NeumorphicButton1(
+                CustomNeumorphicButton(
                     onClick = {},
-                    content = { Text(text = "Neomorfismo") },
-                    modifier = Modifier.padding(1.dp)
+                    content = {
+                        Text(
+                            text = "Neomorfismo",
+                            color = Color.Black,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
                 )
 
 

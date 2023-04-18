@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.com.vtvinicius.uikit.base.backgroundComponents
 
 @Composable
 fun NeumorphicCard1(
@@ -69,7 +70,7 @@ fun NeumorphicCard1(
         shape = shape,
         border = BorderStroke(1.dp, brush = gradient),
         elevation = 20.dp,
-        backgroundColor = Color(0xFFF8F8F8),
+        backgroundColor = backgroundComponents,
         content = {
             content()
         })
