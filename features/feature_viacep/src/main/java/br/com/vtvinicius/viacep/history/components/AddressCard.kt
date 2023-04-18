@@ -26,7 +26,6 @@ fun Preview() {
         neighborhood = "Centro"
     )
 }
-
 @Composable
 fun AddressCard(
     zipCode: String?,
