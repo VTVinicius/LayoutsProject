@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import br.com.vtvinicius.base_feature.extensions.AppScaffold
 import br.com.vtvinicius.uikit.ui.neumorphism.CustomNeumorphicButton
 import br.com.vtvinicius.uikit.ui.neumorphism.NeumorphicCard1
@@ -46,14 +45,11 @@ fun NeumorphismScreen() {
 
                 CustomNeumorphicButton(
                     onClick = {},
-                    content = {
-                        Text(
-                            text = "Neomorfismo",
-                            color = Color.Black,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-                )
+                    text =
+                    "Neomorfismo",
+
+
+                    )
 
 
             }
