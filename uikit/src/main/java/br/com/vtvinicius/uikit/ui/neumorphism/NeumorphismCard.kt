@@ -29,7 +29,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.painterResource
@@ -44,10 +43,8 @@ fun NeumorphicCard1(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(12.dp),
-    contentPadding: PaddingValues = PaddingValues(20.dp),
     onPressed: () -> Unit = {},
     onReleased: () -> Unit = {},
-    content: @Composable() () -> Unit,
     zipCode: String? = "88360-000",
     uf: String? = "SC",
     city: String? = "Brusque",
@@ -59,8 +56,6 @@ fun NeumorphicCard1(
     val targetSize = remember { mutableStateOf(20.dp) }
     val animatedHeight by animateDpAsState(targetValue = targetSize.value)
 
-    val fontSizeTarget = remember { mutableStateOf(14) }
-    val animatedFont by animateIntAsState(targetValue = fontSizeTarget.value)
 
     val targetColor = remember { mutableStateOf(backgroundComponents) }
     val animatedColor by animateColorAsState(targetValue = targetColor.value)
@@ -69,36 +64,21 @@ fun NeumorphicCard1(
     val isPressed by interactionSource.collectIsPressedAsState()
 
     val backgroundColor = remember { mutableStateOf(Color.LightGray) }
-    val borderColor = remember { mutableStateOf(Color.White) }
-    val contentColor = remember { mutableStateOf(Color.Black) }
-    val elevationValue = remember { mutableStateOf(20.dp) }
+
 
     if (isPressed) {
         onPressed()
         backgroundColor.value = backgroundComponents
         targetColor.value = Color.LightGray
         targetSize.value = 0.dp
-        fontSizeTarget.value = 12
 
     } else {
         onReleased()
         backgroundColor.value = backgroundComponents
         targetColor.value = backgroundComponents
         targetSize.value = 20.dp
-        fontSizeTarget.value = 14
+
     }
-
-    val gradient = Brush.verticalGradient(
-        colors = listOf(Color.White, Color(0xFFEEEDED)),
-
-        )
-
-
-    val backgroundModifier = Modifier
-        .shadow((-2).dp, shape, false, Color.White, Color.White)
-        .height(150.dp)
-        .width(300.dp)
-
 
     if (isPressed) {
         onPressed()
@@ -109,56 +89,58 @@ fun NeumorphicCard1(
         backgroundColor.value = Color.White
 
     }
-        Card(
-            modifier = modifier.padding(horizontal = 20.dp, vertical = 10.dp).clickable(
+    Card(
+        modifier = modifier
+            .padding(horizontal = 20.dp, vertical = 10.dp)
+            .clickable(
                 interactionSource = interactionSource,
                 indication = null,
                 onClick = onClick
             ),
-            shape = shape,
-            border = BorderStroke(5.dp, color = animatedColor),
-            elevation = animatedHeight,
-            backgroundColor = backgroundComponents,
-            content = {
-                Box(
-                ) {
+        shape = shape,
+        border = BorderStroke(5.dp, color = animatedColor),
+        elevation = animatedHeight,
+        backgroundColor = backgroundComponents,
+        content = {
+            Box(
+            ) {
 
-                    Row() {
-                        Column(
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            modifier = Modifier
-                                .align(alignment = Alignment.CenterVertically)
-                                .padding(horizontal = 24.dp)
-                        ) {
+                Row() {
+                    Column(
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .align(alignment = Alignment.CenterVertically)
+                            .padding(horizontal = 24.dp)
+                    ) {
 
-                            Image(
-                                painter = painterResource(id = R.drawable.ic_location),
-                                contentDescription = "Location icon",
-                                Modifier.size(36.dp, 43.dp)
-                            )
+                        Image(
+                            painter = painterResource(id = R.drawable.ic_location),
+                            contentDescription = "Location icon",
+                            Modifier.size(36.dp, 43.dp)
+                        )
+                    }
+                    Column(
+                        verticalArrangement = Arrangement.SpaceEvenly,
+                        modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
+                    ) {
+
+                        Row(Modifier.fillMaxWidth()) {
+                            LabelLargeText(text = "$zipCode")
                         }
-                        Column(
-                            verticalArrangement = Arrangement.SpaceEvenly,
-                            modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
-                        ) {
-
-                            Row(Modifier.fillMaxWidth()) {
-                                LabelLargeText(text = "$zipCode")
-                            }
-                            Row(Modifier.fillMaxWidth()) {
-                                LabelLargeText(text = "$city / $uf")
-                            }
-                            Row(Modifier.fillMaxWidth()) {
-                                LabelLargeText(text = "$neighborhood")
-                            }
-                            Row(Modifier.fillMaxWidth()) {
-                                LabelLargeText(text = "$address")
-                            }
+                        Row(Modifier.fillMaxWidth()) {
+                            LabelLargeText(text = "$city / $uf")
+                        }
+                        Row(Modifier.fillMaxWidth()) {
+                            LabelLargeText(text = "$neighborhood")
+                        }
+                        Row(Modifier.fillMaxWidth()) {
+                            LabelLargeText(text = "$address")
                         }
                     }
                 }
-            })
+            }
+        })
 
 }
 
@@ -170,15 +152,7 @@ fun NeumorphicCardSamplePreview() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        NeumorphicCard1(onClick = {}, content = {
-            Column(
-                Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(text = "Neomorfismo")
-            }
-        })
+        NeumorphicCard1(onClick = {})
     }
 
 }

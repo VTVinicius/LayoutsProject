@@ -21,6 +21,7 @@ fun ClockExercise(
     minutes: Float = 0f,
     hours: Float = 0f,
     modifier: Modifier = Modifier,
+    radius: Dp = 50.dp,
     style: ScaleStyle2 = ScaleStyle2(),
 ) {
 
@@ -33,7 +34,6 @@ fun ClockExercise(
     }
 
     val scaleWidth: Dp = 100.dp
-    val radius = 50.dp
 
 
     var angle by remember {

@@ -42,18 +42,7 @@ fun NeumorphismScreen() {
 
                 for (i in 1..3) {
 
-
-                    NeumorphicCard1(onClick = {}, content = {
-                        Column(
-                            Modifier.fillMaxSize(),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center
-                        ) {
-                            Text(text = "Neomorfismo")
-                        }
-                    }
-
-                    )
+                    NeumorphicCard1(onClick = {},                     )
                 }
 
                 VerticalSpacer(height = 64)
@@ -61,12 +50,8 @@ fun NeumorphismScreen() {
                 CustomNeumorphicButton(
                     onClick = {},
                     text =
-                    "Neomorfismo",
-
-
-                    )
-
-
+                    "Neomorfismo"
+                )
             }
         }
     )

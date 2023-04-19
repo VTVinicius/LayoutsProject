@@ -20,7 +20,7 @@ fun GenderScreen() {
     var genero by remember {
         mutableStateOf("Feminino")
     }
-    GenderPicker(onGenderSelected = {
+    GenderPickerResponsivo(onGenderSelected = {
         genero = when (it) {
             Gender.Female -> "Feminino"
             else -> "Masculino"
