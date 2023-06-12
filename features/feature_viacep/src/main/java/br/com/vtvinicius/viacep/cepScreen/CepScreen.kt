@@ -8,6 +8,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import br.com.vtvinicius.base_feature.core.Scene
@@ -33,7 +34,8 @@ fun CepScreen(
 ) {
 
     val state by viewModel.state.collectAsState()
-
+   var text = "teste"
+    text.uppercase()
     AppScaffold(
         topBar = {
             AppTopBar(

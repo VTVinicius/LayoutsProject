@@ -1,9 +1,6 @@
 package br.com.vtvinicius.feature_uikit.buttons
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.*
@@ -161,10 +158,15 @@ fun ButtonScreen(navController: NavController, navigation: FeatureUikitNavigatio
                 SmallButton(
                     text = "SmallButton",
                     textColor = textColor,
-                    backgroundColor = buttonColor
-                ) {
+                    backgroundColor = buttonColor,
+                    onClick = {}
+                ) 
+                
+                VerticalSpacer(height = 16)
+                
+                CounterButton(onClickAdd = { /*TODO*/ }, onClickRemove = { /*TODO*/ })
 
-                }
+                VerticalSpacer(height = 16)
             }
         })
 }

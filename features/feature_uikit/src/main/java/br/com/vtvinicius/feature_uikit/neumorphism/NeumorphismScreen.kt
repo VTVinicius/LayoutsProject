@@ -41,8 +41,7 @@ fun NeumorphismScreen() {
             ) {
 
                 for (i in 1..3) {
-
-                    NeumorphicCard1(onClick = {},                     )
+                    NeumorphicCard1(onClick = {})
                 }
 
                 VerticalSpacer(height = 64)

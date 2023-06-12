@@ -1,7 +1,6 @@
 package br.com.vtvinicius.uikit.ui.inputtext.utils
 
 class Validation {
-
     fun validateCPF(cpf: String): Boolean {
         if (cpf.length != 11) return false
         val numbers = cpf.replace("\\D".toRegex(), "")

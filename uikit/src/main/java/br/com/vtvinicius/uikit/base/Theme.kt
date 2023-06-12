@@ -6,7 +6,6 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
 
 object ApplicationTheme {
-
     val colors: AppColors
         @Composable
         @ReadOnlyComposable

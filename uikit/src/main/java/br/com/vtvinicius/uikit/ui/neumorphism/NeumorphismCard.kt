@@ -1,6 +1,7 @@
 package br.com.vtvinicius.uikit.ui.neumorphism
 
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.TweenSpec
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateIntAsState
 import androidx.compose.foundation.BorderStroke
@@ -8,20 +9,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,6 +27,10 @@ import androidx.compose.ui.unit.dp
 import br.com.vtvinicius.uikit.R
 import br.com.vtvinicius.uikit.base.backgroundComponents
 import br.com.vtvinicius.uikit.ui.text.LabelLargeText
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun NeumorphicCard1(
@@ -54,11 +48,22 @@ fun NeumorphicCard1(
 
 
     val targetSize = remember { mutableStateOf(20.dp) }
-    val animatedHeight by animateDpAsState(targetValue = targetSize.value)
+    val animatedHeight by animateDpAsState(
+        targetValue = targetSize.value,
+        animationSpec = TweenSpec(durationMillis = 10)
+    )
 
+    val fontSizeTarget = remember { mutableStateOf(14) }
+    val animatedFont by animateIntAsState(
+        targetValue = fontSizeTarget.value,
+        animationSpec = TweenSpec(durationMillis = 10)
+    )
 
     val targetColor = remember { mutableStateOf(backgroundComponents) }
-    val animatedColor by animateColorAsState(targetValue = targetColor.value)
+    val animatedColor by animateColorAsState(
+        targetValue = targetColor.value,
+        animationSpec = TweenSpec(durationMillis = 10)
+    )
 
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
@@ -71,13 +76,7 @@ fun NeumorphicCard1(
         backgroundColor.value = backgroundComponents
         targetColor.value = Color.LightGray
         targetSize.value = 0.dp
-
-    } else {
-        onReleased()
-        backgroundColor.value = backgroundComponents
-        targetColor.value = backgroundComponents
-        targetSize.value = 20.dp
-
+        fontSizeTarget.value = 12
     }
 
     if (isPressed) {
@@ -95,7 +94,20 @@ fun NeumorphicCard1(
             .clickable(
                 interactionSource = interactionSource,
                 indication = null,
-                onClick = onClick
+                onClick = {
+                    onClick()
+                    backgroundColor.value = backgroundComponents
+                    targetColor.value = Color.LightGray
+                    targetSize.value = 0.dp
+                    fontSizeTarget.value = 12
+                    CoroutineScope(Dispatchers.Main).launch {
+                        delay(130)
+                        backgroundColor.value = backgroundComponents
+                        targetColor.value = backgroundComponents
+                        targetSize.value = 20.dp
+                        fontSizeTarget.value = 14
+                    }
+                }
             ),
         shape = shape,
         border = BorderStroke(5.dp, color = animatedColor),
