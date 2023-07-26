@@ -64,6 +64,7 @@ fun CustomNeumorphicButton(
     )
 
     val targetColor = remember { mutableStateOf(backgroundComponents) }
+
     val animatedColor by animateColorAsState(
         targetValue = targetColor.value,
         animationSpec = TweenSpec(durationMillis = 50)

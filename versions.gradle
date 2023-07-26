@@ -1,5 +1,7 @@
 ext {
 
+    androidApplicationId = "br.com.vtvinicius.portifolio"
+
     //versions
     androidCompileSdkVersion = 33
     androidMinSdkVersion = 24

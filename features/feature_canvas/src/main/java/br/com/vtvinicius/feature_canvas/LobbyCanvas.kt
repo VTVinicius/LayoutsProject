@@ -129,6 +129,16 @@ fun LobbyCanvas(
                 Spacer(modifier = Modifier.height(24.dp))
 
 
+                FeaturesButton(
+                    onClick = { navigation.goToBatman(navController) },
+                    text = "Loading Batman",
+                    backgroundColor = blueCanvasLight,
+                    textColor = blueCanvasDark
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+
             }
         }
     )

@@ -14,14 +14,29 @@ buildscript {
 
 
 
+
 apply plugin: 'com.google.devtools.ksp'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 
-
 apply from: "$rootProject.projectDir/android-common.gradle"
+
+
+android {
+    flavorDimensions "api"
+    productFlavors {
+        dev {
+            applicationId androidApplicationId
+            dimension "api"
+        }
+        prd {
+            applicationId androidApplicationId
+            dimension "api"
+        }
+    }
+}
 
 
 dependencies {

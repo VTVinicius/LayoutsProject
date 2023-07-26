@@ -25,4 +25,5 @@ interface FeatureCanvasNavigation {
     fun goToPieChart(navController: NavController)
 
     fun goToStar(navController: NavController)
+    fun goToBatman(navController: NavController)
 }

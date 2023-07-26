@@ -48,5 +48,9 @@ class FeatureCanvasNavigationImpl : FeatureCanvasNavigation {
         navController.navigate("star_screen")
     }
 
+    override fun goToBatman(navController: NavController) {
+        navController.navigate("batman_loading")
+    }
+
 
 }

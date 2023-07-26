@@ -7,4 +7,5 @@ interface ExampleRepository {
 
     fun searchCep(cep: String): Flow<EnderecoEntity>
 
+
 }

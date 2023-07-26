@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import br.com.vtvinicius.feature_canvas.LobbyCanvas
 import br.com.vtvinicius.feature_canvas.animated_arrows.AnimatedScreen
 import br.com.vtvinicius.feature_canvas.animated_path.EffectPath
+import br.com.vtvinicius.feature_canvas.batman_card.BatmanCardScreen
 import br.com.vtvinicius.feature_canvas.clock.ClockScreen
 import br.com.vtvinicius.feature_canvas.curve_lines.ExamplePath
 import br.com.vtvinicius.feature_canvas.gender_picker.GenderScreen
@@ -68,6 +69,9 @@ fun FeatureCanvasNavigationController() {
         }
         composable("star_screen") {
             StarScreen()
+        }
+        composable("batman_loading") {
+            BatmanCardScreen()
         }
     }
 }
