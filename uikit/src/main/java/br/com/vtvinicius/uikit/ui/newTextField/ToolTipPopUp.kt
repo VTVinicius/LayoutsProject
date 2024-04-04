@@ -16,17 +16,20 @@ import androidx.compose.ui.unit.sp
 
 import android.view.View
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
@@ -42,6 +45,7 @@ import androidx.compose.ui.window.PopupPositionProvider
 import androidx.compose.ui.window.PopupProperties
 import br.com.vtvinicius.uikit.R
 import br.com.vtvinicius.uikit.base.lightGray
+import br.com.vtvinicius.uikit.base.white
 import kotlin.math.roundToInt
 
 /**
@@ -83,7 +87,7 @@ fun TooltipPopup(
 fun TooltipPopup(
     position: TooltipPopupPosition,
     backgroundShape: Shape = MaterialTheme.shapes.medium,
-    backgroundColor: Color = lightGray,
+    backgroundColor: Color = white,
     arrowHeight: Dp = 4.dp,
     horizontalPadding: Dp = 16.dp,
     onDismissRequest: (() -> Unit)? = null,
@@ -135,7 +139,7 @@ fun TooltipPopup(
     ) {
         BubbleLayout(
             modifier = Modifier
-                .padding(horizontal = horizontalPadding)
+                .padding(horizontal = horizontalPadding).shadow(8.dp, shape = RoundedCornerShape(8.dp))
                 .background(
                     color = backgroundColor,
                     shape = backgroundShape,
@@ -284,10 +288,11 @@ fun BubbleLayout(
 
                 drawPath(
                     path = path,
-                    color = lightGray,
+                    color = Color.Gray,
                 )
                 path.close()
             }
+
     ) {
         content()
     }

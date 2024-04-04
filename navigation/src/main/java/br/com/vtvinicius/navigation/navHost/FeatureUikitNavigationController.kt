@@ -8,6 +8,7 @@ import br.com.vtvinicius.feature_uikit.LobbyUikit
 import br.com.vtvinicius.feature_uikit.buttons.ButtonScreen
 import br.com.vtvinicius.feature_uikit.inputText.InputTextScreen
 import br.com.vtvinicius.feature_uikit.neumorphism.NeumorphismScreen
+import br.com.vtvinicius.feature_uikit.newinputtext.NewInputTextScreen
 import br.com.vtvinicius.navigation.navigators.FeatureUikitNavigationImpl
 
 @Composable
@@ -31,6 +32,12 @@ fun FeatureUikitNavigationController() {
         }
         composable("input_text") {
             InputTextScreen(
+                navController,
+                FeatureUikitNavigationImpl()
+            )
+        }
+        composable("new_input_text") {
+            NewInputTextScreen(
                 navController,
                 FeatureUikitNavigationImpl()
             )

@@ -11,6 +11,9 @@ class FeatureUikitNavigationImpl : FeatureUikitNavigation {
     override fun goToInputText(navController: NavController) {
         navController.navigate("input_text")
     }
+    override fun goToNewInputText(navController: NavController) {
+        navController.navigate("new_input_text")
+    }
 
     override fun goBackToHome(navController: NavController) {
         navController.navigate("lobby_screen")

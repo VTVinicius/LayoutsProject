@@ -7,6 +7,7 @@ interface FeatureUikitNavigation {
     fun goToLobbyUikit(navController: NavController)
 
     fun goToInputText(navController: NavController)
+    fun goToNewInputText(navController: NavController)
 
     fun goBackToHome(navController: NavController)
 

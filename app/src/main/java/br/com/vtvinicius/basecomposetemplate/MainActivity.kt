@@ -34,26 +34,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ApplicationTheme {
-
-                var validate by remember {
-                    mutableStateOf( true)
-                }
-
-
-                BoxWithConstraints(Modifier.fillMaxSize()) {
-
-
-                    Column {
-
-                        DefaultTextField(validationBoolean = validate)
-
-
-                        Button(onClick = { validate = !validate}) {
-
-                            Text(text = "Validate")
-                        }
-                    }
-                }
+                FeatureHomeNavigationController()
             }
         }
     }
